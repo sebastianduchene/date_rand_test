@@ -5,15 +5,7 @@ library(geiger)
 #simulate k=1
 # 32 taxa, Yule, 12 genes, mean = 0.1, sd = 0.05, 2000 nuc/gene, root age = 100, noise: N(0, 0.1)
 
-# Select the number of clocks with the variable k in the following line
-
-k=1 # select k=2, or k=3 for two or three clocks, respectively.
-
-# To run the simulations, open R and type:
-#source("path to this file")
-# Make sure phangorn and geiger are installed
-
-if(k == 1){
+if(k1 == T){
 tr.k1 <- sim.bdtree(b = 1, d = 0, stop = "taxa", n = 32)
 rate.k1 <- abs(rnorm(62, 0.001, 0.0005))
 chrono.k1 <- tr.k1
@@ -42,7 +34,7 @@ for(i in 1:12){
 ##########################################
 #simulate k=2
 
-if(k ==2){
+if(sim2 == T){
 
 tr.k2 <- sim.bdtree(b = 1, d = 0, stop = "taxa", n = 32)
 rate.1 <- abs(rnorm(62, 0.001, 0.0005))
@@ -91,7 +83,7 @@ for(i in 1:6){
 
 ##########################################
 #simulate k=3
-if(k == 3){ 
+if(sim3 == T){ 
 tr.k3 <- sim.bdtree(b = 1, d = 0, stop = "taxa", n = 32)
 rate.1 <- abs(rnorm(62, 0.001, 0.0005))
 rate.2 <- abs(rnorm(62, 0.001, 0.0005))
