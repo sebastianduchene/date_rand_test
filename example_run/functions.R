@@ -68,7 +68,7 @@ taxon_block <- paste(taxon_block, collapse = '\n')
 
 block2 <- "</data>    \n <map name=\"Beta\">beast.math.distributions.Beta</map> \n <map name=\"Exponential\">beast.math.distributions.Exponential</map> \n <map name=\"InverseGamma\">beast.math.distributions.InverseGamma</map> \n <map name=\"LogNormal\">beast.math.distributions.LogNormalDistributionModel</map> \n <map name=\"Gamma\">beast.math.distributions.Gamma</map> \n  <map name=\"Uniform\">beast.math.distributions.Uniform</map> \n <map name=\"prior\">beast.math.distributions.Prior</map> \n <map name=\"LaplaceDistribution\">beast.math.distributions.LaplaceDistribution</map> \n <map name=\"OneOnX\">beast.math.distributions.OneOnX</map> \n <map name=\"Normal\">beast.math.distributions.Normal</map> \n"
 
-block3 <- "<run chainLength=\"10000000\" id=\"mcmc\" spec=\"MCMC\"> \n     <state id=\"state\" storeEvery=\"5000\"> \n        <tree id=\"Tree.t:FILENAME\" name=\"stateNode\"> \n   <trait id=\"dateTrait.t:FILENAME\" spec=\"beast.evolution.tree.TraitSet\" traitname=\"date-backward\">"
+block3 <- "<run chainLength=\"5000000\" id=\"mcmc\" spec=\"MCMC\"> \n     <state id=\"state\" storeEvery=\"5000\"> \n        <tree id=\"Tree.t:FILENAME\" name=\"stateNode\"> \n   <trait id=\"dateTrait.t:FILENAME\" spec=\"beast.evolution.tree.TraitSet\" traitname=\"date-backward\">"
 
 ################################
 date_template <- 'TAXON_NAME=DATE'
