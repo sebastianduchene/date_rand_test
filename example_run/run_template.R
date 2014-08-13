@@ -2,9 +2,9 @@ source('functions.R')
 #par(bg = 'black')
 
 mean_rate = 0.01
-sd_rate = 0.01
-min_cal = 10
-max_cal = 20
+sd_rate = 0.3
+min_cal = 0.5
+max_cal = 1.5
 
 
 for(i in 1:100){
