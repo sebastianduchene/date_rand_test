@@ -1,19 +1,22 @@
 source('functions.R')
-par(bg = 'black')
+#par(bg = 'black')
 
 mean_rate = 0.01
 sd_rate = 0.01
-min_cal = 20
-max_cal = 25
+min_cal = 10
+max_cal = 20
 
-i = 1
 
-#for(i in 1:100){
+for(i in 1:100){
 
-t1 <- get_tree_cal(span_cut = 1:10, max_cal = max_cal, min_cal = min_cal, tr_time = 100, n_tax = 50, print_trees = T)
+t1 <- get_tree_cal(span_cut = c(1.05, 1.3), max_cal = max_cal, min_cal = min_cal, tr_time = 100, n_tax = 50, print_trees = F)
 p1 <- t1$chronogram
 p1$edge.length <- p1$edge.length * rlnorm(98, log(mean_rate), sd_rate)
 s1 <- as.DNAbin(simSeq(p1, l = 1000))
+
+
+#stop('standardise span')
+
 
 # True dates run
 xml1 <- make_xml_file(s1, file_name = 'test1', random_dates = F)
@@ -40,12 +43,7 @@ run_rand <- run_beast(file_name = 'test1.xml', beast_path = '~/Desktop/progs/Bea
 
 cat(paste(paste0('run_rand_', i, '_', k), cal_time, mean_rate, sd_rate, paste(unlist(run_rand), collapse = ' '), slope_true, r_true, collapse = ' '), sep = '\n', file = 'SET1.txt', append = T)
 
-
-
 }
 
 
-
-
-
-#}
+}
