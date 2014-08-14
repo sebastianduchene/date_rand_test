@@ -1,0 +1,37 @@
+source('functions.R')
+
+mean_rate = 0.01
+sd_rate = 0.3
+min_cal = 5
+max_cal = 10
+
+
+for(i in 1:10){
+
+t1 <- get_tree_cal(span_cut = c(1.05, 1.5), max_cal = max_cal, min_cal = min_cal, tr_time = 100, n_tax = 50, print_trees = F)
+p1 <- t1$chronogram
+p1$edge.length <- p1$edge.length * rlnorm(98, log(mean_rate), sd_rate)
+s1 <- as.DNAbin(simSeq(p1, l = 1000))
+
+rate_sim <- mean_rate
+root_true <- max(allnode.times(t1$chronogram))
+dates_true <- as.numeric(gsub('^.+_', '', t1$chronogram$tip.label))
+reg_true <- summary(lm(allnode.times(p1, tipsonly = T) ~ dates_true + 0 ))
+slope_true <- reg_true$coefficient[1]
+r_true <- reg_true$r.squared
+cal_time <- max(dates_true) - min(dates_true)
+
+
+system(paste0('mkdir runs_dat/run_', i))
+xml1 <- make_xml_file(s1, file_name = 'test1', random_dates = F)
+cat(xml1, file = paste0('runs_dat/run_', i,'/test1.xml'), sep = '\n')
+
+for(k in 1:3){
+      xml_rand <- make_xml_file(s1, file_name = paste0('rand_', k), random_dates = T)
+      cat(xml_rand, file = paste0('runs_dat/run_', i,'/rand_', k, '.xml'), sep = '\n')
+}
+
+cat(paste(paste0('run_', i), cal_time, mean_rate, sd_rate, slope_true, r_true, collapse = ' '), sep = '\n', file = paste0('runs_dat/run_', i, '/res_replicate_', i, '.txt'), append = T)
+
+#write.tree(p1, file = paste0('runs_dat/run_', i, 'test1.tree'))
+}
