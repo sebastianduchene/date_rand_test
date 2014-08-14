@@ -34,6 +34,10 @@ cal_time <- max(dates_true) - min(dates_true)
 
 cat(paste(paste0('run_', i), cal_time, mean_rate, sd_rate, paste(unlist(run_1), collapse = ' '), slope_true, r_true, collapse = ' '), sep = '\n', file = 'SET1.txt', append = T)
 
+#OUT <- paste(paste0('run_', i), cal_time, mean_rate, sd_rate, paste(unlist(run_1), collapse = ' '), slope_true, r_true, collapse = ' ')
+
+
+stop('wooooooo')
 # Randomised dates run
 for(k in 1:5){
 xml_rand <- make_xml_file(s1, file_name = 'test1', random_dates = T)
@@ -42,6 +46,9 @@ cat(xml_rand, file = 'test1.xml', sep = '\n')
 run_rand <- run_beast(file_name = 'test1.xml', beast_path = '~/Desktop/progs/Beast2/bin/')
 
 cat(paste(paste0('run_rand_', i, '_', k), cal_time, mean_rate, sd_rate, paste(unlist(run_rand), collapse = ' '), slope_true, r_true, collapse = ' '), sep = '\n', file = 'SET1.txt', append = T)
+
+
+
 
 }
 

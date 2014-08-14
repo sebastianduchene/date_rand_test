@@ -169,9 +169,11 @@ block7 <- "    <logger fileName=\"FILENAME.log\" id=\"tracelog\" logEvery=\"1000
         <log idref=\"likelihood\"/>
         <log idref=\"prior\"/>
     </logger>
+<!--
     <logger fileName=\"$(tree).trees\" id=\"treelog.t:FILENAME\" logEvery=\"1000\" mode=\"tree\">
         <log branchratemodel=\"@RelaxedClock.c:FILENAME\" id=\"TreeWithMetaDataLogger.t:FILENAME\" spec=\"beast.evolution.tree.TreeWithMetaDataLogger\" tree=\"@Tree.t:FILENAME\"/>
     </logger>
+-->
 </run>
 </beast>"
 
@@ -191,26 +193,30 @@ return(res_out)
 
 run_beast <- function(file_name = '', beast_path = '', temp_name = 'out_temp.tree'){
 	  system(paste0(beast_path, 'beast -overwrite ', file_name))
-	  system(paste0(beast_path, 'treeannotator ', gsub('xml', 'trees ', file_name), temp_name))
-
+#####
+	#  system(paste0(beast_path, 'treeannotator ', gsub('xml', 'trees ', file_name), temp_name))
+#####
 	  dat_temp <- read.table(gsub('xml', 'log', file_name), head = T, as.is = T)
 	  rate_est <- mean(as.numeric(dat_temp$rate.mean))
-	  rate_hpd <- quantile(rate_est, c(0.025, 0.975))
+	  rate_hpd <- quantile(as.numeric(dat_temp$rate.mean), c(0.025, 0.975))
 	  root_est <- mean(as.numeric(dat_temp$TreeHeight))
-	  root_hpd <- quantile(root_est, c(0.025, 0.975))
+	  root_hpd <- quantile(as.numeric(dat_temp$TreeHeight), c(0.025, 0.975))
 	  
-	  tree_est <- read.annotated.nexus(temp_name)
-	  dat_mat_est <- trann2trdat(tree_est)
-	  est_phylogram <- tree_est
-	  est_phylogram$edge.length <- dat_mat_est[, 6]
-	  dates <- as.numeric(gsub('^.+_', '', est_phylogram$tip.label))
-	  root_tips <- allnode.times(est_phylogram, tipsonly = T)	  
+########
+	  #tree_est <- read.annotated.nexus(temp_name)
+	  #dat_mat_est <- trann2trdat(tree_est)
+	  #est_phylogram <- tree_est
+	  #est_phylogram$edge.length <- dat_mat_est[, 6]
+	  #dates <- as.numeric(gsub('^.+_', '', est_phylogram$tip.label))
+	  #root_tips <- allnode.times(est_phylogram, tipsonly = T)	  
 
-	  lin_temp <- summary(lm(root_tips ~ dates + 0))
-	  r_est <- lin_temp$r.squared
-	  slope_est <- lin_temp$coefficients[1]
-
-	  return(list(rate_est = rate_est, rate_hpd = rate_hpd, root_est = root_est, root_hpd = root_hpd, slope_est = slope_est, r_est = r_est))
+	  #lin_temp <- summary(lm(root_tips ~ dates + 0))
+	  #r_est <- lin_temp$r.squared
+	  #slope_est <- lin_temp$coefficients[1]
+######
+	  #return(list(rate_est = rate_est, rate_hpd = rate_hpd, root_est = root_est, root_hpd = root_hpd, slope_est = slope_est, r_est = r_est))
+	  return(list(rate_est = rate_est, rate_hpd = rate_hpd, root_est = root_est, root_hpd = root_hpd))
+	  
 }
 
 

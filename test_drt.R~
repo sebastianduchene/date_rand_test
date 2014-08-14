@@ -59,6 +59,8 @@ cal_time <- max(dates_true) - min(dates_true)
 #estimated root age HPD, DONE
 #regression slope for true data , DONE
 #R for true data DONE
+#estimated data slope DONE
+# estimated data R DONE
 
 # Is it necessary to have clock like data? 
 
