@@ -28,7 +28,7 @@ rate_sim <- mean_rate
 root_true <- max(allnode.times(t1$chronogram))
 dates_true <- as.numeric(gsub('^.+_', '', t1$chronogram$tip.label))
 reg_true <- summary(lm(allnode.times(p1, tipsonly = T) ~ dates_true + 0 ))
-slope_true <- reg_true$coefficient[1]
+slope_true <- reg_true$coefficient[2]
 r_true <- reg_true$r.squared
 cal_time <- max(dates_true) - min(dates_true)
 

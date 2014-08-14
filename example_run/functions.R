@@ -206,9 +206,9 @@ run_beast <- function(file_name = '', beast_path = '', temp_name = 'out_temp.tre
 	  dates <- as.numeric(gsub('^.+_', '', est_phylogram$tip.label))
 	  root_tips <- allnode.times(est_phylogram, tipsonly = T)	  
 
-	  lin_temp <- summary(lm(dates ~ root_tips))
+	  lin_temp <- summary(lm(root_tips ~ dates + 0))
 	  r_est <- lin_temp$r.squared
-	  slope_est <- lin_temp$coefficients[2]
+	  slope_est <- lin_temp$coefficients[1]
 
 	  return(list(rate_est = rate_est, rate_hpd = rate_hpd, root_est = root_est, root_hpd = root_hpd, slope_est = slope_est, r_est = r_est))
 }
