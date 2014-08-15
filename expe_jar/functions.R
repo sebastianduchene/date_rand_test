@@ -8,7 +8,7 @@ library(NELSI)
 cut_term_branches <- function(tr_chrono, span_cut = 1:10){
   term_branches <- (1:nrow(tr_chrono$edge))[tr_chrono$edge[, 2] %in% 1:length(tr_chrono$tip.label)]
   term_branches <- sample(term_branches, (length(term_branches) - 1))
-  tr_chrono$edge.length[term_branches] <- tr_chrono$edge.length[term_branches] / sample(span_cut, 1)
+  tr_chrono$edge.length[term_branches] <- tr_chrono$edge.length[term_branches] / sample(span_cut, length(term_branches), replace = T)
   return(tr_chrono)
 }
 
@@ -68,7 +68,7 @@ taxon_block <- paste(taxon_block, collapse = '\n')
 
 block2 <- "</data>    \n <map name=\"Beta\">beast.math.distributions.Beta</map> \n <map name=\"Exponential\">beast.math.distributions.Exponential</map> \n <map name=\"InverseGamma\">beast.math.distributions.InverseGamma</map> \n <map name=\"LogNormal\">beast.math.distributions.LogNormalDistributionModel</map> \n <map name=\"Gamma\">beast.math.distributions.Gamma</map> \n  <map name=\"Uniform\">beast.math.distributions.Uniform</map> \n <map name=\"prior\">beast.math.distributions.Prior</map> \n <map name=\"LaplaceDistribution\">beast.math.distributions.LaplaceDistribution</map> \n <map name=\"OneOnX\">beast.math.distributions.OneOnX</map> \n <map name=\"Normal\">beast.math.distributions.Normal</map> \n"
 
-block3 <- "<run chainLength=\"150000000\" id=\"mcmc\" spec=\"MCMC\"> \n     <state id=\"state\" storeEvery=\"5000\"> \n        <tree id=\"Tree.t:FILENAME\" name=\"stateNode\"> \n   <trait id=\"dateTrait.t:FILENAME\" spec=\"beast.evolution.tree.TraitSet\" traitname=\"date-backward\">"
+block3 <- "<run chainLength=\"15000000\" id=\"mcmc\" spec=\"MCMC\"> \n     <state id=\"state\" storeEvery=\"5000\"> \n        <tree id=\"Tree.t:FILENAME\" name=\"stateNode\"> \n   <trait id=\"dateTrait.t:FILENAME\" spec=\"beast.evolution.tree.TraitSet\" traitname=\"date-backward\">"
 
 ################################
 date_template <- 'TAXON_NAME=DATE'

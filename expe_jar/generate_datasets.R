@@ -121,7 +121,12 @@ setwd(paste0('REP_', i))
 
 par(bg = 'black')
 # Generate chronogram and save in memory:
-t1 <- get_tree_cal(span_cut = c(1.05, 1.5, 2), max_cal = max_cal, min_cal = min_cal, tr_time = 100, n_tax = 50, print_trees = T)
+if(max_cal >10){
+span_cut <- c(1.05, 1.5)
+}else{
+span_cut <- c(1.05, 1.1)
+}
+t1 <- get_tree_cal(span_cut = span_cut, max_cal = max_cal, min_cal = min_cal, tr_time = 100, n_tax = 50, print_trees = T)
 p1 <- t1$chronogram
 write.tree(t1$chronogram, file = 'sim_chrono.tree')
 
