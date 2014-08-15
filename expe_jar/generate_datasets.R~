@@ -2,8 +2,8 @@ source('functions.R')
 
 mean_rate = 0.01
 sd_rate = 0.3
-min_cal = 10
-max_cal = 20
+min_cal = 5
+max_cal = 10
 
 
 for(i in 1:10){
