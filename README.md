@@ -3,10 +3,14 @@ DRT analyses list
 
 Make files and run with shell script keep the simulated chronograms
 
+**Notes:**
+
+- Use the files in expe_jar. This contains the simulated data and the folder to generate the data.
 
 
 
-12 settings:
+
+**12 settings:**
 
 - **SET1** mean rate: 10^-2, strict clock, calibrations range: 1 to 1.5 years
 
