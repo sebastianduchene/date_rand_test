@@ -1,0 +1,28 @@
+dat <- read.table('compiled_data_RUN_II.txt', as.is = T)
+
+colnames(dat) <- c("run.name","cal.time","mean.rate","sd.rate","slope","r.sq","real_ucld","real_low_ucld","real_high_ucld","real_root","real_low_root","real_high_root","r1_ucld","r1_low_ucld","r1_high_ucld","r1_root","r1_low_root","r1_high_root","r2_ucld","r2_low_ucld","r2_high_ucld","r2_root","r2_low_root","r2_high_root","r3_ucld","r3_low_ucld","r3_high_ucld","r3_root","r3_low_root","r3_high_root")
+
+
+pass_cr1 <- vector()
+rate_in <- vector()
+dat$mean.rate <- dat$mean.rate * 5
+for(i in 1:nrow(dat)){
+
+      low_rates <- min(unlist(c(dat[i, grep('r._low_ucld', colnames(dat))])))
+      high_rates <- max(unlist(c(dat[i, grep('r._high_ucld', colnames(dat))])))
+      pass_cr1[i] <- (dat$real_ucld[i] > high_rates) || (dat$real_ucld[i] < low_rates)
+
+      rate_in[i] <- (dat$mean.rate[i] <= dat$real_high_ucld[i]) && (dat$mean.rate[i] >= dat$real_low_ucld[i])
+
+}
+
+rate_dif <- (dat$real_ucld - dat$mean.rate) / dat$mean.rate      
+
+dat <- cbind(dat, rate_dif, pass_cr1, rate_in)
+
+dat <- dat[-which(rate_dif > 100), ]
+
+
+
+
+
