@@ -1,7 +1,7 @@
 #!/bin/bash
 
 folders=`ls -d */`
-beast_path='/Users/sebastianduchene/Desktop/progs/BEAST2.1.3/lib/beast.jar'
+beast_path='/Users/sebastianduchene/Desktop/temp_beast2/beast2/BEAST2/lib/beast.jar'
 
 echo $folders
 
