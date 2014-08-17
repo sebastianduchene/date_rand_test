@@ -1,7 +1,7 @@
 #!/bin/bash
 
 folders=`ls -d */`
-beast_path='/Users/sebastianduchene/Desktop/progs/BEAST2.1.3/lib/beast.jar'
+beast_path='/Users/sebastianducheneAIr/Desktop/temp_beast2/beast2/BEAST2/lib/beast.jar'
 
 echo $folders
 
@@ -12,6 +12,8 @@ for i in $folders; do
     java -jar $beast_path -beagle rand_dat_1.xml
     java -jar $beast_path -beagle rand_dat_2.xml
     java -jar $beast_path -beagle rand_dat_3.xml
+    java -jar $beast_path -beagle rand_dat_4.xml
+    java -jar $beast_path -beagle rand_dat_5.xml
     Rscript ../../get_results.R
     rm *log
     cd ..
