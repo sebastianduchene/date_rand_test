@@ -1,4 +1,6 @@
-dat <- read.table('compiled_data.txt', as.is = T)
+
+
+dat <- read.table('comp_II_III.txt', as.is = T)
 
 colnames(dat) <- c("run.name","cal.time","mean.rate","sd.rate","slope","r.sq","real_ucld","real_low_ucld","real_high_ucld","real_root","real_low_root","real_high_root","r1_ucld","r1_low_ucld","r1_high_ucld","r1_root","r1_low_root","r1_high_root","r2_ucld","r2_low_ucld","r2_high_ucld","r2_root","r2_low_root","r2_high_root","r3_ucld","r3_low_ucld","r3_high_ucld","r3_root","r3_low_root","r3_high_root")
 
@@ -28,12 +30,10 @@ for(i in 1:nrow(dat)){
 }
 
 # chek standardising
-rate_dif <- (dat$real_ucld - dat$mean.rate) / dat$mean.rate
-root_dif <- (median_root - 100) / 100
+rate_dif <- (dat$real_ucld )#- dat$mean.rate) / dat$mean.rate
+root_dif <- (median_root )#- 100) / 100
 
 dat <- cbind(dat, median_rate, rate_dif, median_root, root_dif, pass_cr1, pass_cr2, rate_in)
-
-#dat <- dat[dat_comp$rate_dif < 50, ]
 
 dat <- dat[-(which(dat$median_rate > 1)), ]
 
@@ -42,44 +42,80 @@ par(col = 'white')
 par(col.axis = 'white')
 par(col.lab = 'white')
 
-plot(dat$rate_dif, dat$root_dif, pch = 20, col = c('red', 'green')[as.numeric(dat$pass_cr1) + 1])
-
-plot(dat$median_rate, dat$root_dif, pch = 20, col = c('red', 'green')[as.numeric(dat$pass_cr1) + 1])
-
-# ? relationship between rate dif and root diff. The y interept it the rate scaling in beast
-
-# What is the error in those that pass it
 par(mfrow = c(2, 2))
 par(mar = c(4, 4, 0.5, 0.5))
 
-plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.01], dat$rate_dif[dat$mean.rate == 0.01], ylim = c(-20, 20), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n')
+if(F){
+
+cal_time_factor <- as.numeric(cut(dat$cal.time, 3))
+
+plot(jitter(cal_time_factor)[dat$mean.rate == 0.01], dat$rate_dif[dat$mean.rate == 0.01], ylim = c(-20, 60), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n', pch = 20, cex = 2)
 lines(x = c(-1, 80), y = c(0, 0))
-plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.01], dat$root_dif[dat$mean.rate == 0.01], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n')
+text(x = 1, y = 60, labels = 'rate = 0.01', col = 'white')
+
+plot(jitter(cal_time_factor)[dat$mean.rate == 0.01], dat$root_dif[dat$mean.rate == 0.01], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n', pch = 20, cex = 2)
 lines(x = c(-1, 80), y = c(0, 0))
 
-plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.0001], dat$rate_dif[dat$mean.rate == 0.0001], ylim = c(-20, 60), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = 'Error in rate', xlab = 'Calibration time', xaxt = 'n')
+plot(jitter(cal_time_factor)[dat$mean.rate == 0.0001], dat$rate_dif[dat$mean.rate == 0.0001], ylim = c(-20, 60), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = 'Error in rate', xlab = 'Calibration time', xaxt = 'n', pch = 20, cex = 2)
 lines(x = c(-1, 80), y = c(0, 0))
 axis(1, at = c(1, 2, 3), labels = c(expression(italic(t)<10), expression(paste('10 < ', italic(t), ' > 15')), expression(italic(t)>15)), col = 'white')
+text(x = 1, y = 60, labels = 'rate = 0.0001')
 
-
-plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.0001], dat$root_dif[dat$mean.rate == 0.0001], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2)+1], ylab = 'Error in root', xlab = 'Calibration time', xaxt = 'n')
+plot(jitter(cal_time_factor)[dat$mean.rate == 0.0001], dat$root_dif[dat$mean.rate == 0.0001], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2)+1], ylab = 'Error in root', xlab = 'Calibration time', xaxt = 'n', pch = 20, cex = 2)
 lines(x = c(-1, 80), y = c(0, 0))
 axis(1, at = c(1, 2, 3), labels = c(expression(italic(t)<10), expression(paste('10 < ', italic(t), ' > 15')), expression(italic(t)>15)), col = 'white')
 
 # ! Increase randomisations to 5. increase calibration depth to between 20, 39
-
-
 stop('Completed plots')
 
 
-boxplot(dat$rate_dif ~ factor(dat$pass_cr2), col = c('blue', 'red'), border = 'white', ylim = c(-10, 80))
-boxplot(dat$root_dif ~ factor(dat$pass_cr2), col = c('blue', 'red'), border = 'white', ylim = c(-100, 100))
+}
 
 
-# COLOUR BY RATE
+# PLOTS FOR ERROR IN THE RATE AND THE ROOT AS A FUNCTION OF THE CALIBRATION TIME
+if(T){
+plot(dat$cal.time[dat$mean.rate == 0.01], dat$rate_dif[dat$mean.rate == 0.01], ylim = c(0, 0.2), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', pch = 20, cex = 2)
+lines(x = c(-1, 80), y = c(0.01, 0.01))
+text(x = 5, y = 0.17, labels = 'Error in the rate for a\n simulated rate of  = 0.01', col = 'white')
+
+plot(dat$cal.time[dat$mean.rate == 0.0001], dat$rate_dif[dat$mean.rate == 0.0001], ylim = c(0, 0.02), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', pch = 20, cex = 2)
+lines(x = c(-1, 80), y = c(0.0001, 0.0001))
+text(x = 5, y = 0.015, labels = 'Error in the rate for a\n simulated rate of  = 0.0001', col = 'white')
+
+plot(dat$cal.time[dat$mean.rate == 0.01], dat$root_dif[dat$mean.rate == 0.01], ylim = c(0, 200), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', pch = 20, cex = 2)
+lines(x = c(-1, 80), y = c(100, 100))
+text(x = 5, y = 175, labels = 'Error in the root for a\n simulated rate of  = 0.01', col = 'white')
+
+plot(dat$cal.time[dat$mean.rate == 0.0001], dat$root_dif[dat$mean.rate == 0.0001], ylim = c(0, 200), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', pch = 20, cex = 2)
+lines(x = c(-1, 80), y = c(100, 100))
+text(x = 5, y = 175, labels = 'Error in the root for a\n simulated rate of  = 0.0001', col = 'white')
+
+stop('wow')
+}
+
+plot(jitter(cal_time_factor)[dat$mean.rate == 0.01], dat$root_dif[dat$mean.rate == 0.01], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n', pch = 20, cex = 2)
+lines(x = c(-1, 80), y = c(0, 0))
+
+plot(jitter(cal_time_factor)[dat$mean.rate == 0.0001], dat$rate_dif[dat$mean.rate == 0.0001], ylim = c(-20, 60), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = 'Error in rate', xlab = 'Calibration time', xaxt = 'n', pch = 20, cex = 2)
+lines(x = c(-1, 80), y = c(0, 0))
+axis(1, at = c(1, 2, 3), labels = c(expression(italic(t)<10), expression(paste('10 < ', italic(t), ' > 15')), expression(italic(t)>15)), col = 'white')
+text(x = 1, y = 60, labels = 'rate = 0.0001')
+
+plot(jitter(cal_time_factor)[dat$mean.rate == 0.0001], dat$root_dif[dat$mean.rate == 0.0001], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2)+1], ylab = 'Error in root', xlab = 'Calibration time', xaxt = 'n', pch = 20, cex = 2)
+lines(x = c(-1, 80), y = c(0, 0))
+axis(1, at = c(1, 2, 3), labels = c(expression(italic(t)<10), expression(paste('10 < ', italic(t), ' > 15')), expression(italic(t)>15)), col = 'white')
+
+# ! Increase randomisations to 5. increase calibration depth to between 20, 39
+stop('Completed plots')
 
 
-plot(jitter(as.numeric(dat$pass_cr2)), dat$rate_dif, pch = cal_range, col = c('lightblue', 'orange')[as.numeric(factor(dat$mean.rate))] , ylim = c(-1, 50))
-plot(jitter(as.numeric(dat$pass_cr1)), dat$rate_dif, pch = cal_range, col = c('lightblue', 'orange')[as.numeric(factor(dat$mean.rate))] , ylim = c(-1, 50))
 
-## !! THE TEST HAS HIGH FALSE POSITIVES AND FALSE NEGATIVES. TEST WITH TREES WITH DIFFERENT STRUCTURES
+
+
+
+
+
+
+
+
+

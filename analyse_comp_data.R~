@@ -1,4 +1,4 @@
-dat <- read.table('compiled_data_RUN_II.txt', as.is = T)
+dat <- read.table('compiled_data.txt', as.is = T)
 
 colnames(dat) <- c("run.name","cal.time","mean.rate","sd.rate","slope","r.sq","real_ucld","real_low_ucld","real_high_ucld","real_root","real_low_root","real_high_root","r1_ucld","r1_low_ucld","r1_high_ucld","r1_root","r1_low_root","r1_high_root","r2_ucld","r2_low_ucld","r2_high_ucld","r2_root","r2_low_root","r2_high_root","r3_ucld","r3_low_ucld","r3_high_ucld","r3_root","r3_low_root","r3_high_root")
 
@@ -52,12 +52,12 @@ plot(dat$median_rate, dat$root_dif, pch = 20, col = c('red', 'green')[as.numeric
 par(mfrow = c(2, 2))
 par(mar = c(4, 4, 0.5, 0.5))
 
-plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.01], dat$rate_dif[dat$mean.rate == 0.01], ylim = c(-20, 100), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n')
+plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.01], dat$rate_dif[dat$mean.rate == 0.01], ylim = c(-20, 20), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n')
 lines(x = c(-1, 80), y = c(0, 0))
 plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.01], dat$root_dif[dat$mean.rate == 0.01], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n')
 lines(x = c(-1, 80), y = c(0, 0))
 
-plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.0001], dat$rate_dif[dat$mean.rate == 0.0001], ylim = c(-20, 100), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = 'Error in rate', xlab = 'Calibration time', xaxt = 'n')
+plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.0001], dat$rate_dif[dat$mean.rate == 0.0001], ylim = c(-20, 60), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = 'Error in rate', xlab = 'Calibration time', xaxt = 'n')
 lines(x = c(-1, 80), y = c(0, 0))
 axis(1, at = c(1, 2, 3), labels = c(expression(italic(t)<10), expression(paste('10 < ', italic(t), ' > 15')), expression(italic(t)>15)), col = 'white')
 
