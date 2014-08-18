@@ -166,8 +166,10 @@ setwd(paste0('REP_', i))
 
 par(bg = 'black')
 # Generate chronogram and save in memory:
-if(max_cal >10){
+if(max_cal >=10 & max_cal < 20){
 span_cut <- c(1.05, 2, 1.3)
+}else if(max_cal>=20){
+span_cut <- c(1.1, 2, 1.5)
 }else{
 span_cut <- c(1.05, 1.1, 1.01)
 }

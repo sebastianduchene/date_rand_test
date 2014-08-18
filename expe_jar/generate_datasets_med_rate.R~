@@ -1,75 +1,80 @@
 source('functions.R')
 
-for(set in 1:16){
+for(set in 17:24){
 
-if(set == 1){
-mean_rate = 0.01
+if(set == 17){
+mean_rate = 0.001
 sd_rate = 0.01
 min_cal = 1
 max_cal = 1.5
-set_name <- 'SET1'
+set_name <- 'SET17'
 }
 
 
-if(set == 2){
-mean_rate = 0.01
+if(set == 18){
+mean_rate = 0.001
 sd_rate = 0.01
 min_cal = 5
 max_cal = 10
-set_name = 'SET2'
+set_name = 'SET18'
 }
 
 
-if(set == 3){
-mean_rate = 0.01
+if(set == 19){
+mean_rate = 0.001
 sd_rate = 0.01
 min_cal = 10
 max_cal = 20
-set_name = 'SET3'
+set_name = 'SET19'
 }
 
-if(set == 13){
-mean_rate = 0.01
+if(set == 20){
+mean_rate = 0.001
 sd_rate = 0.01
 min_cal = 20
 max_cal = 30
-set_name = 'SET13'
+set_name = 'SET20'
 }
 
 
 
-if(set == 4){
-mean_rate = 0.01
+if(set == 21){
+mean_rate = 0.001
 sd_rate = 0.3
 min_cal = 1
 max_cal = 1.5
-set_name = 'SET4'
+set_name = 'SET21'
 }
 
-if(set == 5){
-mean_rate = 0.01
+if(set == 22){
+mean_rate = 0.001
 sd_rate = 0.3
 min_cal = 5
 max_cal = 10
-set_name = 'SET5'
+set_name = 'SET22'
 }
 
-if(set == 6){
-mean_rate = 0.01
+if(set == 23){
+mean_rate = 0.001
 sd_rate = 0.3
 min_cal = 10
 max_cal = 20
-set_name = 'SET6'
+set_name = 'SET23'
 }
 
-if(set == 14){
+if(set == 24){
 mean_rate = 0.01
 sd_rate = 0.3
 min_cal = 20
 max_cal = 30
-set_name = 'SET14'
+set_name = 'SET24'
 }
 
+
+
+#################
+#################
+#################
 
 
 if(set == 7){
@@ -162,9 +167,9 @@ setwd(paste0('REP_', i))
 par(bg = 'black')
 # Generate chronogram and save in memory:
 if(max_cal >10){
-span_cut <- c(1.05, 1.5)
+span_cut <- c(1.05, 2, 1.3)
 }else{
-span_cut <- c(1.05, 1.1)
+span_cut <- c(1.05, 1.1, 1.01)
 }
 t1 <- get_tree_cal(span_cut = span_cut, max_cal = max_cal, min_cal = min_cal, tr_time = 100, n_tax = 50, print_trees = T)
 p1 <- t1$chronogram
