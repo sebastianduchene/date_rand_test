@@ -69,18 +69,13 @@ text(x = 1, y = 60, labels = 'rate = 0.01', col = 'white')
 plot(jitter(cal_time_factor)[dat$mean.rate == 0.01], dat$root_dif[dat$mean.rate == 0.01], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n', pch = 20, cex = 2)
 lines(x = c(-1, 80), y = c(0, 0))
 
-<<<<<<< HEAD
 plot(jitter(cal_time_factor)[dat$mean.rate == 0.0001], dat$rate_dif[dat$mean.rate == 0.0001], ylim = c(-20, 60), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = 'Error in rate', xlab = 'Calibration time', xaxt = 'n', pch = 20, cex = 2)
-=======
-plot(jitter(as.numeric(cut(dat$cal.time, 3)))[dat$mean.rate == 0.01], dat$root_dif[dat$mean.rate == 0.01], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2) + 1], ylab = '', xlab = '', xaxt = 'n')
->>>>>>> 9a9553ecac429e2d334670a15f881f36965dd155
 lines(x = c(-1, 80), y = c(0, 0))
 axis(1, at = c(1, 2, 3), labels = c(expression(italic(t)<10), expression(paste('10 < ', italic(t), ' > 15')), expression(italic(t)>15)), col = 'white')
 text(x = 1, y = 60, labels = 'rate = 0.0001')
 
 plot(jitter(cal_time_factor)[dat$mean.rate == 0.0001], dat$root_dif[dat$mean.rate == 0.0001], ylim = c(-2, 2), col = c('blue', 'red')[as.numeric(dat$pass_cr2)+1], ylab = 'Error in root', xlab = 'Calibration time', xaxt = 'n', pch = 20, cex = 2)
 lines(x = c(-1, 80), y = c(0, 0))
-<<<<<<< HEAD
 axis(1, at = c(1, 2, 3), labels = c(expression(italic(t)<10), expression(paste('10 < ', italic(t), ' > 15')), expression(italic(t)>15)), col = 'white')
 
 # ! Increase randomisations to 5. increase calibration depth to between 20, 39
@@ -89,9 +84,6 @@ stop('Completed plots')
 
 }
 
-=======
-axis(1, at = c(1, 2, 3), labels = c(expression(italic(t)<10), expression(paste('10 < ', italic(t), ' > 15')), expression(italic(t)>15)), col = 'black')
->>>>>>> 9a9553ecac429e2d334670a15f881f36965dd155
 
 # PLOTS FOR ERROR IN THE RATE AND THE ROOT AS A FUNCTION OF THE CALIBRATION TIME
 if(T){

@@ -30,13 +30,13 @@ for(i in 1:nrow(dat)){
       median_rate[i] <- dat$real_low_ucld[i] + (dat$real_high_ucld[i] - dat$real_low_ucld[i] )
       median_root[i] <- dat$real_low_root[i] + (dat$real_high_root[i] - dat$real_low_root[i] )
 
-      pass_cr1[i] <- (dat$real_ucld[i] > high_rates) || (dat$real_ucld[i] < low_rates)
-      pass_cr2[i] <- (median_rate[i] > high_rates) || (median_rate[i] < low_rates)
-      pass_cr3[i] <- all(c(dat$real_low_ucld , dat$real_high_ucld) > high_rates) || all(c(dat$real_high_ucld, dat$real_low_ucld)  < low_rates)
+      pass_cr1[i] <- (dat$real_ucld[i] > high_rates) | (dat$real_ucld[i] < low_rates)
+      pass_cr2[i] <- (median_rate[i] > high_rates) | (median_rate[i] < low_rates)
+      pass_cr3[i] <- all(c(dat$real_low_ucld , dat$real_high_ucld) > high_rates) | all(c(dat$real_high_ucld, dat$real_low_ucld)  < low_rates)
       
-      pass_cr4[i] <- (median_root[i] > high_root) || (median_root[i] < low_root)
+      pass_cr4[i] <- (median_root[i] > high_root) | (median_root[i] < low_root)
 
-      rate_in[i] <- (dat$mean.rate[i] <= dat$real_high_ucld[i]) && (dat$mean.rate[i] >= dat$real_low_ucld[i])
+      rate_in[i] <- (dat$mean.rate[i] <= dat$real_high_ucld[i]) & (dat$mean.rate[i] >= dat$real_low_ucld[i])
 
 }
 
@@ -49,6 +49,21 @@ root_dif <- (median_root )#- 100) / 100
 dat <- cbind(dat, median_rate, rate_dif, median_root, root_dif, pass_cr1, pass_cr2, pass_cr4, rate_in)
 
 dat <- dat[-(which(dat$median_rate > 1)), ]
+
+dat_c1_r1 <- dat[(dat$mean.rate == 0.01 & dat$sd.rate == 0.01), ]
+
+plot(log10(dat_c1_r1$cal.time), dat_c1_r1$real_root, col = c('red', 'black')[1 + as.numeric(dat_c1_r1$pass_cr2)] )
+lines(x = c(0, 1.2), y = c(0.0001, 0.0001))
+
+## ! Also try an intermediate rate
+
+
+#plot(dat_c1_r1$
+
+stop('processing data')
+
+
+
 
 #par(bg = 'black')
 #par(col = 'white')
