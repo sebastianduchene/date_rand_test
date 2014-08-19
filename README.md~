@@ -7,6 +7,7 @@ Make files and run with shell script keep the simulated chronograms
 
 - Use the files in expe_jar. This contains the simulated data and the folder to generate the data.
 
+- Running in local machine in ~/Desktop/DRT_RUNS_II
 
 
 

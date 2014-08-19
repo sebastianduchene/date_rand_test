@@ -1,4 +1,4 @@
-DRT analyses list
+3DRT analyses list
 =================
 
 Make files and run with shell script keep the simulated chronograms
@@ -9,9 +9,9 @@ Make files and run with shell script keep the simulated chronograms
 
 - Running in local machine in ~/Desktop/DRT_RUNS_II
 
+NOTE LIST ANALYSES CURRENTLY RUNNING AND ALL THE 24 SETTINGS
 
-
-**12 settings:**
+**24 settings:**
 
 - **SET1** mean rate: 10^-2, strict clock, calibrations range: 1 to 1.5 years
 
