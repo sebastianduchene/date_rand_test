@@ -1,0 +1,13 @@
+dat_raw <- readLines('comp_I_II_III.txt')
+
+dat_split <- lapply(dat_raw, function(x) strsplit(x, ' ')[[1]])
+
+
+dat_mat <- matrix(NA, length(dat_split), 60)
+
+
+for(i in 1:nrow(dat_mat)){
+      dat_mat[i, 1:length(dat_split[[i]])] <- dat_split[[i]]
+}
+
+write.table(dat_mat, file = 'com_I_II_III_clean.txt', row.names = F, col.names = F)
