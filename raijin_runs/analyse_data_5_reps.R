@@ -39,49 +39,64 @@ d1 <- d1[-which(d1$rate_median > 0.01), ]
 d1 <- d1[-which((d1$rate_high - d1$rate_low) > 0.01), ]
 
 d1$cal_time <- log10(d1$cal_time)
+d1$rate_median <- log10(d1$rate_median)
+d1$rate_low <- log10(d1$rate_low)
+d1$rate_high <- log10(d1$rate_high)
 
-plot_true <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001))
 
-plot_cr1 <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.001))
 
-plot_cr2 <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.001))
+plot_true <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = -3))
 
-plot_cr3 <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.001))
+plot_cr1 <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = -3))
 
-pdf('plots_1.pdf', width = 14, height = 7)
+plot_cr2 <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = -3))
+
+plot_cr3 <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = -3))
+
+pdf('plots_1_log.pdf', width = 14, height = 7)
 grid.arrange(plot_true, plot_cr1, plot_cr2, plot_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.001 and sd=0.01')
 dev.off()
 
+
+
 d2 <- dat[dat$sim_rate == 0.01 & dat$sd_rate == 0.01, ]
 d2$cal_time <- log10(d2$cal_time)
+d2$rate_median <- log10(d2$rate_median)
+d2$rate_low <- log10(d2$rate_low)
+d2$rate_high <- log10(d2$rate_high)
 
-plot_true_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01))
 
-plot_cr1_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.01))
+plot_true_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = -2))
 
-plot_cr2_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.01))
+plot_cr1_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = -2))
 
-plot_cr3_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.01))
+plot_cr2_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = -2))
 
-pdf('plots_2.pdf', width = 14, height = 7)
+plot_cr3_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = -2))
+
+pdf('plots_2_log.pdf', width = 14, height = 7)
 grid.arrange(plot_true_d2, plot_cr1_d2, plot_cr2_d2, plot_cr3_d2, ncol = 2, nrow = 2, main = 'Simulations with rate=0.01 and sd=0.01')
 dev.off()
+
 
 
 d3 <- dat[dat$sim_rate == 0.0001 & dat$sd_rate == 0.01, ]
 d3$cal_time <- log10(d3$cal_time)
 d3 <- d3[-which(d3$rate_high > 0.02), ]
+d3$rate_median <- log10(d3$rate_median)
+d3$rate_low <- log10(d3$rate_low)
+d3$rate_high <- log10(d3$rate_high)
 
 
-plot_true_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001))
+plot_true_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = -4))
 
-plot_cr1_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.0001))
+plot_cr1_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = -4))
 
-plot_cr2_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.0001))
+plot_cr2_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = -4))
 
-plot_cr3_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.0001))
+plot_cr3_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = -4))
 
-pdf('plots_3.pdf', width = 14, height = 7)
+pdf('plots_3_log.pdf', width = 14, height = 7)
 grid.arrange(plot_true_d3, plot_cr1_d3, plot_cr2_d3, plot_cr3_d3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.0001 and sd=0.01')
 dev.off()
 

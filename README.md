@@ -29,7 +29,7 @@ Make files and run with shell script keep the simulated chronograms
 - **SET5**
   mean rate = 1e-4
   sd rate = 0.01
-  cal = 1-15
+  cal = 5-15
 
 - **SET6**
   mean rate = 1e-4
@@ -49,7 +49,7 @@ Make files and run with shell script keep the simulated chronograms
 - **SET9**
   mean rate = 1e-4
   sd rate = 0.1
-  cal = 11-30
+  cal = 15-30
 
 - **SET10**
   mean rate = 1e-3

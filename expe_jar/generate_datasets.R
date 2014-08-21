@@ -1,142 +1,227 @@
 source('functions.R')
 
-for(set in 1:16){
+for(set in 1:27){
 
 if(set == 1){
-mean_rate = 0.01
-sd_rate = 0.01
+mean_rate = 1e-4
+sd_rate = 0
 min_cal = 1
-max_cal = 1.5
+max_cal = 5
 set_name <- 'SET1'
 }
 
 
 if(set == 2){
-mean_rate = 0.01
-sd_rate = 0.01
+mean_rate = 1e-4
+sd_rate = 0
 min_cal = 5
-max_cal = 10
+max_cal = 15
 set_name = 'SET2'
 }
 
 
 if(set == 3){
-mean_rate = 0.01
-sd_rate = 0.01
-min_cal = 10
-max_cal = 20
+mean_rate = 1e-4
+sd_rate = 0
+min_cal = 15
+max_cal = 30
 set_name = 'SET3'
 }
 
-if(set == 13){
-mean_rate = 0.01
-sd_rate = 0.01
-min_cal = 20
-max_cal = 30
-set_name = 'SET13'
-}
-
-
-
 if(set == 4){
-mean_rate = 0.01
-sd_rate = 0.3
+mean_rate = 1e-4
+sd_rate = 0.01
 min_cal = 1
-max_cal = 1.5
+max_cal = 5
 set_name = 'SET4'
 }
 
+
 if(set == 5){
-mean_rate = 0.01
-sd_rate = 0.3
+mean_rate = 1e-4
+sd_rate = 0.01
 min_cal = 5
-max_cal = 10
+max_cal = 15
 set_name = 'SET5'
 }
 
 if(set == 6){
-mean_rate = 0.01
-sd_rate = 0.3
-min_cal = 10
-max_cal = 20
+mean_rate = 1e-4
+sd_rate = 0.01
+min_cal = 15
+max_cal = 30
 set_name = 'SET6'
 }
 
-if(set == 14){
-mean_rate = 0.01
-sd_rate = 0.3
-min_cal = 20
-max_cal = 30
-set_name = 'SET14'
-}
-
-
-
 if(set == 7){
-mean_rate = 0.0001
-sd_rate = 0.01
+mean_rate = 1e-4
+sd_rate = 0.1
 min_cal = 1
-max_cal = 1.5
+max_cal = 5
 set_name = 'SET7'
 }
 
 if(set == 8){
-mean_rate = 0.0001
-sd_rate = 0.01
+mean_rate = 1e-4
+sd_rate = 0.1
 min_cal = 5
-max_cal = 10
+max_cal = 15
 set_name = 'SET8'
 }
 
 if(set == 9){
-mean_rate = 0.0001
-sd_rate = 0.01
-min_cal = 10
-max_cal = 20
+mean_rate = 1e-4
+sd_rate = 0.1
+min_cal = 15
+max_cal = 30
 set_name = 'SET9'
 }
 
-if(set == 15){
-mean_rate = 0.0001
-sd_rate = 0.01
-min_cal = 20
-max_cal = 30
-set_name = 'SET15'
-}
-
-
-
 if(set == 10){
-mean_rate = 0.0001
-sd_rate = 0.3
+mean_rate = 1e-3
+sd_rate = 0
 min_cal = 1
-max_cal = 1.5
+max_cal = 5
 set_name = 'SET10'
 }
 
 if(set == 11){
-mean_rate = 0.0001
-sd_rate = 0.3
+mean_rate = 1e-3
+sd_rate = 0
 min_cal = 5
-max_cal = 10
+max_cal = 15
 set_name = 'SET11'
 }
 
 if(set == 12){
-mean_rate = 0.0001
-sd_rate = 0.3
-min_cal = 10
-max_cal = 20
+mean_rate = 1e-3
+sd_rate = 0
+min_cal = 15
+max_cal = 30
 set_name = 'SET12'
 }
 
-if(set == 16){
-mean_rate = 0.0001
-sd_rate = 0.3
-min_cal = 20
+if(set == 13){
+mean_rate = 1e-3
+sd_rate = 0.01
+min_cal = 1
+max_cal = 5
+set_name = 'SET13'
+}
+
+if(set == 14){
+mean_rate = 1e-3
+sd_rate = 0.01
+min_cal = 5
+max_cal = 15
+set_name = 'SET14'
+}
+
+if(set == 15){
+mean_rate = 1e-3
+sd_rate = 0.01
+min_cal = 15
 max_cal = 30
+set_name = 'SET15'
+}
+
+if(set == 16){
+mean_rate = 1e-3
+sd_rate = 0.1
+min_cal = 1
+max_cal = 5
 set_name = 'SET16'
 }
+
+if(set == 17){
+mean_rate = 1e-3
+sd_rate = 0.1
+min_cal = 5
+max_cal = 15
+set_name = 'SET17'
+}
+
+if(set == 18){
+mean_rate = 1e-3
+sd_rate = 0.1
+min_cal = 15
+max_cal = 30
+set_name = 'SET18'
+}
+
+if(set == 19){
+mean_rate = 1e-2
+sd_rate = 0
+min_cal = 1
+max_cal = 5
+set_name = 'SET19'
+}
+
+if(set == 20){
+mean_rate = 1e-2
+sd_rate = 0
+min_cal = 5
+max_cal = 15
+set_name = 'SET20'
+}
+
+if(set == 21){
+mean_rate = 1e-2
+sd_rate = 0
+min_cal = 15
+max_cal = 30
+set_name = 'SET21'
+}
+
+if(set == 22){
+mean_rate = 1e-2
+sd_rate = 0.01
+min_cal = 1
+max_cal = 5
+set_name = 'SET22'
+}
+
+if(set == 23){
+mean_rate = 1e-2
+sd_rate = 0.01
+min_cal = 5
+max_cal = 15
+set_name = 'SET23'
+}
+
+if(set == 24){
+mean_rate = 1e-2
+sd_rate = 0.01
+min_cal = 15
+max_cal = 30
+set_name = 'SET24'
+}
+
+if(set == 25){
+mean_rate = 1e-2
+sd_rate = 0.1
+min_cal = 1
+max_cal = 5
+set_name = 'SET25'
+}
+
+if(set == 26){
+mean_rate = 1e-2
+sd_rate = 0.1
+min_cal = 5
+max_cal = 15
+set_name = 'SET26'
+}
+
+if(set == 27){
+mean_rate = 1e-2
+sd_rate = 0.1
+min_cal = 15
+max_cal = 30
+set_name = 'SET27'
+}
+
+
 
 
 
@@ -161,11 +246,14 @@ setwd(paste0('REP_', i))
 
 par(bg = 'black')
 # Generate chronogram and save in memory:
-if(max_cal >10){
-span_cut <- c(1.05, 1.5)
-}else{
-span_cut <- c(1.05, 1.1)
+if(max_cal == 5 ){
+  span_cut <- c(1.1, 1.2)
+  }else if(max_cal == 15){
+    span_cut <- c(1.1, 1.2, 1.3)
+  }else if(max_cal == 30){
+  span_cut <- c(1.1, 1.5, 2, 2.2)
 }
+
 t1 <- get_tree_cal(span_cut = span_cut, max_cal = max_cal, min_cal = min_cal, tr_time = 100, n_tax = 50, print_trees = T)
 p1 <- t1$chronogram
 write.tree(t1$chronogram, file = 'sim_chrono.tree')

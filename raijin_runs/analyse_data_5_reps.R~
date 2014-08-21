@@ -48,9 +48,9 @@ plot_cr2 <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_cr2)) + 
 
 plot_cr3 <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.001))
 
-#pdf('test_plots_1.pdf', width = 14, height = 7)
+pdf('plots_1.pdf', width = 14, height = 7)
 grid.arrange(plot_true, plot_cr1, plot_cr2, plot_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.001 and sd=0.01')
-#dev.off()
+dev.off()
 
 d2 <- dat[dat$sim_rate == 0.01 & dat$sd_rate == 0.01, ]
 d2$cal_time <- log10(d2$cal_time)
@@ -63,9 +63,9 @@ plot_cr2_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_cr2))
 
 plot_cr3_d2 <- ggplot(d2, aes(x = cal_time, y = rate_median, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.01))
 
-#pdf('test_plots_1.pdf', width = 14, height = 7)
+pdf('plots_2.pdf', width = 14, height = 7)
 grid.arrange(plot_true_d2, plot_cr1_d2, plot_cr2_d2, plot_cr3_d2, ncol = 2, nrow = 2, main = 'Simulations with rate=0.01 and sd=0.01')
-#dev.off()
+dev.off()
 
 
 d3 <- dat[dat$sim_rate == 0.0001 & dat$sd_rate == 0.01, ]
@@ -81,7 +81,7 @@ plot_cr2_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_cr2))
 
 plot_cr3_d3 <- ggplot(d3, aes(x = cal_time, y = rate_median, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high))+ geom_hline(aes(yintercept = 0.0001))
 
-#pdf('test_plots_1.pdf', width = 14, height = 7)
+pdf('plots_3.pdf', width = 14, height = 7)
 grid.arrange(plot_true_d3, plot_cr1_d3, plot_cr2_d3, plot_cr3_d3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.0001 and sd=0.01')
-#dev.off()
+dev.off()
 
