@@ -1,7 +1,7 @@
 library(ggplot2)
 library(gridExtra)
 
-dat <- read.table('all_comp_dat.txt', as.is = T)
+dat <- read.table('compiled_dat_3.txt', as.is = T)
 dat <- dat[, 1:42]
 
 colnames(dat)  <- c('run_name', 'cal_time', 'sim_rate', 'sd_rate', 'slope', 'r', 'rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high', paste0('r1_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')), paste0('r2_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')), paste0('r3_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')), paste0('r4_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')), paste0('r5_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')) )
@@ -32,13 +32,16 @@ dat <- cbind(dat, rate_median, pass_cr1, pass_cr2, pass_cr3, pass_true, cv_rates
 
 #lines(x = c(0, 30), y = c(0.0001, 0.0001))
 
-dat <- dat[-which(dat$rate_high > 0.1), ]
+#dat <- dat[-which(dat$rate_high > 0.1), ]
 
-d1 <- dat[dat$sd_rate == 0.01 & dat$sim_rate == 0.001, ]
-d1 <- d1[-which(d1$rate_median > 0.01), ]
-d1 <- d1[-which((d1$rate_high - d1$rate_low) > 0.01), ]
+#d1 <- dat[dat$sd_rate == 0.01 & dat$sim_rate == 0.001, ]
+#d1 <- d1[-which(d1$rate_median > 0.01), ]
+#d1 <- d1[-which((d1$rate_high - d1$rate_low) > 0.01), ]
 
-d1$cal_time <- log10(d1$cal_time)
+#d1$cal_time <- log10(d1$cal_time)
+stop('preparing data')
+
+
 
 plot_true <- ggplot(d1, aes(x = cal_time, y = rate_median, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001))
 

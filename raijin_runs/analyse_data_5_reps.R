@@ -39,6 +39,14 @@ dat <- cbind(dat, rate_median, pass_cr1, pass_cr2, pass_cr3, pass_true, cv_rates
 #d1 <- d1[-which((d1$rate_high - d1$rate_low) > 0.01), ]
 
 #d1$cal_time <- log10(d1$cal_time)
+
+x = dat$cal_time[dat$sim_rate == 0.01 & dat$sd_rate == 0.]
+
+y = dat$rate_mean[dat$sim_rate == 0.01 & dat$sd_rate == 0]
+
+plot(x, y, col = c('red', 'black')[as.numeric(pass_true[dat$sim_rate == 0.01 & dat$sd_rate == 0]) + 1])
+
+
 stop('preparing data')
 
 
