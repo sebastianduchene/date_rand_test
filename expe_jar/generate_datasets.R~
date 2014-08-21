@@ -1,6 +1,6 @@
 source('functions.R')
 
-for(set in 1:12){
+for(set in 1:16){
 
 if(set == 1){
 mean_rate = 0.01
@@ -28,6 +28,16 @@ max_cal = 20
 set_name = 'SET3'
 }
 
+if(set == 13){
+mean_rate = 0.01
+sd_rate = 0.01
+min_cal = 20
+max_cal = 30
+set_name = 'SET13'
+}
+
+
+
 if(set == 4){
 mean_rate = 0.01
 sd_rate = 0.3
@@ -51,6 +61,16 @@ min_cal = 10
 max_cal = 20
 set_name = 'SET6'
 }
+
+if(set == 14){
+mean_rate = 0.01
+sd_rate = 0.3
+min_cal = 20
+max_cal = 30
+set_name = 'SET14'
+}
+
+
 
 if(set == 7){
 mean_rate = 0.0001
@@ -76,6 +96,16 @@ max_cal = 20
 set_name = 'SET9'
 }
 
+if(set == 15){
+mean_rate = 0.0001
+sd_rate = 0.01
+min_cal = 20
+max_cal = 30
+set_name = 'SET15'
+}
+
+
+
 if(set == 10){
 mean_rate = 0.0001
 sd_rate = 0.3
@@ -99,6 +129,16 @@ min_cal = 10
 max_cal = 20
 set_name = 'SET12'
 }
+
+if(set == 16){
+mean_rate = 0.0001
+sd_rate = 0.3
+min_cal = 20
+max_cal = 30
+set_name = 'SET16'
+}
+
+
 
 #system('mkdir runs_dat')
 
@@ -132,7 +172,7 @@ write.tree(t1$chronogram, file = 'sim_chrono.tree')
 
 # Generate phylogram and sequences
 p1$edge.length <- p1$edge.length * rlnorm(98, log(mean_rate), sd_rate)
-s1 <- as.DNAbin(simSeq(p1, l = 1000))
+s1 <- as.DNAbin(simSeq(p1, l = 2000))
 
 # Save in memory simulated rate, age of root, calibration range, regression slope, and r^2
 rate_sim <- mean_rate
@@ -148,7 +188,7 @@ cal_time <- max(dates_true) - min(dates_true)
 xml1 <- make_xml_file(s1, file_name = 'true_dat', random_dates = F)
 cat(xml1, file = paste0('true_dat.xml'), sep = '\n')
 
-for(r_rep in 1:3){
+for(r_rep in 1:5){
  xml_rand <- make_xml_file(s1, file_name = paste0('rand_dat_', r_rep), random_dates = T)
  cat(xml_rand, file = paste0('rand_dat_', r_rep, '.xml'), sep = '\n')
 }
