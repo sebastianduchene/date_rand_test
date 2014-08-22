@@ -6,6 +6,11 @@ dat <- dat[, 1:42]
 
 colnames(dat)  <- c('run_name', 'cal_time', 'sim_rate', 'sd_rate', 'slope', 'r', 'rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high', paste0('r1_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')), paste0('r2_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')), paste0('r3_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')), paste0('r4_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')), paste0('r5_', c('rate_mean', 'rate_low', 'rate_high', 'root_mean', 'root_low', 'root_high')) )
 
+
+#dat$rate_high  <- dat$rate_high / 10
+
+#dat$rate_low <- dat$rate_low / 10
+
 pass_cr1 <- vector()
 pass_cr2 <- vector()
 pass_cr3 <- vector()
@@ -30,7 +35,6 @@ for(i in 1:nrow(dat)){
 
 dat <- cbind(dat, rate_median, pass_cr1, pass_cr2, pass_cr3, pass_true, cv_rates)
 
-#lines(x = c(0, 30), y = c(0.0001, 0.0001))
 
 #dat <- dat[-which(dat$rate_high > 0.1), ]
 
@@ -40,11 +44,169 @@ dat <- cbind(dat, rate_median, pass_cr1, pass_cr2, pass_cr3, pass_true, cv_rates
 
 #d1$cal_time <- log10(d1$cal_time)
 
-x = dat$cal_time[dat$sim_rate == 0.0001 & dat$sd_rate == 0]
+dat <- dat[-which(dat$rate_high > 0.4), ]
 
-y = dat$rate_mean[dat$sim_rate == 0.0001 & dat$sd_rate == 0]
+##plot clocklike data for high rate
 
-plot(x, y, col = c('red', 'black')[as.numeric(pass_true[dat$sim_rate == 0.0001 & dat$sd_rate == 0]) + 1])
+pdf('clock.pdf')
+
+d_clock_high <- dat[dat$sim_rate == 0.01 & dat$sd_rate == 0, ]
+
+plot_clock_high_true <- ggplot(d_clock_high, aes(x = cal_time, y = rate_mean, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+plot_clock_high_cr1 <- ggplot(d_clock_high, aes(x = cal_time, y = rate_mean, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+plot_clock_high_cr2 <- ggplot(d_clock_high, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+plot_clock_high_cr3 <- ggplot(d_clock_high, aes(x = cal_time, y = rate_mean, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+grid.arrange(plot_clock_high_true, plot_clock_high_cr1, plot_clock_high_cr2, plot_clock_high_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.01 and 0 rate variation')
+
+## plot clocklike data for medium rate
+
+d_clock_med <- dat[dat$sim_rate == 0.001 & dat$sd_rate == 0, ]
+
+plot_clock_med_true <- ggplot(d_clock_med, aes(x = cal_time, y = rate_mean, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+plot_clock_med_cr1 <- ggplot(d_clock_med, aes(x = cal_time, y = rate_mean, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+plot_clock_med_cr2 <- ggplot(d_clock_med, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+plot_clock_med_cr3 <- ggplot(d_clock_med, aes(x = cal_time, y = rate_mean, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+grid.arrange(plot_clock_med_true, plot_clock_med_cr1, plot_clock_med_cr2, plot_clock_med_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.001 and 0 rate variation')
+
+
+## plot clocklike data for low rate
+
+d_clock_low <- dat[dat$sim_rate == 0.0001 & dat$sd_rate == 0, ]
+
+plot_clock_low_true <- ggplot(d_clock_low, aes(x = cal_time, y = rate_mean, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) + coord_cartesian(ylim = c(0, 0.025))
+
+plot_clock_low_cr1 <- ggplot(d_clock_low, aes(x = cal_time, y = rate_mean, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) + coord_cartesian(ylim = c(0, 0.025))
+
+plot_clock_low_cr2 <- ggplot(d_clock_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) + coord_cartesian(ylim = c(0, 0.025))
+
+plot_clock_low_cr3 <- ggplot(d_clock_low, aes(x = cal_time, y = rate_mean, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) + coord_cartesian(ylim = c(0, 0.025))
+
+grid.arrange(plot_clock_low_true, plot_clock_low_cr1, plot_clock_low_cr2, plot_clock_low_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.0001 and 0 rate variation')
+dev.off()
+
+
+######################################
+######################################
+
+##plot low variation data for high rate
+pdf('low_var.pdf')
+
+
+d_1_high <- dat[dat$sim_rate == 0.01 & dat$sd_rate == 0.01, ]
+
+plot_1_high_true <- ggplot(d_1_high, aes(x = cal_time, y = rate_mean, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+plot_1_high_cr1 <- ggplot(d_1_high, aes(x = cal_time, y = rate_mean, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+plot_1_high_cr2 <- ggplot(d_1_high, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+plot_1_high_cr3 <- ggplot(d_1_high, aes(x = cal_time, y = rate_mean, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+grid.arrange(plot_1_high_true, plot_1_high_cr1, plot_1_high_cr2, plot_1_high_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.01 and low rate variation')
+
+## plot 1like data for medium rate
+
+d_1_med <- dat[dat$sim_rate == 0.001 & dat$sd_rate == 0.01, ]
+
+plot_1_med_true <- ggplot(d_1_med, aes(x = cal_time, y = rate_mean, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+plot_1_med_cr1 <- ggplot(d_1_med, aes(x = cal_time, y = rate_mean, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+plot_1_med_cr2 <- ggplot(d_1_med, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+plot_1_med_cr3 <- ggplot(d_1_med, aes(x = cal_time, y = rate_mean, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+grid.arrange(plot_1_med_true, plot_1_med_cr1, plot_1_med_cr2, plot_1_med_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.001 and low rate variation')
+
+
+## plot 1like data for low rate
+
+d_1_low <- dat[dat$sim_rate == 0.0001 & dat$sd_rate == 0.01, ]
+
+plot_1_low_true <- ggplot(d_1_low, aes(x = cal_time, y = rate_mean, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) + coord_cartesian(ylim = c(0, 0.025))
+
+plot_1_low_cr1 <- ggplot(d_1_low, aes(x = cal_time, y = rate_mean, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) #+ coord_cartesian(ylim = c(0, 0.025))
+
+plot_1_low_cr2 <- ggplot(d_1_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) #+ coord_cartesian(ylim = c(0, 0.025))
+
+plot_1_low_cr3 <- ggplot(d_1_low, aes(x = cal_time, y = rate_mean, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) #+ coord_cartesian(ylim = c(0, 0.025))
+
+
+grid.arrange(plot_1_low_true, plot_1_low_cr1, plot_1_low_cr2, plot_1_low_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.0001 and low rate variation')
+dev.off()
+
+
+
+######################################
+######################################
+
+##plot high variation data for high rate
+
+pdf('h_var.pdf')
+
+d_hvar_high <- dat[dat$sim_rate == 0.01 & dat$sd_rate == 0.1, ]
+
+plot_hvar_high_true <- ggplot(d_hvar_high, aes(x = cal_time, y = rate_mean, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+plot_hvar_high_cr1 <- ggplot(d_hvar_high, aes(x = cal_time, y = rate_mean, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+plot_hvar_high_cr2 <- ggplot(d_hvar_high, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+plot_hvar_high_cr3 <- ggplot(d_hvar_high, aes(x = cal_time, y = rate_mean, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.01)) + coord_cartesian(ylim = c(0, 0.5))
+
+grid.arrange(plot_hvar_high_true, plot_hvar_high_cr1, plot_hvar_high_cr2, plot_hvar_high_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.01 and high rate variation')
+
+## plot 1like data for medium rate
+
+d_hvar_med <- dat[dat$sim_rate == 0.001 & dat$sd_rate == 0.1, ]
+
+plot_hvar_med_true <- ggplot(d_hvar_med, aes(x = cal_time, y = rate_mean, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+plot_hvar_med_cr1 <- ggplot(d_hvar_med, aes(x = cal_time, y = rate_mean, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+plot_hvar_med_cr2 <- ggplot(d_hvar_med, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+plot_hvar_med_cr3 <- ggplot(d_hvar_med, aes(x = cal_time, y = rate_mean, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.001)) + coord_cartesian(ylim = c(0, 0.05))
+
+grid.arrange(plot_hvar_med_true, plot_hvar_med_cr1, plot_hvar_med_cr2, plot_hvar_med_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.001 and high rate variation')
+
+
+## plot 1like data for low rate
+
+d_hvar_low <- dat[dat$sim_rate == 0.0001 & dat$sd_rate == 0.1, ]
+
+plot_hvar_low_true <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) + coord_cartesian(ylim = c(0, 0.025))
+
+plot_hvar_low_cr1 <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr1)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) #+ coord_cartesian(ylim = c(0, 0.025))
+
+plot_hvar_low_cr2 <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) #+ coord_cartesian(ylim = c(0, 0.025))
+
+plot_hvar_low_cr3 <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr3)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = 0.0001)) #+ coord_cartesian(ylim = c(0, 0.025))
+
+grid.arrange(plot_hvar_low_true, plot_hvar_low_cr1, plot_hvar_low_cr2, plot_hvar_low_cr3, ncol = 2, nrow = 2, main = 'Simulations with rate=0.0001 and high rate variation')
+dev.off()
+
+
+
+
+#plot(d_clock_low$cal_time, d_clock_low$rate_mean, ylim = c(0, 0.05))
+#points(d_clock_low$cal_time, d_clock_low$rate_high, col = 'red')
+#points(d_clock_low$cal_time, d_clock_low$rate_low, col = 'red')
+
+
+
+
+
+
+
 
 
 stop('preparing data')
