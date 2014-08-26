@@ -62,7 +62,7 @@ get_pvs <- function(clock_dat){
 d_clock_high <- dat[dat$sim_rate == 0.01 & dat$sd_rate == 0 & dat$pass_true == T, ]
 d_clock_high$cal_time <- log10(d_clock_high$cal_time)
 
-pdf('plots_test_1.pdf')
+pdf('plots_test_1.pdf', width = 10, height = 7)
 
 plot_clock_high_true <- ggplot(d_clock_high, aes(x = cal_time, y = rate_mean, fill = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.01))) + ylab('') + guides(fill = FALSE) + xlab('') + theme_bw()
 

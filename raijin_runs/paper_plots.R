@@ -21,8 +21,8 @@ rate_median <- dat$rate_low + ((dat$rate_high - dat$rate_low) / 2)
 
 for(i in 1:nrow(dat)){
       rates_high <-dat[i, grep('r.+rate_high', colnames(dat))]
-      rates_high <- rates_high[!is.na(rates_high)] * 4.5
-      rates_low <- dat[i, grep('r.+rate_low', colnames(dat))] / 2
+      rates_high <- rates_high[!is.na(rates_high)] * 4
+      rates_low <- dat[i, grep('r.+rate_low', colnames(dat))] #/ 2
       rates_low <- rates_low[!is.na(rates_low)]
       rates_med <- dat[i, grep('r.+rate_mean', colnames(dat))] 
       rates_med <- rates_med[!is.na(rates_med)]
@@ -59,10 +59,12 @@ get_pvs <- function(clock_dat){
 #	return(c(ppv_cr1, npv_cr1, ppv_cr2, npv_cr2))
 }
 
+
+
 d_clock_high <- dat[dat$sim_rate == 0.01 & dat$sd_rate == 0 & dat$pass_true == T, ]
 d_clock_high$cal_time <- log10(d_clock_high$cal_time)
 
-pdf('plots_test_1.pdf', width = 10, height = 7)
+#pdf('plots_test_1.pdf', width = 10, height = 7)
 
 plot_clock_high_true <- ggplot(d_clock_high, aes(x = cal_time, y = rate_mean, fill = pass_true)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.01))) + ylab('') + guides(fill = FALSE) + xlab('') + theme_bw()
 
@@ -206,8 +208,9 @@ plot_hvar_low_cr1 <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour 
 
 plot_hvar_low_cr2 <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point() + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE) + scale_colour_manual(values = c('red', 'black')) + theme_bw() + ylab('') + xlab('') + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('FP = ', get_pvs(d_hvar_low)[3]), paste('FN = ', get_pvs(d_hvar_low)[4]))  , size = 2) 
 
+
 grid.arrange(plot_hvar_high_true, plot_hvar_high_cr1, plot_hvar_high_cr2, plot_hvar_med_true, plot_hvar_med_cr1, plot_hvar_med_cr2, ncol = 3, nrow = 2, main = 'Simulations with high rate variation')
 
 #grid.arrange(plot_hvar_high_true, plot_hvar_high_cr1, plot_hvar_high_cr2, plot_hvar_med_true, plot_hvar_med_cr1, plot_hvar_med_cr2,plot_hvar_low_true, plot_hvar_low_cr1, plot_hvar_low_cr2,  ncol = 3, nrow = 3, main = 'Simulations with high rate variation')
 
-dev.off()
+#dev.off()
