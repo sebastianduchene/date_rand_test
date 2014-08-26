@@ -1,0 +1,54 @@
+library(ape)
+source('../functions.R')
+
+
+dat <- read.dna('rabv_128.fasta', format = 'fasta')
+samp_dates <- as.numeric(gsub('^.+_', '', rownames(dat)))
+
+# Remove 1985, 1987, 1989, 1992, 1997, 2004, 2005
+
+taxa_prune <- c('AB247412_1985', 'AB110658_1987', 'AB110659_1989', 'AB518489_1989', 'AB449211_1992', 'AB276311_1997', 'AB276312_1997', 'AB247439_2004', 'AB247448_2004', 'AB518493_2004' ,'AB518494_2004' ,'AB518495_2004', 'AB247419_2005', 'AB247420_2005', 'AB247445_2005', 'AB247446_2005', 'AB247447_2005')
+
+
+
+
+seq_data <- read.dna('rabv_128.fasta', format = 'fasta')
+comp_dates <- gsub('.+_', '', rownames(seq_data))
+
+#GET COMPLETE DATA AND RANDOMISED DATA
+comp_data <- make_xml_file(seq_data, file_name = 'complete_true', random_dates = F)
+cat(comp_data, file = 'comp_true.xml', sep = '\n')
+
+for(i in 1:5){
+      comp_temp <- make_xml_file(seq_data, file_name = paste0('complete_rand_', i), random_dates = T)
+      cat(comp_temp, file = paste0('complete_rand_', i, '.xml'), sep = '/n')
+}
+
+
+#GET PRUNED DATA WITHOUT THE DEEPEST CALIBRATIONS
+pruned_data <- seq_data[!(rownames(seq_data) %in% taxa_prune), ]
+
+pruned_dates <- gsub('.+_', '', rownames(pruned_data))
+
+prune_true_file <- make_xml_file(pruned_data, file_name = 'pruned_true', random_dates = F)
+cat(prune_true_file, file = 'pruned_true.xml', sep = '\n')
+
+for(i in 1:5){
+      rand_temp <- make_xml_file(pruned_data, file_name = paste0('pruned_true_rand_', i), random_dates = T)
+      cat(rand_temp, file = paste0('pruned_true_rand_', i, '.xml'), sep = '\n')
+}
+
+
+# GET PRUNED ALTERNATIVE  AND RANDOMISED DATA SETS
+
+taxa_alt_prune <- sample(rownames(seq_data)[!(rownames(seq_data) %in% taxa_prune)], length(taxa_prune))
+
+prune_alt_data <- seq_data[!(rownames(seq_data) %in% taxa_alt_prune), ]
+
+prune_alt_file <- make_xml_file(prune_alt_data, file_name = 'prune_alt_true', random_dates = F)
+cat(prune_alt_file, file = 'prune_alt_true.xml', sep = '\n')
+
+for(i in 1:5){
+      rand_temp <- make_xml_file(prune_alt_data, file_name = paste0('pruned_alt_rand_', i), random_dates = T)
+      cat(rand_temp, file = paste0('prune_alt_rand_', i, '.xml'), sep = '\n')
+}
