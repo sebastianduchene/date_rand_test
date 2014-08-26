@@ -5,9 +5,11 @@ source('../functions.R')
 dat <- read.dna('rabv_128.fasta', format = 'fasta')
 samp_dates <- as.numeric(gsub('^.+_', '', rownames(dat)))
 
-# Remove 1985, 1987, 1989, 1992
+# Remove 1985, 1987, 1989, 1992, and 1997
 
-taxa_prune <- c('AB247412_1985', 'AB110658_1987', 'AB110659_1989', 'AB518489_1989', 'AB449211_1992')
+taxa_prune <- c('AB247412_1985', 'AB110658_1987', 'AB110659_1989', 'AB518489_1989', 'AB449211_1992', 'AB276311_1997'
+, 'AB276312_1997')
+
 
 seq_data <- read.dna('rabv_128.fasta', format = 'fasta')
 comp_dates <- gsub('.+_', '', rownames(seq_data))
