@@ -3,7 +3,7 @@ library(ape)
 files_dat <- grep('true_dat.xml$', dir(recursive = T), value = T)
 
 
-v_sites_mat <- matrix(NA, nrow = length(files_dat), ncol = 2)
+v_sites_mat <- matrix(NA, nrow = length(files_dat), ncol = 3)
 
 for(i in 1:length(files_dat)){
       d_temp <- readLines(files_dat[i])
@@ -17,9 +17,9 @@ for(i in 1:length(files_dat)){
 
       rownames(t_mat) <- 1:nrow(t_mat)
       t_mat <- as.DNAbin(t_mat)
-
-      print(c(gsub('/true_dat.xml', '', files_dat[i]), length(seg.sites(t_mat))))
-      v_sites_mat[i, ] <- c(gsub('/true_dat.xml', '', files_dat[i]), length(seg.sites(t_mat)) / 2000)
+      d_mat <- round(median(dist.dna(t_mat, model = 'TN93'), na.rm = T), 3)
+      print(c(gsub('/true_dat.xml', '', files_dat[i]), length(seg.sites(t_mat)), d_mat))
+      v_sites_mat[i, ] <- c(gsub('/true_dat.xml', '', files_dat[i]), length(seg.sites(t_mat)) / 2000, d_mat)
 
 }
 
