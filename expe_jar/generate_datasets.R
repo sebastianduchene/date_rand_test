@@ -1,6 +1,6 @@
 source('functions.R')
 
-for(set in 1:27){
+for(set in 28:36){
 
 if(set == 1){
 mean_rate = 1e-4
@@ -221,6 +221,77 @@ max_cal = 30
 set_name = 'SET27'
 }
 
+if(set == 28){
+mean_rate = 5e-4
+sd_rate = 0
+min_cal = 1
+max_cal = 5
+set_name = 'SET28'
+}
+
+if(set == 29){
+mean_rate = 5e-4
+sd_rate = 0
+min_cal = 5
+max_cal = 15
+set_name = 'SET29'
+}
+
+if(set == 30){
+mean_rate = 5e-4
+sd_rate = 0
+min_cal = 15
+max_cal = 30
+set_name = 'SET30'
+}
+
+if(set == 31){
+mean_rate = 5e-4
+sd_rate = 0.01
+min_cal = 1
+max_cal = 5
+set_name = 'SET31'
+}
+
+if(set == 32){
+mean_rate = 5e-4
+sd_rate = 0.01
+min_cal = 5
+max_cal = 15
+set_name = 'SET32'
+}
+
+if(set == 33){
+mean_rate = 5e-4
+sd_rate = 0.01
+min_cal = 15
+max_cal = 30
+set_name = 'SET33'
+}
+
+if(set == 34){
+mean_rate = 5e-4
+sd_rate = 0.1
+min_cal = 1
+max_cal = 5
+set_name = 'SET34'
+}
+
+if(set == 35){
+mean_rate = 5e-4
+sd_rate = 0.1
+min_cal = 5
+max_cal = 15
+set_name = 'SET35'
+}
+
+if(set == 36){
+mean_rate = 5e-4
+sd_rate = 0.1
+min_cal = 15
+max_cal = 30
+set_name = 'SET36'
+}
 
 
 
