@@ -1,0 +1,1 @@
+d_true <- read.table('res_comp.txt', head = T)

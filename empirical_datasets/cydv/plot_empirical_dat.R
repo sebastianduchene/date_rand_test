@@ -1,0 +1,19 @@
+library(ggplot2)
+
+d_true <- log10(read.table('res_comp.txt', head = T))
+d_true <- cbind(d_true, nRep = c(1, 1.1, 1.2, 1.3, 1.4, 1.5), tRep = factor(c(1, 0, 0, 0, 0, 0)))
+
+d_prune_alt <- log10(read.table('res_prune_alt.txt', head = T))
+d_prune_alt <- cbind(d_prune_alt, nRep = c(2, 2.1, 2.2, 2.3, 2.4, 2.5), tRep = factor(c(1, 0, 0, 0, 0, 0)))
+
+d_prune_true <- log10(read.table('res_prune_true.txt', head = T))
+d_prune_true <- cbind(d_prune_true, nRep = c(3, 3.1, 3.2, 3.3, 3.4, 3.5), tRep = factor(c(1, 0, 0, 0, 0, 0)))
+
+
+d_all <- rbind(d_true, d_prune_alt, d_prune_true)
+
+plot_true <- ggplot(d_all, aes(x = nRep, y = meanRate, colour = tRep)) + geom_point() + geom_errorbar(aes(ymin = lowHPD, ymax = highHPD, width = 0)) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + guides(colour = FALSE) + scale_x_continuous(breaks = c(1.25, 2.25, 3.25), labels = c('Complete data', 'Pruned\nwide timespan', 'Pruned\nshort timespan')) + ylab(expression(paste('Rate estimate (', log[10], ' subst/site/year)' ) )) + xlab('') + geom_hline(y = d_all[1,1], alpha = 1, linetype = 2)
+
+pdf('empirical_data_plot.pdf', width = 5, height = 5, useDingbats = F)
+print(plot_true)
+dev.off()
