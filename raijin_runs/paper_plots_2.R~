@@ -86,7 +86,7 @@ var_sites_dat$median_dist <- as.numeric(var_sites_dat$median_dist)
 
 dat <- merge(dat, var_sites_dat, by.x = 1, by.y = 1)
 
-pdf('paper_plots_v3.pdf', width = 15, height = 5, useDingbats = F)
+pdf('paper_plots_v3.pdf', width = 10, height = 10, useDingbats = F)
 ###############
 d_clock_high <- dat[dat$sim_rate == 0.01 & dat$sd_rate == 0 & dat$pass_true == T, ]
 d_clock_high$cal_time <- log10(d_clock_high$cal_time)
@@ -105,7 +105,7 @@ plot_clock_med <- ggplot(d_clock_med, aes(x = cal_time, y = rate_mean, colour = 
 
 plot_clock_low <- ggplot(d_clock_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_clock_low)[1]), paste('Type I = ', get_pvs(d_clock_low)[2])) , size = 2)  + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_clock_low)[3]), paste('Type I = ', get_pvs(d_clock_low)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.60), label = c(paste('var_sites', round(mean(d_clock_low$var_sites), 3)), paste('med_dist', round(mean(d_clock_low$median_dist), 3))), size = 2)
 
-grid.arrange(plot_clock_high, plot_clock_med, plot_clock_low, ncol = 3, nrow = 1)
+#grid.arrange(plot_clock_high, plot_clock_med, plot_clock_low, ncol = 3, nrow = 1)
 
 
 #########
@@ -125,9 +125,9 @@ plot_lvar_high <- ggplot(d_lvar_high, aes(x = cal_time, y = rate_mean, colour = 
 plot_lvar_med <- ggplot(d_lvar_med, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('') + annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_med)[1]), paste('Type I = ', get_pvs(d_lvar_med)[2])) , size = 2)  + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_med)[3]), paste('Type I = ', get_pvs(d_lvar_med)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_lvar_med$var_sites), 3)), paste('med_dist', round(mean(d_lvar_med$median_dist), 3))), size = 2)
 
 
-plot_lvar_low <- ggplot(d_lvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_low)[1]), paste('Type I = ', get_pvs(d_lvar_low)[2])) , size = 2)  + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_low)[3]), paste('Type I = ', get_pvs(d_lvar_low)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_lvar_low$var_sites), 3)), paste('med_dist', round(mean(d_lvar_low$median_dist), 3))), size = 2)
+plot_lvar_low <- ggplot(d_lvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_low)[1]), paste('Type I = ', get_pvs(d_lvar_low)[2])) , size = 2)  + annotate('text', x = c(1.3, 1.3), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_low)[3]), paste('Type I = ', get_pvs(d_lvar_low)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_lvar_low$var_sites), 3)), paste('med_dist', round(mean(d_lvar_low$median_dist), 3))), size = 2)
 
-grid.arrange(plot_lvar_high, plot_lvar_med, plot_lvar_low, ncol = 3, nrow = 1)
+#grid.arrange(plot_lvar_high, plot_lvar_med, plot_lvar_low, ncol = 3, nrow = 1)
 
 
 ############
@@ -145,8 +145,11 @@ plot_hvar_high <- ggplot(d_hvar_high, aes(x = cal_time, y = rate_mean, colour = 
 
 plot_hvar_med <- ggplot(d_hvar_med, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('') + annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_med)[1]), paste('Type I = ', get_pvs(d_hvar_med)[2])) , size = 2)  + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_med)[3]), paste('Type I = ', get_pvs(d_hvar_med)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_hvar_med$var_sites), 3)), paste('med_dist', round(mean(d_hvar_med$median_dist), 3))), size = 2)
 
-plot_hvar_low <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_low)[1]), paste('Type I = ', get_pvs(d_hvar_low)[2])) , size = 2)  + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_low)[3]), paste('Type I = ', get_pvs(d_hvar_low)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_lvar_low$var_sites), 3)), paste('med_dist', round(mean(d_lvar_low$median_dist), 3))), size = 2)
+plot_hvar_low <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_low)[1]), paste('Type I = ', get_pvs(d_hvar_low)[2])) , size = 2)  + annotate('text', x = c(1.3, 1.3), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_low)[3]), paste('Type I = ', get_pvs(d_hvar_low)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_hvar_low$var_sites), 3)), paste('med_dist', round(mean(d_hvar_low$median_dist), 3))), size = 2)
 
-grid.arrange(plot_hvar_high, plot_hvar_med, plot_hvar_low, ncol = 3, nrow = 1)
+#grid.arrange(plot_hvar_high, plot_hvar_med, plot_hvar_low, ncol = 3, nrow = 1)
+
+
+grid.arrange(plot_clock_high, plot_clock_med, plot_clock_low, plot_lvar_high, plot_lvar_med, plot_lvar_low, plot_hvar_high, plot_hvar_med, plot_hvar_low, ncol = 3, nrow = 3)
 
 dev.off()

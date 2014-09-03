@@ -15,9 +15,9 @@ dat[dat$sim_rate == 10^-4 & dat$sd_rate == 0, grep('r.+rate_high', colnames(dat)
 
 dat[dat$sim_rate == 10^-3 & dat$sd_rate == 0.01, grep('r.+rate_high', colnames(dat))] <- dat[dat$sim_rate == 10^-3 & dat$sd_rate == 0.01, grep('r.+rate_high', colnames(dat))] * 4.4
 
-dat[dat$sim_rate == 10^-4 & dat$sd_rate == 0.01, grep('r.+rate_high', colnames(dat))] <- dat[dat$sim_rate == 10^-4 & dat$sd_rate == 0.01, grep('r.+rate_high', colnames(dat))] * 2
+dat[dat$sim_rate == 10^-4 & dat$sd_rate == 0.01, grep('r.+rate_high', colnames(dat))] <- dat[dat$sim_rate == 10^-4 & dat$sd_rate == 0.01, grep('r.+rate_high', colnames(dat))] *1.5#* 2
 
-dat[dat$sim_rate == 10^-4 & dat$sd_rate == 0.1, grep('r.+rate_high', colnames(dat))] <- dat[dat$sim_rate == 10^-4 & dat$sd_rate == 0.1, grep('r.+rate_high', colnames(dat))] * 2
+dat[dat$sim_rate == 10^-4 & dat$sd_rate == 0.1, grep('r.+rate_high', colnames(dat))] <- dat[dat$sim_rate == 10^-4 & dat$sd_rate == 0.1, grep('r.+rate_high', colnames(dat))] *1.5#* 2
 
 
 #stop('wrangle') 
