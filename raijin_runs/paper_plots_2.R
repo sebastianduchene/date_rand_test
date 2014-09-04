@@ -31,27 +31,32 @@ pass_cr1 <- vector()
 pass_cr2 <- vector()
 pass_cr3 <- vector()
 
-pass_true <- dat$sim_rate <= dat$rate_high & dat$sim_rate >= dat$rate_low
+#pass_true <- dat$sim_rate <= dat$rate_high & dat$sim_rate >= dat$rate_low
 
 
 
 #pass_true <- dat$sim_rate-(dat$sd_rate*dat$sim_rate) < dat$rate_high & dat$sim_rate+(dat$sd_rate*dat$sim_rate) > dat$rate_low
 
-#sim_rate_high <- dat$sim_rate*(1 +  dat$sd_rate)
-#sim_rate_low <- dat$sim_rate/(1+dat$sd_rate)
-#pass_true <- vector()
-#for(i in 1:nrow(dat)){
-#      if(  (dat$rate_high[i] <= sim_rate_high[i]) & (dat$rate_high[i] >= sim_rate_low[i])){
-#      	   pass_true[i] <- T 
-#      }else if(  (dat$rate_low[i] >= sim_rate_low[i]) & (dat$rate_low[i] >= sim_rate_high[i])){
-#      	    pass_true[i] <- T
-#      }else if( (dat$rate_high[i] >= sim_rate_high[i]) & (dat$rate_low[i] >= sim_rate_low[i])){
-#      	    pass_true[i] <- T
-#      }else{
-#	pass_true[i] <- F
-#      }
-#}
-
+sim_rate_high <- dat$sim_rate+(dat$sim_rate *  dat$sd_rate)
+sim_rate_low <- dat$sim_rate-(dat$sim_rate * dat$sd_rate)
+pass_true <- vector()
+for(i in 1:nrow(dat)){
+      if((dat$rate_high[i] <= sim_rate_high[i]) & (dat$rate_high[i] >= sim_rate_low[i])){
+        pass_true[i] <- T
+	next
+      }else if((dat$rate_low[i] <= sim_rate_high[i]) & (dat$rate_low[i] >= sim_rate_low[i])){
+        pass_true[i] <- T
+	next
+      }else if((sim_rate_high[i] <= dat$rate_high[i]) & (sim_rate_high[i] >= dat$rate_low[i])){
+        pass_true[i] <- T
+	next
+      }else if((sim_rate_low[i] <= dat$rate_high[i]) & (sim_rate_low[i] >= dat$rate_low[i])){
+        pass_true[i] <- T
+	next
+      }else{
+        pass_true[i] <- F
+      }
+}
 
 
 
@@ -159,13 +164,13 @@ d_lvar_low <- dat[dat$sim_rate == 0.0001 & dat$sd_rate == 0.01 , ]
 d_lvar_low$cal_time <- log10(d_lvar_low$cal_time)
 ##############
 
-plot_lvar_high <- ggplot(d_lvar_high, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.01))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.2, -2.3), label = c(paste('Type II = ', get_pvs(d_lvar_high)[1]), paste('Type I = ', get_pvs(d_lvar_high)[2]))  , size = 2)  + annotate('text', x = c(1.25, 1.25), y = c(-2.2, -2.3), label = c(paste('Type II = ', get_pvs(d_lvar_high)[3]), paste('Type I = ', get_pvs(d_lvar_high)[4]))  , size = 2)  + annotate('text', x = c(1.25, 1.25), y = c(-2.35, -2.4), label = c(paste('var_sites', round(mean(d_lvar_high$var_sites), 3)), paste('med_dist', round(mean(d_lvar_high$median_dist), 3))), size = 2) + geom_hline(y = log10(0.01)+(log10(0.01) * 0.01), linetype = 2) + geom_hline(y = log10(0.01)-(log10(0.01) * 0.01), linetype = 2)
+plot_lvar_high <- ggplot(d_lvar_high, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.01))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.2, -2.3), label = c(paste('Type II = ', get_pvs(d_lvar_high)[1]), paste('Type I = ', get_pvs(d_lvar_high)[2]))  , size = 2)  + annotate('text', x = c(1.25, 1.25), y = c(-2.2, -2.3), label = c(paste('Type II = ', get_pvs(d_lvar_high)[3]), paste('Type I = ', get_pvs(d_lvar_high)[4]))  , size = 2)  + annotate('text', x = c(1.25, 1.25), y = c(-2.35, -2.4), label = c(paste('var_sites', round(mean(d_lvar_high$var_sites), 3)), paste('med_dist', round(mean(d_lvar_high$median_dist), 3))), size = 2) + geom_hline(y = log10(0.01 * 1.05), linetype = 2) + geom_hline(y = log10(0.01 / 1.05), linetype = 2)
 
 
-plot_lvar_med <- ggplot(d_lvar_med, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('') + annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_med)[1]), paste('Type I = ', get_pvs(d_lvar_med)[2])) , size = 2)  + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_med)[3]), paste('Type I = ', get_pvs(d_lvar_med)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_lvar_med$var_sites), 3)), paste('med_dist', round(mean(d_lvar_med$median_dist), 3))), size = 2) + geom_hline(y = log10(0.001)+(log10(0.001) * 0.01), linetype = 2) + geom_hline(y = log10(0.001)-(log10(0.001) * 0.01), linetype = 2)
+plot_lvar_med <- ggplot(d_lvar_med, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('') + annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_med)[1]), paste('Type I = ', get_pvs(d_lvar_med)[2])) , size = 2)  + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_med)[3]), paste('Type I = ', get_pvs(d_lvar_med)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_lvar_med$var_sites), 3)), paste('med_dist', round(mean(d_lvar_med$median_dist), 3))), size = 2) + geom_hline(y = log10(0.001 * 1.05), linetype = 2) + geom_hline(y = log10(0.001 /1.05), linetype = 2)
 
 
-plot_lvar_low <- ggplot(d_lvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_low)[1]), paste('Type I = ', get_pvs(d_lvar_low)[2])) , size = 2)  + annotate('text', x = c(1.3, 1.3), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_low)[3]), paste('Type I = ', get_pvs(d_lvar_low)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_lvar_low$var_sites), 3)), paste('med_dist', round(mean(d_lvar_low$median_dist), 3))), size = 2) + geom_hline(y = log10(0.0001)+(log10(0.0001) * 0.01), linetype = 2) + geom_hline(y = log10(0.0001)-(log10(0.0001) * 0.01), linetype = 2)
+plot_lvar_low <- ggplot(d_lvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_low)[1]), paste('Type I = ', get_pvs(d_lvar_low)[2])) , size = 2)  + annotate('text', x = c(1.3, 1.3), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_lvar_low)[3]), paste('Type I = ', get_pvs(d_lvar_low)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_lvar_low$var_sites), 3)), paste('med_dist', round(mean(d_lvar_low$median_dist), 3))), size = 2) + geom_hline(y = log10(0.0001 * 1.05), linetype = 2) + geom_hline(y = log10(0.0001 / 1.05), linetype = 2)
 
 #grid.arrange(plot_lvar_high, plot_lvar_med, plot_lvar_low, ncol = 3, nrow = 1)
 
@@ -181,11 +186,11 @@ d_hvar_low <- dat[dat$sim_rate == 0.0001 & dat$sd_rate == 0.1 , ]
 d_hvar_low$cal_time <- log10(d_hvar_low$cal_time)
 ############
 
-plot_hvar_high <- ggplot(d_hvar_high, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.01))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.2, -2.3), label = c(paste('Type II = ', get_pvs(d_hvar_high)[1]), paste('Type I = ', get_pvs(d_hvar_high)[2]))  , size = 2)  + annotate('text', x = c(1.25, 1.25), y = c(-2.2, -2.3), label = c(paste('Type II = ', get_pvs(d_hvar_high)[3]), paste('Type I = ', get_pvs(d_hvar_high)[4]))  , size = 2)  + annotate('text', x = c(1.25, 1.25), y = c(-2.35, -2.4), label = c(paste('var_sites', round(mean(d_hvar_high$var_sites), 3)), paste('med_dist', round(mean(d_hvar_high$median_dist), 3))), size = 2) + geom_hline(y = log10(0.01)+(log10(0.01) * 0.1), linetype = 2) + geom_hline(y = log10(0.01)-(log10(0.01) * 0.1), linetype = 2)
+plot_hvar_high <- ggplot(d_hvar_high, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.01))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.2, -2.3), label = c(paste('Type II = ', get_pvs(d_hvar_high)[1]), paste('Type I = ', get_pvs(d_hvar_high)[2]))  , size = 2)  + annotate('text', x = c(1.25, 1.25), y = c(-2.2, -2.3), label = c(paste('Type II = ', get_pvs(d_hvar_high)[3]), paste('Type I = ', get_pvs(d_hvar_high)[4]))  , size = 2)  + annotate('text', x = c(1.25, 1.25), y = c(-2.35, -2.4), label = c(paste('var_sites', round(mean(d_hvar_high$var_sites), 3)), paste('med_dist', round(mean(d_hvar_high$median_dist), 3))), size = 2) + geom_hline(y = log10(0.01 * 1.2), linetype = 2) + geom_hline(y = log10(0.01 / 1.2), linetype = 2)
 
-plot_hvar_med <- ggplot(d_hvar_med, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('') + annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_med)[1]), paste('Type I = ', get_pvs(d_hvar_med)[2])) , size = 2)  + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_med)[3]), paste('Type I = ', get_pvs(d_hvar_med)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_hvar_med$var_sites), 3)), paste('med_dist', round(mean(d_hvar_med$median_dist), 3))), size = 2) + geom_hline(y = log10(0.001)+(log10(0.001) * 0.1), linetype = 2) + geom_hline(y = log10(0.001)-(log10(0.001) * 0.1), linetype = 2)
+plot_hvar_med <- ggplot(d_hvar_med, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('') + annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_med)[1]), paste('Type I = ', get_pvs(d_hvar_med)[2])) , size = 2)  + annotate('text', x = c(1.2, 1.2), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_med)[3]), paste('Type I = ', get_pvs(d_hvar_med)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_hvar_med$var_sites), 3)), paste('med_dist', round(mean(d_hvar_med$median_dist), 3))), size = 2) + geom_hline(y = log10(0.001 * 1.2), linetype = 2) + geom_hline(y = log10(0.001 / 1.2), linetype = 2)
 
-plot_hvar_low <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_low)[1]), paste('Type I = ', get_pvs(d_hvar_low)[2])) , size = 2)  + annotate('text', x = c(1.3, 1.3), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_low)[3]), paste('Type I = ', get_pvs(d_hvar_low)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_hvar_low$var_sites), 3)), paste('med_dist', round(mean(d_hvar_low$median_dist), 3))), size = 2) + geom_hline(y = log10(0.0001)+(log10(0.0001) * 0.1), linetype = 2) + geom_hline(y = log10(0.0001)-(log10(0.0001) * 0.1), linetype = 2)
+plot_hvar_low <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pass_cr2)) + geom_point(aes(shape = pass_label), size = 4) + geom_errorbar(aes(ymin = rate_low, ymax = rate_high)) + geom_hline(aes(yintercept = log10(0.0001))) + guides(colour = FALSE, shape = FALSE) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + ylab('') + xlab('')+ annotate('text', x = c(1, 1), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_low)[1]), paste('Type I = ', get_pvs(d_hvar_low)[2])) , size = 2)  + annotate('text', x = c(1.3, 1.3), y = c(-2.4, -2.5), label = c(paste('Type II = ', get_pvs(d_hvar_low)[3]), paste('Type I = ', get_pvs(d_hvar_low)[4])) , size = 2) + annotate('text', x = c(1.25, 1.25), y = c(-2.55, -2.6), label = c(paste('var_sites', round(mean(d_hvar_low$var_sites), 3)), paste('med_dist', round(mean(d_hvar_low$median_dist), 3))), size = 2) + geom_hline(y = log10(0.0001 * 1.2), linetype = 2) + geom_hline(y = log10(0.0001 / 1.2), linetype = 2)
 
 #grid.arrange(plot_hvar_high, plot_hvar_med, plot_hvar_low, ncol = 3, nrow = 1)
 

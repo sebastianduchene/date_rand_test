@@ -31,10 +31,28 @@ pass_cr1 <- vector()
 pass_cr2 <- vector()
 pass_cr3 <- vector()
 
-pass_true <- dat$sim_rate-(dat$sd_rate*dat$sim_rate) < dat$rate_high & dat$sim_rate+(dat$sd_rate*dat$sim_rate) > dat$rate_low
-#pass_true <- (dat$rate_high <= dat$sim_rate+(dat$sd_rate * dat$sim_rate) & dat$rate_high >= dat$sim_rate-(dat$sd_rate * dat$sim_rate)) 
-#pass_true <- pass_true | (dat$rate_low >= dat$sim_rate-(dat$sd_rate * dat$sim_rate) & dat$rate_low >= dat$sim_rate+(dat$sd_rate * dat$sim_rate))
-#pass_true <- pass_true | (dat$rate_high >= dat$sim_rate+(dat$sd_rate * dat$sim_rate) & dat$rate_low >= dat$sim_rate-(dat$sd_rate * dat$sim_rate))
+pass_true <- dat$sim_rate <= dat$rate_high & dat$sim_rate >= dat$rate_low
+
+
+
+#pass_true <- dat$sim_rate-(dat$sd_rate*dat$sim_rate) < dat$rate_high & dat$sim_rate+(dat$sd_rate*dat$sim_rate) > dat$rate_low
+
+#sim_rate_high <- dat$sim_rate*(1 +  dat$sd_rate)
+#sim_rate_low <- dat$sim_rate/(1+dat$sd_rate)
+#pass_true <- vector()
+#for(i in 1:nrow(dat)){
+#      if(  (dat$rate_high[i] <= sim_rate_high[i]) & (dat$rate_high[i] >= sim_rate_low[i])){
+#      	   pass_true[i] <- T 
+#      }else if(  (dat$rate_low[i] >= sim_rate_low[i]) & (dat$rate_low[i] >= sim_rate_high[i])){
+#      	    pass_true[i] <- T
+#      }else if( (dat$rate_high[i] >= sim_rate_high[i]) & (dat$rate_low[i] >= sim_rate_low[i])){
+#      	    pass_true[i] <- T
+#      }else{
+#	pass_true[i] <- F
+#      }
+#}
+
+
 
 
 
