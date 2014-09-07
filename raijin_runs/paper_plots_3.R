@@ -3,9 +3,9 @@ library(gridExtra)
 
 dat4 <- read.table('compiled_4.txt', as.is = T)
 dat4 <- dat4[, 1:36]
-dat5 <- read.table('compiled_5.txt', as.is = T)
+dat5 <- read.table('compiled_5_1.txt', as.is = T)
 dat5 <- dat5[, 1:36]
-dat6 <- read.table('compiled_6.txt', as.is = T)
+dat6 <- read.table('compiled_6_1.txt', as.is = T)
 
 dat <- rbind(dat4, dat5, dat6)
 
@@ -48,8 +48,8 @@ pass_cr3 <- vector()
 
 #pass_true <- dat$sim_rate-(dat$sd_rate*dat$sim_rate) < dat$rate_high & dat$sim_rate+(dat$sd_rate*dat$sim_rate) > dat$rate_low
 
-sim_rate_high <- dat$sim_rate+(dat$sim_rate *  dat$sd_rate)
-sim_rate_low <- dat$sim_rate-(dat$sim_rate * dat$sd_rate)
+sim_rate_high <- dat$sim_rate+(dat$sim_rate * (dat$sd_rate + 0.05))
+sim_rate_low <- dat$sim_rate-(dat$sim_rate * (dat$sd_rate +  0.05))
 pass_true <- vector()
 for(i in 1:nrow(dat)){
       if((dat$rate_high[i] <= sim_rate_high[i]) & (dat$rate_high[i] >= sim_rate_low[i])){
