@@ -125,7 +125,7 @@ get_pvs <- function(clock_dat){
 
 
 
-pdf('paper_plots_v6.pdf', width = 10, height = 10, useDingbats = F)
+#pdf('paper_plots_v6.pdf', width = 10, height = 10, useDingbats = F)
 ###############
 d_clock_high <- dat[dat$sim_rate == 0.001 & dat$sd_rate == 0 & dat$pass_true == T, ]
 d_clock_high$cal_time <- log10(d_clock_high$cal_time)
@@ -188,5 +188,5 @@ plot_hvar_low <- ggplot(d_hvar_low, aes(x = cal_time, y = rate_mean, colour = pa
 
 grid.arrange(plot_clock_high, plot_clock_med, plot_clock_low, plot_lvar_high, plot_lvar_med, plot_lvar_low, plot_hvar_high, plot_hvar_med, plot_hvar_low, ncol = 3, nrow = 3)
 
-dev.off()
+#dev.off()
 
