@@ -22,6 +22,6 @@ control_plot <- ggplot(control_all, aes(x = cont, y = log10(V2), colour = type))
 
 lvar_plot <- ggplot(lvar_all, aes(x = cont, y = log10(V2), colour = type)) + geom_point() + geom_errorbar(aes(ymin = log10(V3), ymax = log10(V4), width = 0)) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + guides(colour = FALSE)  +  xlab('') + ylab(expression(paste('Rate estimate (', log[10], ' subst/site/year)'))) + geom_hline(y = log10(0.0038), linetype = 1) + coord_cartesian(ylim = c(-7, 0))
 
-pdf('seq_var_plot.pdf', width = 9, height = 5)
+pdf('seq_var_plot.pdf', width = 9, height = 5, useDingbats = F)
 grid.arrange(lvar_plot, control_plot, nrow = 1, ncol = 2)
 dev.off()
