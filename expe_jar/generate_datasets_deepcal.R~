@@ -1,6 +1,6 @@
 source('functions.R')
 
-for(set in 37:45){
+for(set in 46:48){
 
 if(set == 1){
 mean_rate = 1e-4
@@ -366,6 +366,29 @@ max_cal = 60
 set_name = 'SET45'
 }
 
+if(set == 46){
+mean_rate = 5e-4
+sd_rate = 0
+min_cal = 35
+max_cal = 60
+set_name = 'SET46'
+}
+
+if(set == 47){
+mean_rate = 5e-4
+sd_rate = 0.01
+min_cal = 35
+max_cal = 60
+set_name = 'SET47'
+}
+
+if(set == 48){
+mean_rate = 5e-4
+sd_rate = 0.1
+min_cal = 35
+max_cal = 60
+set_name = 'SET48'
+}
 
 
 

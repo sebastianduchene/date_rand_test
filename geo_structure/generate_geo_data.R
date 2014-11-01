@@ -1,0 +1,37 @@
+source('../expe_jar/functions.R')
+library(NELSI)
+library(ape)
+trees <- read.nexus('geo_structure.trees')
+
+mean_rate = 1e-4
+
+sd_rate = 0.05
+
+if(F){
+  phylo_1 <- trees[[3]] 
+  phylo_1$edge.length <- phylo_1$edge.length * rlnorm(length(phylo_1$edge.length), log(mean_rate), sd_rate)
+
+  dat_1 <- as.DNAbin(simSeq(phylo_1, l = 2000))
+
+  xml_true <- make_xml_file(dat_1, file_name = 'true_dat', random_dates = F)
+  cat(xml_true, file = 'true_dat.xml', sep = '\n')
+
+  for(i in 1:5){
+    xml_rand <- make_xml_file(dat_1, file_name = paste0('rand_dat_', i), random_dates = T)
+    cat(xml_rand, file = paste0('rand_dat_', i, '.xml'), sep = '\n')
+  }
+}
+
+
+true_dat <- read.table('true_dat.log', head = T, as.is = T)
+
+true_rate <- quantile(as.numeric(read.table('true_dat.log', head = T, as.is = T)$rate.mean)[-c(1:1000)], c(0.025, 0.975))
+
+rand_1 <- quantile(as.numeric(read.table('rand_dat.log', head = T, as.is = T)$rate.mean)[-c(1:1000)], c(0.025, 0.975))
+rand_2 <- quantile(as.numeric(read.table('rand_dat_2.log', head = T, as.is = T)$rate.mean)[-c(1:1000)], c(0.025, 0.975))
+rand_3 <- quantile(as.numeric(read.table('rand_dat_3.log', head = T, as.is = T)$rate.mean)[-c(1:1000)], c(0.025, 0.975))
+rand_4 <- quantile(as.numeric(read.table('rand_dat_4.log', head = T, as.is = T)$rate.mean)[-c(1:1000)], c(0.025, 0.975))
+rand_5 <- quantile(as.numeric(read.table('rand_dat_5.log', head = T, as.is = T)$rate.mean)[-c(1:1000)], c(0.025, 0.975))
+
+
+
