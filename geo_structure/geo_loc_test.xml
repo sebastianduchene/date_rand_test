@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" version="2.0">
+
+
+    <data
+id="geo_structure"
+name="alignment">
+                        <sequence id="seq_A0_0" taxon="A0_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_A1_0" taxon="A1_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_A2_0" taxon="A2_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_A3_0" taxon="A3_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_A4_0" taxon="A4_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_A5_0" taxon="A5_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_A6_0" taxon="A6_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_A7_0" taxon="A7_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_A8_0" taxon="A8_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_A9_0" taxon="A9_0" totalcount="4" value="NN"/>
+                        <sequence id="seq_B0_1" taxon="B0_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_B1_1" taxon="B1_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_B2_1" taxon="B2_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_B3_1" taxon="B3_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_B4_1" taxon="B4_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_B5_1" taxon="B5_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_B6_1" taxon="B6_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_B7_1" taxon="B7_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_B8_1" taxon="B8_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_B9_1" taxon="B9_1" totalcount="4" value="NN"/>
+                        <sequence id="seq_C0_2" taxon="C0_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C1_2" taxon="C1_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C2_2" taxon="C2_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C3_2" taxon="C3_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C4_2" taxon="C4_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C5_2" taxon="C5_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C6_2" taxon="C6_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C7_2" taxon="C7_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C8_2" taxon="C8_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C9_2" taxon="C9_2" totalcount="4" value="NN"/>
+                        <sequence id="seq_D0_3" taxon="D0_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_D1_3" taxon="D1_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_D2_3" taxon="D2_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_D3_3" taxon="D3_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_D4_3" taxon="D4_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_D5_3" taxon="D5_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_D6_3" taxon="D6_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_D7_3" taxon="D7_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_D8_3" taxon="D8_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_D9_3" taxon="D9_3" totalcount="4" value="NN"/>
+                        <sequence id="seq_E0_4" taxon="E0_4" totalcount="4" value="NN"/>
+                        <sequence id="seq_E1_4" taxon="E1_4" totalcount="4" value="NN"/>
+                        <sequence id="seq_E2_4" taxon="E2_4" totalcount="4" value="NN"/>
+                        <sequence id="seq_E3_4" taxon="E3_4" totalcount="4" value="NN"/>
+                        <sequence id="seq_E4_4" taxon="E4_4" totalcount="4" value="NN"/>
+                        <sequence id="seq_E5_4" taxon="E5_4" totalcount="4" value="NN"/>
+                        <sequence id="seq_E6_4" taxon="E6_4" totalcount="4" value="NN"/>
+                        <sequence id="seq_E7_4" taxon="E7_4" totalcount="4" value="NN"/>
+                        <sequence id="seq_E8_4" taxon="E8_4" totalcount="4" value="NN"/>
+                        <sequence id="seq_E9_4" taxon="E9_4" totalcount="4" value="NN"/>
+                    </data>
+
+
+    
+
+
+    
+
+
+    
+<map name="Beta">beast.math.distributions.Beta</map>
+<map name="Exponential">beast.math.distributions.Exponential</map>
+<map name="InverseGamma">beast.math.distributions.InverseGamma</map>
+<map name="LogNormal">beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Gamma">beast.math.distributions.Gamma</map>
+<map name="Uniform">beast.math.distributions.Uniform</map>
+<map name="prior">beast.math.distributions.Prior</map>
+<map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map>
+<map name="OneOnX">beast.math.distributions.OneOnX</map>
+<map name="Normal">beast.math.distributions.Normal</map>
+
+
+<run chainLength="10000000" id="mcmc" sampleFromPrior="true" spec="MCMC">
+    <state id="state" storeEvery="5000">
+        <tree id="Tree.t:geo_structure" name="stateNode">
+            <trait id="dateTrait.t:geo_structure" spec="beast.evolution.tree.TraitSet" traitname="date-backward">
+                A0_0=0.0,
+A1_0=0.0,
+A2_0=0.0,
+A3_0=0.0,
+A4_0=0.0,
+A5_0=0.0,
+A6_0=0.0,
+A7_0=0.0,
+A8_0=0.0,
+A9_0=0.0,
+B0_1=1.0,
+B1_1=1.0,
+B2_1=1.0,
+B3_1=1.0,
+B4_1=1.0,
+B5_1=1.0,
+B6_1=1.0,
+B7_1=1.0,
+B8_1=1.0,
+B9_1=1.0,
+C0_2=2.0,
+C1_2=2.0,
+C2_2=2.0,
+C3_2=2.0,
+C4_2=2.0,
+C5_2=2.0,
+C6_2=2.0,
+C7_2=2.0,
+C8_2=2.0,
+C9_2=2.0,
+D0_3=3.0,
+D1_3=3.0,
+D2_3=3.0,
+D3_3=3.0,
+D4_3=3.0,
+D5_3=3.0,
+D6_3=3.0,
+D7_3=3.0,
+D8_3=3.0,
+D9_3=3.0,
+E0_4=4.0,
+E1_4=4.0,
+E2_4=4.0,
+E3_4=4.0,
+E4_4=4.0,
+E5_4=4.0,
+E6_4=4.0,
+E7_4=4.0,
+E8_4=4.0,
+E9_4=4.0                <taxa id="TaxonSet.geo_structure" spec="TaxonSet">
+                    <data
+idref="geo_structure"
+name="alignment"/>
+                </taxa>
+            </trait>
+            <taxonset idref="TaxonSet.geo_structure"/>
+        </tree>
+        <parameter id="clockRate.c:geo_structure" name="stateNode">1.0</parameter>
+        <parameter id="popSize.t:geo_structure" name="stateNode">0.3</parameter>
+    </state>
+
+    <init estimate="false" id="RandomTree.t:geo_structure" initial="@Tree.t:geo_structure" spec="beast.evolution.tree.RandomTree" taxa="@geo_structure">
+        <populationModel id="ConstantPopulation0.t:geo_structure" spec="ConstantPopulation">
+            <parameter id="randomPopSize.t:geo_structure" name="popSize">1.0</parameter>
+        </populationModel>
+    </init>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="CoalescentConstant.t:geo_structure" spec="Coalescent">
+                <populationModel id="ConstantPopulation.t:geo_structure" popSize="@popSize.t:geo_structure" spec="ConstantPopulation"/>
+                <treeIntervals id="TreeIntervals.t:geo_structure" spec="TreeIntervals" tree="@Tree.t:geo_structure"/>
+            </distribution>
+            <prior id="ClockPrior.c:geo_structure" name="distribution" x="@clockRate.c:geo_structure">
+                <Uniform id="Uniform.0" name="distr" upper="Infinity"/>
+            </prior>
+            <prior id="PopSizePrior.t:geo_structure" name="distribution" x="@popSize.t:geo_structure">
+                <OneOnX id="OneOnX.0" name="distr"/>
+            </prior>
+            <distribution id="all_taxa.prior" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="all_taxa" spec="TaxonSet">
+                    <taxon id="A0_0" spec="Taxon"/>
+                    <taxon id="A1_0" spec="Taxon"/>
+                    <taxon id="A2_0" spec="Taxon"/>
+                    <taxon id="A3_0" spec="Taxon"/>
+                    <taxon id="A4_0" spec="Taxon"/>
+                    <taxon id="A5_0" spec="Taxon"/>
+                    <taxon id="A6_0" spec="Taxon"/>
+                    <taxon id="A7_0" spec="Taxon"/>
+                    <taxon id="A8_0" spec="Taxon"/>
+                    <taxon id="A9_0" spec="Taxon"/>
+                    <taxon id="B0_1" spec="Taxon"/>
+                    <taxon id="B1_1" spec="Taxon"/>
+                    <taxon id="B2_1" spec="Taxon"/>
+                    <taxon id="B3_1" spec="Taxon"/>
+                    <taxon id="B4_1" spec="Taxon"/>
+                    <taxon id="B5_1" spec="Taxon"/>
+                    <taxon id="B6_1" spec="Taxon"/>
+                    <taxon id="B7_1" spec="Taxon"/>
+                    <taxon id="B8_1" spec="Taxon"/>
+                    <taxon id="B9_1" spec="Taxon"/>
+                    <taxon id="C0_2" spec="Taxon"/>
+                    <taxon id="C1_2" spec="Taxon"/>
+                    <taxon id="C2_2" spec="Taxon"/>
+                    <taxon id="C3_2" spec="Taxon"/>
+                    <taxon id="C4_2" spec="Taxon"/>
+                    <taxon id="C5_2" spec="Taxon"/>
+                    <taxon id="C6_2" spec="Taxon"/>
+                    <taxon id="C7_2" spec="Taxon"/>
+                    <taxon id="C8_2" spec="Taxon"/>
+                    <taxon id="C9_2" spec="Taxon"/>
+                    <taxon id="D0_3" spec="Taxon"/>
+                    <taxon id="D1_3" spec="Taxon"/>
+                    <taxon id="D2_3" spec="Taxon"/>
+                    <taxon id="D3_3" spec="Taxon"/>
+                    <taxon id="D4_3" spec="Taxon"/>
+                    <taxon id="D5_3" spec="Taxon"/>
+                    <taxon id="D6_3" spec="Taxon"/>
+                    <taxon id="D7_3" spec="Taxon"/>
+                    <taxon id="D8_3" spec="Taxon"/>
+                    <taxon id="D9_3" spec="Taxon"/>
+                    <taxon id="E0_4" spec="Taxon"/>
+                    <taxon id="E1_4" spec="Taxon"/>
+                    <taxon id="E2_4" spec="Taxon"/>
+                    <taxon id="E3_4" spec="Taxon"/>
+                    <taxon id="E4_4" spec="Taxon"/>
+                    <taxon id="E5_4" spec="Taxon"/>
+                    <taxon id="E6_4" spec="Taxon"/>
+                    <taxon id="E7_4" spec="Taxon"/>
+                    <taxon id="E8_4" spec="Taxon"/>
+                    <taxon id="E9_4" spec="Taxon"/>
+                </taxonset>
+                <LogNormal id="LogNormalDistributionModel.0" meanInRealSpace="true" name="distr" offset="95.0">
+                    <parameter estimate="false" id="RealParameter.0" name="M">100.0</parameter>
+                    <parameter estimate="false" id="RealParameter.01" lower="0.0" name="S" upper="5.0">1.25</parameter>
+                </LogNormal>
+            </distribution>
+            <distribution id="location_A" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="location_A1" spec="TaxonSet">
+                    <taxon idref="A0_0"/>
+                    <taxon idref="A1_0"/>
+                    <taxon idref="A2_0"/>
+                    <taxon idref="A3_0"/>
+                    <taxon idref="A4_0"/>
+                    <taxon idref="A5_0"/>
+                    <taxon idref="A6_0"/>
+                    <taxon idref="A7_0"/>
+                    <taxon idref="A8_0"/>
+                    <taxon idref="A9_0"/>
+                </taxonset>
+                <Normal id="Normal.0" name="distr">
+                    <parameter estimate="false" id="RealParameter.02" name="mean">3.0</parameter>
+                    <parameter estimate="false" id="RealParameter.03" name="sigma">1.0</parameter>
+                </Normal>
+            </distribution>
+            <distribution id="location_B" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="location_B1" spec="TaxonSet">
+                    <taxon idref="B0_1"/>
+                    <taxon idref="B1_1"/>
+                    <taxon idref="B2_1"/>
+                    <taxon idref="B3_1"/>
+                    <taxon idref="B4_1"/>
+                    <taxon idref="B5_1"/>
+                    <taxon idref="B6_1"/>
+                    <taxon idref="B7_1"/>
+                    <taxon idref="B8_1"/>
+                    <taxon idref="B9_1"/>
+                </taxonset>
+                <Normal id="Normal.01" name="distr">
+                    <parameter estimate="false" id="RealParameter.04" name="mean">4.0</parameter>
+                    <parameter estimate="false" id="RealParameter.05" name="sigma">1.0</parameter>
+                </Normal>
+            </distribution>
+            <distribution id="location_C" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="location_C1" spec="TaxonSet">
+                    <taxon idref="C0_2"/>
+                    <taxon idref="C1_2"/>
+                    <taxon idref="C2_2"/>
+                    <taxon idref="C3_2"/>
+                    <taxon idref="C4_2"/>
+                    <taxon idref="C5_2"/>
+                    <taxon idref="C6_2"/>
+                    <taxon idref="C7_2"/>
+                    <taxon idref="C8_2"/>
+                    <taxon idref="C9_2"/>
+                </taxonset>
+                <Normal id="Normal.02" name="distr">
+                    <parameter estimate="false" id="RealParameter.06" name="mean">5.0</parameter>
+                    <parameter estimate="false" id="RealParameter.07" name="sigma">1.0</parameter>
+                </Normal>
+            </distribution>
+            <distribution id="location_D" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="location_D1" spec="TaxonSet">
+                    <taxon idref="D0_3"/>
+                    <taxon idref="D1_3"/>
+                    <taxon idref="D2_3"/>
+                    <taxon idref="D3_3"/>
+                    <taxon idref="D4_3"/>
+                    <taxon idref="D5_3"/>
+                    <taxon idref="D6_3"/>
+                    <taxon idref="D7_3"/>
+                    <taxon idref="D8_3"/>
+                    <taxon idref="D9_3"/>
+                </taxonset>
+                <Normal id="Normal.03" name="distr">
+                    <parameter estimate="false" id="RealParameter.08" name="mean">6.0</parameter>
+                    <parameter estimate="false" id="RealParameter.09" name="sigma">1.0</parameter>
+                </Normal>
+            </distribution>
+            <distribution id="location_E" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="location_E1" spec="TaxonSet">
+                    <taxon idref="E0_4"/>
+                    <taxon idref="E1_4"/>
+                    <taxon idref="E2_4"/>
+                    <taxon idref="E3_4"/>
+                    <taxon idref="E4_4"/>
+                    <taxon idref="E5_4"/>
+                    <taxon idref="E6_4"/>
+                    <taxon idref="E7_4"/>
+                    <taxon idref="E8_4"/>
+                    <taxon idref="E9_4"/>
+                </taxonset>
+                <Normal id="Normal.04" name="distr">
+                    <parameter estimate="false" id="RealParameter.010" name="mean">7.0</parameter>
+                    <parameter estimate="false" id="RealParameter.011" name="sigma">1.0</parameter>
+                </Normal>
+            </distribution>
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution">
+            <distribution data="@geo_structure" id="treeLikelihood.geo_structure" spec="TreeLikelihood" tree="@Tree.t:geo_structure">
+                <siteModel id="SiteModel.s:geo_structure" spec="SiteModel">
+                    <parameter estimate="false" id="mutationRate.s:geo_structure" name="mutationRate">1.0</parameter>
+                    <parameter estimate="false" id="gammaShape.s:geo_structure" name="shape">1.0</parameter>
+                    <parameter estimate="false" id="proportionInvariant.s:geo_structure" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="JC69.s:geo_structure" spec="JukesCantor"/>
+                </siteModel>
+                <branchRateModel clock.rate="@clockRate.c:geo_structure" id="StrictClock.c:geo_structure" spec="beast.evolution.branchratemodel.StrictClockModel"/>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="treeScaler.t:geo_structure" scaleFactor="0.5" spec="ScaleOperator" tree="@Tree.t:geo_structure" weight="3.0"/>
+
+    <operator id="treeRootScaler.t:geo_structure" rootOnly="true" scaleFactor="0.5" spec="ScaleOperator" tree="@Tree.t:geo_structure" weight="3.0"/>
+
+    <operator id="UniformOperator.t:geo_structure" spec="Uniform" tree="@Tree.t:geo_structure" weight="30.0"/>
+
+    <operator id="SubtreeSlide.t:geo_structure" spec="SubtreeSlide" tree="@Tree.t:geo_structure" weight="15.0"/>
+
+    <operator id="narrow.t:geo_structure" spec="Exchange" tree="@Tree.t:geo_structure" weight="15.0"/>
+
+    <operator id="wide.t:geo_structure" isNarrow="false" spec="Exchange" tree="@Tree.t:geo_structure" weight="3.0"/>
+
+    <operator id="WilsonBalding.t:geo_structure" spec="WilsonBalding" tree="@Tree.t:geo_structure" weight="3.0"/>
+
+    <operator id="StrictClockRateScaler.c:geo_structure" parameter="@clockRate.c:geo_structure" scaleFactor="0.75" spec="ScaleOperator" weight="3.0"/>
+
+    <operator id="strictClockUpDownOperator.c:geo_structure" scaleFactor="0.75" spec="UpDownOperator" weight="3.0">
+        <parameter idref="clockRate.c:geo_structure" name="up"/>
+        <tree idref="Tree.t:geo_structure" name="down"/>
+    </operator>
+
+    <operator id="PopSizeScaler.t:geo_structure" parameter="@popSize.t:geo_structure" scaleFactor="0.75" spec="ScaleOperator" weight="3.0"/>
+
+    <logger fileName="geo_structure.log" id="tracelog" logEvery="1000" model="@posterior" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.geo_structure"/>
+        <log id="TreeHeight.t:geo_structure" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:geo_structure"/>
+        <parameter idref="clockRate.c:geo_structure" name="log"/>
+        <parameter idref="popSize.t:geo_structure" name="log"/>
+        <log idref="CoalescentConstant.t:geo_structure"/>
+        <log idref="location_A"/>
+        <log idref="location_B"/>
+        <log idref="location_C"/>
+        <log idref="location_D"/>
+        <log idref="location_E"/>
+        <log idref="all_taxa.prior"/>
+    </logger>
+
+    <logger id="screenlog" logEvery="1000">
+        <log idref="posterior"/>
+        <log arg="@posterior" id="ESS.0" spec="util.ESS"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+
+    <logger fileName="$(tree).trees" id="treelog.t:geo_structure" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:geo_structure" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:geo_structure"/>
+    </logger>
+
+</run>
+
+</beast>
