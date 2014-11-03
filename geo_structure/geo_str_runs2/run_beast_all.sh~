@@ -1,0 +1,7 @@
+#!/bin/bash
+
+xml_files=`ls | awk '/xml$/'`
+
+for run_file in $xml_files; do
+    echo $run_file
+done

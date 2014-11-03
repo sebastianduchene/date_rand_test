@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" version="2.0">
     <data 
- id="block_rand_1" 
+ id="true_dat" 
  name="alignment"> <sequence id="seq_A0_0" taxon="A0_0" totalcount="4" value="ggatttcatggcgttgtcgctagaatcgtggtggtattggacttgaatgggcgttaccgcggagtttatactaaagtgattacgcccccaaggcaaggcagatctcacccaatcgctctatcgggatcactgtcccgccgatctaattgctttccgcgcttgtctattcagctgagtcgctggactgattcattgtcttaaggtgcccatggtcaccgattgaactccgcgaggagttgaaatttccacagcgtaaagttaggaagttccacggtatattaggagagttttagctagcatactagtagggctcggcgctatgcaaaattgatgtactcgtctcgtcctacgtccaatgctattacgtctagcgccggctggtagcggatcagcgcgctcattagatcgcgcgttcttccccgcgggactatttggtcctgagtttctaatgtttcagagaagaattaatcgcacgcttcaaaactatttgcccttgtctgtctagaaaaacattttaattttttcatcttgagggagggaaagctacttaatcgacgaagcggtatggaatgcatggaggatatgtaggattcttgcgctagcacggcctgcagatgccgcgtgcagctatcgccagatccaggaaaaggagctggggaactcgcgtccgatcagattcgtgcgccgacactagtgtgaacttagactcattgattcacaagatggtggtaggacgttgagcatctgttgggactgagtgtccgtacgctggcgtggtacgtagtagtcctccaacacgtgtttgaattctcggagaaattccgcacgctcccagagtgttgcggaaaaaaagcgggtggctcggaatagtcctgccccgggcgttttgatcgagccggacaggccggtccaatctgtagcgtcgaacctaggtatgcgcctgagacacatgcgctatcggtttcacgttgggaagagaaaagaaggtgggtaaaaacttcgaaacttgtggccaacagtatgggacccatgccaggaactcatggccatgaggtgcttaatctctgggtgagcggaagatgatcgcgccgttctcacgcgtgtttatcctagtaacccgatatagtgtgttcattttcagatgggttgcataccctcaataccggggtatcagctcaccaagtttaggtctcttgcttgttaactatacgcgattcaattatataaaattgcgaggtgctgagctatctaagatgtatcttataaacacaatcgtgatatgtccgacatgcaaactaagatactgcggtctgaactagggtaaaaaatcgatccgttcttacctgatagccgggtgtaacggctgccgtccagcttagcgctcacactactacgggaagacgtgtaggactataggggcaaaagaagcagcaacacctcgtgatccggccgctaatgcaattagtgaggcgcgacgccgtagtcaacgtttcgaggggccgaccgaatgactccaaactcgctcaacgaactgttggagcttcgataaaaacttgtattttcggcgtgcatatacaactgtctgaatacaaatactgactttgtgacacaggaacggcgcaacgggctatctgcgccatcgtcggtgcttactgctagccctgggctatgcacttggtgcctgggagaatctcctaatccaagcaatctacagcacagctgctgtttcgggggaggcgcataagactatcaatccacttggttcttgtaattcttcaacatcgttacgcccctggcaataatcgcatgagaccgcgataatcgctaaactaggttgaggctagatacctagcgacaattagttacagcaagttgtaaaacctgggctactgtgcaggtgcttgtgtctttccttccttgcgcatgacctcacttcgattacttgacggtatcggggatctaaacatcgagagcgaaggtaccgtacatttctagacaag"/>
 <sequence id="seq_A1_0" taxon="A1_0" totalcount="4" value="ggatttcatggcgttgtcgctagaatcgtggtggtattggacttgaatgggcgttaccgcggagtttatactaaagtgattacgcccccaaggcaaggcagatctcacccaatcgctctatcgggatcactgtcccgccgatctaattgctttccgcgcttgtctattcagctgagtcgctggactgattcattgtcttaaggtgcccatggtcaccgattgaactccgcgaggagttgaaatttccacagcgtaaagttaggaagttccacggtatattaggagagttttagctagcatactagtagggctcggcgctatgcaaaattgatgtactcgtctcgtcctacgtccaatgctattacgtctagcgccggctggtagcggatcagcgcgctcattagatcgcgcgttcttccccgcgggactatttggtcctgagtttctaatgtttcagagaagaattaatcgcacgcttcaaaactatttgcccttgtctgtctagaaaaacattttaattttttcatcttgagggagggaaagctacttaatcgacgaagcggtatggaatgcatggaggatatgtaggattcttgcgctagcacggcctgcagatgccgcgtgccgctatcgccagatccaggaaaaggagctggggaactcgcgtccgatcagattcgtgcgccgacactagtgtgaacttagactcattgattcacaagatggtggtaggacgttgagcatctgttgggactgagtgtccgtacgctggcgtggtacgtagtagtcctccaacacgtgtttgaattctcggagaaattccgcacgctcccagagtgttgcggaaaaaaagcgggtggctcggaatagtcctgccccgggcgttttgatcgagccggacaggccggtccaatctgtagcgtcgaacctaggtatgcgcctgagacacatgcgctatcggtttcacgttgggaagagaaaagaaggtgggtaaaaacttcgaaacttgtggccaacagtatgggacccatgccaggaactcatggccatgaggtgcttaatctctgggtaagcggaagatgatcgcgccgttctcacgcgtgtttatcctagtaacccgatatagtgtgttcattttcagatgggttgcataccctcaataccggggtatcagctcaccaagtttaggtctcttgcttgttaactatacgcgattcaattatataaaattgcgaggtgctgagctatctaagatgtatcttataaacacaatcgtgatatgtccgacatgcaaactaagatactgcggtctgaactagggtaaaaaatcgatccgttcttacctgatagccgggtgtaacggctgccgtccagcttagcgctcacactactacgggaagacgtgtaggactataggggcaaaagaagcagcaacacctcgtgatccggccgctaatgcaattagtgaggcgcgacgccgtagtcaacgtttcgaggggccgaccgaatgactccaaactcgctcaacgaactgttggagcttcgataaaaacttgtattttcggcgtgcatatacaactgtctgaatacaaatactgactttgtgacacaggaacggcgcaacgggctatctgcgccatcgtcggtgcttactgctagccctgggctatgcacttggtgcctgggagaatctcctaatccaagaaatctacagcacagctgctgtttcgggggaggcgcataagactatcaatccacttggttcttgtaattcttcaacatcgttacgcccctggcaataatcgcatgagaccgcgataatcgctaaactaggttgaggctagatacctagcgacaattagttacagcaagttgtaaaacctggactactgtgcaggtgcttgtgtctttccttccttgcgcatgacctcacttcgattacttgacggtatcggggatctaaacatcgagagcgaaggtaccgtacatttctagacaag"/>
 <sequence id="seq_A2_0" taxon="A2_0" totalcount="4" value="ggatttcatggcgttgtcgctagaatcgtggtggtattggacttgaatgggcgttaccgcggagtttatactaaagtgattacgcccccaaggcaaggcagatctcacccaatcgctctatcgggatcactgtcccgccgatctaattgctttccgcgcttgtctattcagctgagtcgctggactgattcattgtcttaaggtgcccatggtcaccgattgaactccgcgaggagttgaaatttccacagcgtaaagttaggaagttccacggtatattaggagagttttagctagcatactagtagggctcggcgctatgcaaaattgatgtactcgtctcgtcctacgtccaatgctattacgtctagcgccggctggtagcggatcagcgcgctcattagatcgcgcgttcttccccgcgggactatttggtcctgagtttctaatgtttcagagaagaattaatcgcacgcttcaaaactatttgcccttgtctgtctagaaaaacattttaattttttcatcttgagggagggaaagctacttaatcgacgaagcggtatggaatgcatggaggatatgtaggattcttgcgctagcacggcctgcagatgccgcgtgcagctatcgccagatccaggaaaaggagctggggaactcgcgtccgatcagattcgtgcgccgacactagtgtgaacttagactcattgattcacaagatggtggtaggacgttgagcatctgttgggactgagtgtccgtacgctggcgtggtacgtagtagtcctccaacacgtgtttgaattctcggagaaattccgcacgctcccagagtgttgcggaaaaaaagcgggtggctcggaatagtcctgccccgggcgttttgatcgagccggacaggccggtccaatctgtagcgtcgaacctaggtatgcgcctgagacacatgcgctatcggtttcacgttgggaagagaaaagaaggtgggtaaaaacttcgaaacttgtggccaacagtatgggacccatgccaggaactcatggccatgaggtgcttaatctctgggtgagcggaagatgatcgcgccgttctcacgcgtgtttatcctagtaacccgatatagtgtgttcattttcagatgggttgcataccctcaataccggggtatcagctcaccaagtttaggtctcttgcttgttaactatacgcgattcaattatataaaattgcgaggtgctgagctatctaagatgtatcttataaacacaatcgtgatatgtccgacatgcaaactaagatactgcggtctgaactagggtaaaaaatcgatccgttcttacctgatagccgggtgtaacggctgccgtccagcttagcgctcacactactacgggaagacgtgtaggactataggggcaaaagaagcagcaacacctcgtgatccggccgctaatgcaattagtgaggcgcgacgccgtagtcaacgtttcgaggggccgaccgaatgactccaaactcgctcaacgaactgttggagcttcgataaaaacttgtattttcggcgtgcatatacaactgtctgaatacaaatactgactttgtgacacaggaacggcgcaacgggctatctgcgccatcgttggtgcttactgctagccctgggctatgcacttggtgcctgggagaatctcctaatccaagcaatctacagcacagctgctgtttcgggggaggcgcataagactatcaatccacttggttcttgtaattcttcaacatcgttacgcccctggcaataatcgcatgagaccgcgataatcgctaaactaggttgaggctagatacctagcgacaattagttacagcaagttgtaaaacctgggctactgtgcaggtgcttgtgtctttccttccttgcgcatgacctcacttcgattacttgacggtatcggggatctaaacatcgagagcgaaggtaccgtacatttctagacaag"/>
@@ -61,10 +61,10 @@
  <map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map> 
  <map name="OneOnX">beast.math.distributions.OneOnX</map> 
  <map name="Normal">beast.math.distributions.Normal</map> 
- <run chainLength="15000000" id="mcmc" spec="MCMC"> 
+ <run chainLength="50000000" id="mcmc" spec="MCMC"> 
      <state id="state" storeEvery="5000"> 
-        <tree id="Tree.t:block_rand_1" name="stateNode"> 
-   <trait id="dateTrait.t:block_rand_1" spec="beast.evolution.tree.TraitSet" traitname="date-backward"> A0_0=0,
+        <tree id="Tree.t:true_dat" name="stateNode"> 
+   <trait id="dateTrait.t:true_dat" spec="beast.evolution.tree.TraitSet" traitname="date-backward"> A0_0=0,
 A1_0=4,
 A2_0=4,
 A3_0=4,
@@ -113,23 +113,23 @@ E5_4=0,
 E6_4=0,
 E7_4=0,
 E8_4=0,
-E9_4=0 <taxa id="TaxonSet.block_rand_1" spec="TaxonSet"> 
+E9_4=0 <taxa id="TaxonSet.true_dat" spec="TaxonSet"> 
       <data 
- idref="block_rand_1" 
+ idref="true_dat" 
  name="alignment"/> 
   </taxa>   
  </trait> 
- <taxonset idref="TaxonSet.block_rand_1"/>  
+ <taxonset idref="TaxonSet.true_dat"/>  
   </tree> 
-  <parameter id="ucldMean.c:block_rand_1" name="stateNode">1.0</parameter> 
-        <parameter id="ucldStdev.c:block_rand_1" lower="0.0" name="stateNode" upper="5.0">0.5</parameter> 
-   <stateNode dimension="98" id="rateCategories.c:block_rand_1" spec="parameter.IntegerParameter">1</stateNode> 
-    <parameter id="popSize.t:block_rand_1" name="stateNode">0.3</parameter>
-    </state>     <init estimate="false" id="RandomTree.t:block_rand_1" initial="@Tree.t:block_rand_1" spec="beast.evolution.tree.RandomTree" taxa="@block_rand_1"> 
+  <parameter id="ucldMean.c:true_dat" name="stateNode">1.0</parameter> 
+        <parameter id="ucldStdev.c:true_dat" lower="0.0" name="stateNode" upper="5.0">0.5</parameter> 
+   <stateNode dimension="98" id="rateCategories.c:true_dat" spec="parameter.IntegerParameter">1</stateNode> 
+    <parameter id="popSize.t:true_dat" name="stateNode">0.3</parameter>
+    </state>     <init estimate="false" id="RandomTree.t:true_dat" initial="@Tree.t:true_dat" spec="beast.evolution.tree.RandomTree" taxa="@true_dat"> 
 
-        <populationModel id="ConstantPopulation0.t:block_rand_1" spec="ConstantPopulation"> 
+        <populationModel id="ConstantPopulation0.t:true_dat" spec="ConstantPopulation"> 
 
-            <parameter id="randomPopSize.t:block_rand_1" name="popSize">1.0</parameter> 
+            <parameter id="randomPopSize.t:true_dat" name="popSize">1.0</parameter> 
 
         </populationModel> 
 
@@ -139,27 +139,27 @@ E9_4=0 <taxa id="TaxonSet.block_rand_1" spec="TaxonSet">
 
         <distribution id="prior" spec="util.CompoundDistribution"> 
 
-            <distribution id="CoalescentConstant.t:block_rand_1" spec="Coalescent"> 
+            <distribution id="CoalescentConstant.t:true_dat" spec="Coalescent"> 
 
-                <populationModel id="ConstantPopulation.t:block_rand_1" popSize="@popSize.t:block_rand_1" spec="ConstantPopulation"/> 
+                <populationModel id="ConstantPopulation.t:true_dat" popSize="@popSize.t:true_dat" spec="ConstantPopulation"/> 
 
-                <treeIntervals id="TreeIntervals.t:block_rand_1" spec="TreeIntervals" tree="@Tree.t:block_rand_1"/> 
+                <treeIntervals id="TreeIntervals.t:true_dat" spec="TreeIntervals" tree="@Tree.t:true_dat"/> 
 
             </distribution> 
 
-            <prior id="PopSizePrior.t:block_rand_1" name="distribution" x="@popSize.t:block_rand_1"> 
+            <prior id="PopSizePrior.t:true_dat" name="distribution" x="@popSize.t:true_dat"> 
 
                 <OneOnX id="OneOnX.0" name="distr"/> 
 
             </prior> 
 
-            <prior id="MeanRatePrior.c:block_rand_1" name="distribution" x="@ucldMean.c:block_rand_1"> 
+            <prior id="MeanRatePrior.c:true_dat" name="distribution" x="@ucldMean.c:true_dat"> 
 
                 <Uniform id="Uniform.0" name="distr" upper="Infinity"/> 
 
             </prior> 
 
-            <prior id="ucldStdevPrior.c:block_rand_1" name="distribution" x="@ucldStdev.c:block_rand_1"> 
+            <prior id="ucldStdevPrior.c:true_dat" name="distribution" x="@ucldStdev.c:true_dat"> 
 
                 <Exponential id="Exponential.0" name="distr"> 
 
@@ -173,23 +173,23 @@ E9_4=0 <taxa id="TaxonSet.block_rand_1" spec="TaxonSet">
 
         <distribution id="likelihood" spec="util.CompoundDistribution"> 
 
-            <distribution data="@block_rand_1" id="treeLikelihood.block_rand_1" spec="TreeLikelihood" tree="@Tree.t:block_rand_1"> 
+            <distribution data="@true_dat" id="treeLikelihood.true_dat" spec="TreeLikelihood" tree="@Tree.t:true_dat"> 
 
-                <siteModel id="SiteModel.s:block_rand_1" spec="SiteModel"> 
+                <siteModel id="SiteModel.s:true_dat" spec="SiteModel"> 
 
-                    <parameter estimate="false" id="mutationRate.s:block_rand_1" name="mutationRate">1.0</parameter> 
+                    <parameter estimate="false" id="mutationRate.s:true_dat" name="mutationRate">1.0</parameter> 
 
-                    <parameter estimate="false" id="gammaShape.s:block_rand_1" name="shape">1.0</parameter> 
+                    <parameter estimate="false" id="gammaShape.s:true_dat" name="shape">1.0</parameter> 
 
-                    <parameter estimate="false" id="proportionInvariant.s:block_rand_1" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter> 
+                    <parameter estimate="false" id="proportionInvariant.s:true_dat" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter> 
 
-                    <substModel id="JC69.s:block_rand_1" spec="JukesCantor"/> 
+                    <substModel id="JC69.s:true_dat" spec="JukesCantor"/> 
 
                 </siteModel> 
 
-                <branchRateModel clock.rate="@ucldMean.c:block_rand_1" id="RelaxedClock.c:block_rand_1" rateCategories="@rateCategories.c:block_rand_1" spec="beast.evolution.branchratemodel.UCRelaxedClockModel" tree="@Tree.t:block_rand_1"> 
+                <branchRateModel clock.rate="@ucldMean.c:true_dat" id="RelaxedClock.c:true_dat" rateCategories="@rateCategories.c:true_dat" spec="beast.evolution.branchratemodel.UCRelaxedClockModel" tree="@Tree.t:true_dat"> 
 
-                    <LogNormal S="@ucldStdev.c:block_rand_1" id="LogNormalDistributionModel.c:block_rand_1" meanInRealSpace="true" name="distr"> 
+                    <LogNormal S="@ucldStdev.c:true_dat" id="LogNormalDistributionModel.c:true_dat" meanInRealSpace="true" name="distr"> 
 
                         <parameter estimate="false" id="RealParameter.01" lower="0.0" name="M" upper="1.0">1.0</parameter> 
 
@@ -203,33 +203,33 @@ E9_4=0 <taxa id="TaxonSet.block_rand_1" spec="TaxonSet">
 
     </distribution> 
 
-     <operator id="treeScaler.t:block_rand_1" scaleFactor="0.5" spec="ScaleOperator" tree="@Tree.t:block_rand_1" weight="3.0"/>
-    <operator id="treeRootScaler.t:block_rand_1" rootOnly="true" scaleFactor="0.5" spec="ScaleOperator" tree="@Tree.t:block_rand_1" weight="3.0"/>
-    <operator id="UniformOperator.t:block_rand_1" spec="Uniform" tree="@Tree.t:block_rand_1" weight="30.0"/>
-    <operator id="SubtreeSlide.t:block_rand_1" spec="SubtreeSlide" tree="@Tree.t:block_rand_1" weight="15.0"/>
-    <operator id="narrow.t:block_rand_1" spec="Exchange" tree="@Tree.t:block_rand_1" weight="15.0"/>
-    <operator id="wide.t:block_rand_1" isNarrow="false" spec="Exchange" tree="@Tree.t:block_rand_1" weight="3.0"/>
-    <operator id="WilsonBalding.t:block_rand_1" spec="WilsonBalding" tree="@Tree.t:block_rand_1" weight="3.0"/>
-    <operator id="ucldMeanScaler.c:block_rand_1" parameter="@ucldMean.c:block_rand_1" scaleFactor="0.5" spec="ScaleOperator" weight="1.0"/>
-    <operator id="ucldStdevScaler.c:block_rand_1" parameter="@ucldStdev.c:block_rand_1" scaleFactor="0.5" spec="ScaleOperator" weight="3.0"/>
-    <operator id="CategoriesRandomWalk.c:block_rand_1" parameter="@rateCategories.c:block_rand_1" spec="IntRandomWalkOperator" weight="10.0" windowSize="1"/>
-    <operator id="CategoriesSwapOperator.c:block_rand_1" intparameter="@rateCategories.c:block_rand_1" spec="SwapOperator" weight="10.0"/>
-    <operator id="CategoriesUniform.c:block_rand_1" parameter="@rateCategories.c:block_rand_1" spec="UniformOperator" weight="10.0"/>
-    <operator id="relaxedUpDownOperator.c:block_rand_1" scaleFactor="0.75" spec="UpDownOperator" weight="3.0">
-        <parameter idref="ucldMean.c:block_rand_1" name="up"/>
-        <tree idref="Tree.t:block_rand_1" name="down"/>
+     <operator id="treeScaler.t:true_dat" scaleFactor="0.5" spec="ScaleOperator" tree="@Tree.t:true_dat" weight="3.0"/>
+    <operator id="treeRootScaler.t:true_dat" rootOnly="true" scaleFactor="0.5" spec="ScaleOperator" tree="@Tree.t:true_dat" weight="3.0"/>
+    <operator id="UniformOperator.t:true_dat" spec="Uniform" tree="@Tree.t:true_dat" weight="30.0"/>
+    <operator id="SubtreeSlide.t:true_dat" spec="SubtreeSlide" tree="@Tree.t:true_dat" weight="15.0"/>
+    <operator id="narrow.t:true_dat" spec="Exchange" tree="@Tree.t:true_dat" weight="15.0"/>
+    <operator id="wide.t:true_dat" isNarrow="false" spec="Exchange" tree="@Tree.t:true_dat" weight="3.0"/>
+    <operator id="WilsonBalding.t:true_dat" spec="WilsonBalding" tree="@Tree.t:true_dat" weight="3.0"/>
+    <operator id="ucldMeanScaler.c:true_dat" parameter="@ucldMean.c:true_dat" scaleFactor="0.5" spec="ScaleOperator" weight="1.0"/>
+    <operator id="ucldStdevScaler.c:true_dat" parameter="@ucldStdev.c:true_dat" scaleFactor="0.5" spec="ScaleOperator" weight="3.0"/>
+    <operator id="CategoriesRandomWalk.c:true_dat" parameter="@rateCategories.c:true_dat" spec="IntRandomWalkOperator" weight="10.0" windowSize="1"/>
+    <operator id="CategoriesSwapOperator.c:true_dat" intparameter="@rateCategories.c:true_dat" spec="SwapOperator" weight="10.0"/>
+    <operator id="CategoriesUniform.c:true_dat" parameter="@rateCategories.c:true_dat" spec="UniformOperator" weight="10.0"/>
+    <operator id="relaxedUpDownOperator.c:true_dat" scaleFactor="0.75" spec="UpDownOperator" weight="3.0">
+        <parameter idref="ucldMean.c:true_dat" name="up"/>
+        <tree idref="Tree.t:true_dat" name="down"/>
     </operator>
-    <operator id="PopSizeScaler.t:block_rand_1" parameter="@popSize.t:block_rand_1" scaleFactor="0.75" spec="ScaleOperator" weight="3.0"/>     <logger fileName="block_rand_1.log" id="tracelog" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+    <operator id="PopSizeScaler.t:true_dat" parameter="@popSize.t:true_dat" scaleFactor="0.75" spec="ScaleOperator" weight="3.0"/>     <logger fileName="true_dat.log" id="tracelog" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
         <log idref="posterior"/>
         <log idref="likelihood"/>
         <log idref="prior"/>
-        <log idref="treeLikelihood.block_rand_1"/>
-        <log id="TreeHeight.t:block_rand_1" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:block_rand_1"/>
-        <parameter idref="ucldMean.c:block_rand_1" name="log"/>
-        <parameter idref="ucldStdev.c:block_rand_1" name="log"/>
-        <log branchratemodel="@RelaxedClock.c:block_rand_1" id="rate.c:block_rand_1" spec="beast.evolution.branchratemodel.RateStatistic" tree="@Tree.t:block_rand_1"/>
-        <parameter idref="popSize.t:block_rand_1" name="log"/>
-        <log idref="CoalescentConstant.t:block_rand_1"/>
+        <log idref="treeLikelihood.true_dat"/>
+        <log id="TreeHeight.t:true_dat" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:true_dat"/>
+        <parameter idref="ucldMean.c:true_dat" name="log"/>
+        <parameter idref="ucldStdev.c:true_dat" name="log"/>
+        <log branchratemodel="@RelaxedClock.c:true_dat" id="rate.c:true_dat" spec="beast.evolution.branchratemodel.RateStatistic" tree="@Tree.t:true_dat"/>
+        <parameter idref="popSize.t:true_dat" name="log"/>
+        <log idref="CoalescentConstant.t:true_dat"/>
     </logger>
     <logger id="screenlog" logEvery="1000">
         <log idref="posterior"/>
@@ -238,8 +238,8 @@ E9_4=0 <taxa id="TaxonSet.block_rand_1" spec="TaxonSet">
         <log idref="prior"/>
     </logger>
 <!--
-    <logger fileName="$(tree).trees" id="treelog.t:block_rand_1" logEvery="1000" mode="tree">
-        <log branchratemodel="@RelaxedClock.c:block_rand_1" id="TreeWithMetaDataLogger.t:block_rand_1" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:block_rand_1"/>
+    <logger fileName="$(tree).trees" id="treelog.t:true_dat" logEvery="1000" mode="tree">
+        <log branchratemodel="@RelaxedClock.c:true_dat" id="TreeWithMetaDataLogger.t:true_dat" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:true_dat"/>
     </logger>
 -->
 </run>

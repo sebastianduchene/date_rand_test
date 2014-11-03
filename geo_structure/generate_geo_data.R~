@@ -1,14 +1,14 @@
-source('../../../expe_jar/functions.R')
+source('../expe_jar/functions.R')
 library(NELSI)
 library(ape)
-trees <- read.nexus('../../geo_structure.trees')
+trees <- read.nexus('geo_structure.trees')
 
 mean_rate = 1e-4
 
 sd_rate = 0.05
 
-if(T){# To generate data
-  phylo_1 <- trees[[25]] 
+if(F){
+  phylo_1 <- trees[[3]] 
   phylo_1$edge.length <- phylo_1$edge.length * rlnorm(length(phylo_1$edge.length), log(mean_rate), sd_rate)
 
   dat_1 <- as.DNAbin(simSeq(phylo_1, l = 2000))
@@ -23,8 +23,6 @@ if(T){# To generate data
 }
 
 
-
-if(F){# To analyse data
 true_dat <- read.table('true_dat.log', head = T, as.is = T)
 
 true_rate <- quantile(as.numeric(read.table('true_dat.log', head = T, as.is = T)$rate.mean)[-c(1:1000)], c(0.025, 0.975))
@@ -35,4 +33,5 @@ rand_3 <- quantile(as.numeric(read.table('rand_dat_3.log', head = T, as.is = T)$
 rand_4 <- quantile(as.numeric(read.table('rand_dat_4.log', head = T, as.is = T)$rate.mean)[-c(1:1000)], c(0.025, 0.975))
 rand_5 <- quantile(as.numeric(read.table('rand_dat_5.log', head = T, as.is = T)$rate.mean)[-c(1:1000)], c(0.025, 0.975))
 
-}
+
+
