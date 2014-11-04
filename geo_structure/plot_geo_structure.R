@@ -1,43 +1,53 @@
 library(ggplot2)
+library(gridExtra)
 
-true_rate <- log10(as.numeric(read.table('true_dat.log', head = T, as.is = T)$rate.mean)[-c(1:2000)])
+get_post_data <- function(folder_name){
+  true_rate <- log10(as.numeric(read.table(paste0(folder_name, '/true_dat.log'), head = T, as.is = T)$rate.mean)[-c(1:2000)])
+  cluster_1 <- log10(as.numeric(read.table(paste0(folder_name, '/true_dat_rand_1.log'), head = T, as.is = T)$rate.mean)[c(1:2000)])
+  cluster_2 <- log10(as.numeric(read.table(paste0(folder_name, '/true_dat_rand_2.log'), head = T, as.is = T)$rate.mean)[c(1:2000)])
+  cluster_3 <- log10(as.numeric(read.table(paste0(folder_name, '/true_dat_rand_3.log'), head = T, as.is = T)$rate.mean)[c(1:2000)])
+  cluster_4 <- log10(as.numeric(read.table(paste0(folder_name, '/true_dat_rand_4.log'), head = T, as.is = T)$rate.mean)[c(1:2000)])
+  cluster_5 <- log10(as.numeric(read.table(paste0(folder_name, '/true_dat_rand_5.log'), head = T, as.is = T)$rate.mean)[c(1:2000)])
 
-rand_1 <- log10(as.numeric(read.table('rand_dat.log', head = T, as.is = T)$rate.mean)[-c(1:2000)])
-rand_2 <- log10(as.numeric(read.table('rand_dat_2.log', head = T, as.is = T)$rate.mean)[-c(1:2000)])
-rand_3 <- log10(as.numeric(read.table('rand_dat_3.log', head = T, as.is = T)$rate.mean)[-c(1:2000)])
-rand_4 <- log10(as.numeric(read.table('rand_dat_4.log', head = T, as.is = T)$rate.mean)[-c(1:2000)])
-rand_5 <- log10(as.numeric(read.table('rand_dat_5.log', head = T, as.is = T)$rate.mean)[-c(1:2000)])
+  rand_1 <- log10(as.numeric(read.table(paste0(folder_name, '/rand_dat_1.log'), head = T, as.is = T)$rate.mean)[-c(1:2000)])
+  rand_2 <- log10(as.numeric(read.table(paste0(folder_name, '/rand_dat_2.log'), head = T, as.is = T)$rate.mean)[-c(1:2000)])
+  rand_3 <- log10(as.numeric(read.table(paste0(folder_name, '/rand_dat_3.log'), head = T, as.is = T)$rate.mean)[-c(1:2000)])
+  rand_4 <- log10(as.numeric(read.table(paste0(folder_name, '/rand_dat_4.log'), head = T, as.is = T)$rate.mean)[-c(1:2000)])
+  rand_5 <- log10(as.numeric(read.table(paste0(folder_name, '/rand_dat_5.log'), head = T, as.is = T)$rate.mean)[-c(1:2000)])
 
-block_1 <- log10(as.numeric(read.table('block_rand_1.log', head = T, as.is = T)$rate.mean)[c(1:2000)])
-block_2 <- log10(as.numeric(read.table('block_rand_2.log', head = T, as.is = T)$rate.mean)[c(1:2000)])
-block_3 <- log10(as.numeric(read.table('block_rand_3.log', head = T, as.is = T)$rate.mean)[c(1:2000)])
-block_4 <- log10(as.numeric(read.table('block_rand_4.log', head = T, as.is = T)$rate.mean)[c(1:2000)])
-block_5 <- log10(as.numeric(read.table('block_rand_5.log', head = T, as.is = T)$rate.mean)[c(1:2000)])
+  mean_vals <- c(mean(true_rate), mean(cluster_1), mean(cluster_2), mean(cluster_3),  mean(cluster_4), mean(cluster_5), mean(rand_1), mean(rand_2), mean(rand_3), mean(rand_4), mean(rand_5))
+  max_vals <- c(quantile(true_rate, 0.025), quantile(cluster_1, 0.025), quantile(cluster_2, 0.025), quantile(cluster_3, 0.025),  quantile(cluster_4, 0.025), quantile(cluster_5, 0.025), quantile(rand_1, 0.025), quantile(rand_2, 0.025), quantile(rand_3, 0.025), quantile(rand_4, 0.025), quantile(rand_5, 0.025))
+  min_vals <- c(quantile(true_rate, 0.975), quantile(cluster_1, 0.975), quantile(cluster_2, 0.975), quantile(cluster_3, 0.975),  quantile(cluster_4, 0.975), quantile(cluster_5, 0.975), quantile(rand_1, 0.975), quantile(rand_2, 0.975), quantile(rand_3, 0.975), quantile(rand_4, 0.975), quantile(rand_5, 0.975))
+  
+  col_vals <- factor(c(2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+  dat_all <- data.frame(mean_vals, min_vals, max_vals, col_vals)
+  return(dat_all)
+}
+
+rbind_list <- function(c_list){
+  if(length(c_list) == 2){
+    return(rbind(c_list[[1]], c_list[[2]]))
+  }else if(length(c_list) > 2){
+    return(rbind(c_list[[1]], rbind_list(c_list[-1])))
+  }
+}
 
 
-mean_vals <- c(mean(true_rate), mean(block_1), mean(block_2), mean(block_3),  mean(block_4), mean(block_5), mean(rand_1), mean(rand_2), mean(rand_3), mean(rand_4), mean(rand_5))
+#all_reps <- lapply(c('r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10'), function(x) get_post_data(x))
 
-max_vals <- c(quantile(true_rate, 0.025), quantile(block_1, 0.025), quantile(block_2, 0.025), quantile(block_3, 0.025),  quantile(block_4, 0.025), quantile(block_5, 0.025), quantile(rand_1, 0.025), quantile(rand_2, 0.025), quantile(rand_3, 0.025), quantile(rand_4, 0.025), quantile(rand_5, 0.025))
+conc_all <- rbind_list(all_reps)
+loc_vals <- vector()
+for(i in 1:10){
+ loc_vals <- c(loc_vals, c(1.5, 2, 2.1, 2.2, 2.3, 2.4, 3, 3.1, 3.2, 3.3, 3.4) + i*4)
+}
 
-min_vals <- c(quantile(true_rate, 0.975), quantile(block_1, 0.975), quantile(block_2, 0.975), quantile(block_3, 0.975),  quantile(block_4, 0.975), quantile(block_5, 0.975), quantile(rand_1, 0.975), quantile(rand_2, 0.975), quantile(rand_3, 0.975), quantile(rand_4, 0.975), quantile(rand_5, 0.975))
-
-loc_vals <- c(1, 2, 2.1, 2.2, 2.3, 2.4, 3, 3.1, 3.2, 3.3, 3.4)
-col_vals <- factor(c(2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
-
-dat_all <- data.frame(loc_vals, mean_vals, min_vals, max_vals, col_vals)
+conc_all <- cbind(loc_vals, conc_all)
 
 
-plot_dat <- ggplot( dat_all, aes(x = loc_vals, y = mean_vals, colour = col_vals)) + geom_point() + geom_errorbar(aes(ymin = min_vals, ymax = max_vals, width = 0)) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + guides(colour = FALSE) + scale_x_continuous(breaks = c(1.25, 2.25, 3.25)) + geom_hline(y = log10(1e-4), linetype = 1)
+plot_dat_1 <- ggplot(conc_all[1:55, ], aes(x = loc_vals, y = mean_vals, colour = col_vals)) + geom_point() + geom_errorbar(aes(ymin = min_vals, ymax = max_vals, width = 0)) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + guides(colour = FALSE) + geom_hline(y = log10(1e-4), linetype = 1) + geom_hline(y = log10(1e-4 + 1e-4*0.05), linetype = 2) + geom_hline(y = log10(1e-4 - 1e-4*0.05), linetype = 2) #+ scale_x_continuous(breaks = c(1.25, 2.25, 3.25))
 
-pdf('spatial_structure.pdf', width = 5, height = 5, useDingbats = F)
-print(plot_dat)
+plot_dat_2 <- ggplot(conc_all[56:110, ], aes(x = loc_vals, y = mean_vals, colour = col_vals)) + geom_point() + geom_errorbar(aes(ymin = min_vals, ymax = max_vals, width = 0)) + scale_colour_manual(values = c('grey', 'black')) + theme_bw() + guides(colour = FALSE) + geom_hline(y = log10(1e-4), linetype = 1) + geom_hline(y = log10(1e-4 + 1e-4*0.05), linetype = 2) + geom_hline(y = log10(1e-4 - 1e-4*0.05), linetype = 2) #+ scale_x_continuous(breaks = c(1.25, 2.25, 3.25))
+
+pdf('spatial_structure.pdf', width = 6.5, height = 7, useDingbats = F)
+grid.arrange(plot_dat_1, plot_dat_2, nrow = 2, ncol = 1)
 dev.off()
-
-
-
-
-
-
-
-
-
