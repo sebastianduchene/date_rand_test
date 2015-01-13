@@ -1,3 +1,0 @@
-library(ape)
-
-sim_trees <- read.nexus('geo_structure.trees')

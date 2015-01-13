@@ -1,0 +1,2 @@
+dat <- readLines('true_dat.xml')
+

@@ -61,7 +61,7 @@
  <map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map> 
  <map name="OneOnX">beast.math.distributions.OneOnX</map> 
  <map name="Normal">beast.math.distributions.Normal</map> 
- <run chainLength="15000000" id="mcmc" spec="MCMC"> 
+ <run chainLength="50000000" id="mcmc" spec="MCMC"> 
      <state id="state" storeEvery="5000"> 
         <tree id="Tree.t:true_dat_rand_3" name="stateNode"> 
    <trait id="dateTrait.t:true_dat_rand_3" spec="beast.evolution.tree.TraitSet" traitname="date-backward"> A0_0=0,
