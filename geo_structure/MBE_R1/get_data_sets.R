@@ -3,9 +3,9 @@ library(NELSI)
 library(ape)
 library(phangorn)
 
-sim_trees <- read.nexus('geo_structure.trees')
+sim_trees <- read.tree('R1_trs.trees')
 
-sample_trees <- sim_trees[c(5, 6, 7, 44, 66, 88, 99, 100, 120, 300)]
+sample_trees <- sim_trees[c(2, 7, 9, 11, 20, 10, 3, 19, 4, 5)]
 
 mean_rate = 1e-4
 sd_rate = 0.05
