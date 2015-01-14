@@ -5,7 +5,7 @@ library(phangorn)
 
 sim_trees <- read.tree('R1_trs.trees')
 
-sample_trees <- sim_trees[c(2, 7, 9, 11, 20, 10, 3, 19)]
+sample_trees <- sim_trees[c(2, 7, 9, 11, 20, 10, 3, 19, 4, 5)]
 
 mean_rate = 1e-4
 sd_rate = 0.05
