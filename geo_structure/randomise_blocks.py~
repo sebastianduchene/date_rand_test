@@ -46,3 +46,7 @@ for i in range(n_rand):
     print block_rand_dict
     new_rand_lines = copy.copy(raw_lines)
     new_rand_lines[(dates_lim[0] + 1):dates_lim[-1]] = new_dates_list[1:-1]
+    new_rand_lines = ''.join(new_rand_lines)
+    new_file_name = re.sub('[.]xml', '_rand_', sys.argv[1]) + str(i + 1)
+    new_rand_lines = re.sub(re.sub('[.]xml', '', sys.argv[1]), new_file_name, new_rand_lines) 
+    open(new_file_name + '.xml', 'w').write(new_rand_lines)
