@@ -7,7 +7,7 @@ sim_trees <- read.nexus('geo_structure.trees')
 
 print(sapply(1:10, function(x) max(allnode.times(sim_trees[[x]]))))
 
-sample_trees <- sim_trees[c(2, 3, 4, 5, 6, 7, 8, 10, 14, 15)]
+sample_trees <- sim_trees[201:210]
 
 print(sapply(1:length(sample_trees), function(x) max(allnode.times(sample_trees[[x]]))))
 

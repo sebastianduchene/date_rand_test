@@ -212,49 +212,49 @@ name="alignment"/>
                     <taxon id="E8_4" spec="Taxon"/>
                     <taxon id="E9_4" spec="Taxon"/>
                 </taxonset>
-                <Normal id="Normal.0" name="distr">
-                    <parameter estimate="false" id="RealParameter.02" name="mean">100.0</parameter>
-                    <parameter estimate="false" id="RealParameter.03" name="sigma">0.5</parameter>
+                <Normal id="Normal.06" name="distr">
+                    <parameter estimate="false" id="RealParameter.66" name="mean">100.0</parameter>
+                    <parameter estimate="false" id="RealParameter.67" name="sigma">0.1</parameter>
                 </Normal>
             </distribution>
-<!--
-            <distribution id="location_A" monophyletic="false" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+
+            <distribution id="location_A" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
                 <taxonset id="location_A1" spec="TaxonSet">
                     <taxon idref="A0_0"/>
                     <taxon idref="A1_0"/>
                     <taxon idref="A2_0"/>
                     <taxon idref="A3_0"/>
                     <taxon idref="A4_0"/>
+
+
                     <taxon idref="A5_0"/>
                     <taxon idref="A6_0"/>
                     <taxon idref="A7_0"/>
                     <taxon idref="A8_0"/>
                     <taxon idref="A9_0"/>
-                </taxonset>
-                <Normal id="Normal.0" name="distr">
-                    <parameter estimate="false" id="RealParameter.02" name="mean">3.0</parameter>
-                    <parameter estimate="false" id="RealParameter.03" name="sigma">1.0</parameter>
-                </Normal>
-            </distribution>
-            <distribution id="location_B" monophyletic="false" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
-                <taxonset id="location_B1" spec="TaxonSet">
                     <taxon idref="B0_1"/>
                     <taxon idref="B1_1"/>
                     <taxon idref="B2_1"/>
                     <taxon idref="B3_1"/>
+
+
+
                     <taxon idref="B4_1"/>
                     <taxon idref="B5_1"/>
                     <taxon idref="B6_1"/>
                     <taxon idref="B7_1"/>
                     <taxon idref="B8_1"/>
                     <taxon idref="B9_1"/>
+
+
+
                 </taxonset>
                 <Normal id="Normal.01" name="distr">
-                    <parameter estimate="false" id="RealParameter.04" name="mean">4.0</parameter>
-                    <parameter estimate="false" id="RealParameter.05" name="sigma">1.0</parameter>
+                    <parameter estimate="false" id="RealParameter.04" name="mean">2</parameter>
+                    <parameter estimate="false" id="RealParameter.05" name="sigma">0.1</parameter>
                 </Normal>
             </distribution>
-            <distribution id="location_C" monophyletic="false" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+            <distribution id="location_C" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
                 <taxonset id="location_C1" spec="TaxonSet">
                     <taxon idref="C0_2"/>
                     <taxon idref="C1_2"/>
@@ -262,53 +262,42 @@ name="alignment"/>
                     <taxon idref="C3_2"/>
                     <taxon idref="C4_2"/>
                     <taxon idref="C5_2"/>
+
                     <taxon idref="C6_2"/>
                     <taxon idref="C7_2"/>
                     <taxon idref="C8_2"/>
                     <taxon idref="C9_2"/>
-                </taxonset>
-                <Normal id="Normal.02" name="distr">
-                    <parameter estimate="false" id="RealParameter.06" name="mean">5.0</parameter>
-                    <parameter estimate="false" id="RealParameter.07" name="sigma">1.0</parameter>
-                </Normal>
-            </distribution>
-            <distribution id="location_D" monophyletic="false" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
-                <taxonset id="location_D1" spec="TaxonSet">
                     <taxon idref="D0_3"/>
                     <taxon idref="D1_3"/>
                     <taxon idref="D2_3"/>
                     <taxon idref="D3_3"/>
                     <taxon idref="D4_3"/>
-                    <taxon idref="D5_3"/>
-                    <taxon idref="D6_3"/>
-                    <taxon idref="D7_3"/>
-                    <taxon idref="D8_3"/>
-                    <taxon idref="D9_3"/>
-                </taxonset>
-                <Normal id="Normal.03" name="distr">
-                    <parameter estimate="false" id="RealParameter.08" name="mean">6.0</parameter>
-                    <parameter estimate="false" id="RealParameter.09" name="sigma">1.0</parameter>
-                </Normal>
-            </distribution>
-            <distribution id="location_E" monophyletic="false" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
-                <taxonset id="location_E1" spec="TaxonSet">
-                    <taxon idref="E0_4"/>
-                    <taxon idref="E1_4"/>
-                    <taxon idref="E2_4"/>
+
                     <taxon idref="E3_4"/>
                     <taxon idref="E4_4"/>
                     <taxon idref="E5_4"/>
                     <taxon idref="E6_4"/>
                     <taxon idref="E7_4"/>
                     <taxon idref="E8_4"/>
+
+
+
+                    <taxon idref="D5_3"/>
+                    <taxon idref="D6_3"/>
+                    <taxon idref="D7_3"/>
+                    <taxon idref="D8_3"/>
+                    <taxon idref="D9_3"/>
+                    <taxon idref="E0_4"/>
+                    <taxon idref="E1_4"/>
+                    <taxon idref="E2_4"/>
                     <taxon idref="E9_4"/>
                 </taxonset>
                 <Normal id="Normal.04" name="distr">
-                    <parameter estimate="false" id="RealParameter.010" name="mean">7.0</parameter>
-                    <parameter estimate="false" id="RealParameter.011" name="sigma">1.0</parameter>
+                    <parameter estimate="false" id="RealParameter.010" name="mean">4</parameter>
+                    <parameter estimate="false" id="RealParameter.011" name="sigma">0.1</parameter>
                 </Normal>
             </distribution>
--->
+
         </distribution>
         <distribution id="likelihood" spec="util.CompoundDistribution">
             <distribution data="@geo_structure" id="treeLikelihood.geo_structure" spec="TreeLikelihood" tree="@Tree.t:geo_structure">

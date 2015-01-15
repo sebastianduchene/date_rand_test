@@ -5,7 +5,11 @@ library(phangorn)
 
 sim_trees <- read.nexus('geo_structure.trees')
 
-sample_trees <- sim_trees[sample(1:length(sim_trees), 10)]
+print(sapply(1:10, function(x) max(allnode.times(sim_trees[[x]]))))
+
+sample_trees <- sim_trees[701:710]
+
+print(sapply(1:length(sample_trees), function(x) max(allnode.times(sample_trees[[x]]))))
 
 mean_rate = 1e-4
 sd_rate = 0.05

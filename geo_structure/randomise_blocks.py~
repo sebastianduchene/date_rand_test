@@ -1,5 +1,7 @@
 import re, os, copy, random, sys
 
+# To use open terminal and type. python path/to/this/script path/to/the/folder/with/true/dat number_of_randomisations
+
 #raw_lines = open('true_dat.xml', 'r').readlines()
 raw_lines = open(sys.argv[1], 'r').readlines()
 n_rand = int(sys.argv[2])
