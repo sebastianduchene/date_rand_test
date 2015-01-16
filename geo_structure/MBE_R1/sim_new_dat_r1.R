@@ -19,9 +19,9 @@ for(i in 1:length(taxon_names_loc)){
 taxa_replace <- data.frame(taxon_names, new_taxon_names = NA, sampling_time = NA, old_dates = NA, new_dates = NA)
 
 # This is the sampling time
-taxa_replace$sampling_time <- round(runif(nrow(taxa_replace), 0, 10), 2)
+taxa_replace$sampling_time <- round(runif(nrow(taxa_replace), 0, 1), 2)
 
-taxa_replace$sampling_time[c(1, nrow(taxa_replace))] <- c(0, 10)
+taxa_replace$sampling_time[c(1, nrow(taxa_replace))] <- c(0, 1)
 
 for(i in 1:nrow(taxa_replace)){
   taxa_replace$new_taxon_names[i] <- gsub('_.+', paste0('_', taxa_replace$sampling_time[i]), taxa_replace$taxon_names[i])

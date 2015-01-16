@@ -5,55 +5,55 @@
 id="geo_structure"
 name="alignment">
                         <sequence id="seq_A0_0" taxon="A0_0" totalcount="4" value="NN"/>
-                        <sequence id="seq_A1_6.31" taxon="A1_6.31" totalcount="4" value="NN"/>
-                        <sequence id="seq_A2_3.21" taxon="A2_3.21" totalcount="4" value="NN"/>
-                        <sequence id="seq_A3_6.41" taxon="A3_6.41" totalcount="4" value="NN"/>
-                        <sequence id="seq_A4_2.14" taxon="A4_2.14" totalcount="4" value="NN"/>
-                        <sequence id="seq_A5_0.65" taxon="A5_0.65" totalcount="4" value="NN"/>
-                        <sequence id="seq_A6_8.51" taxon="A6_8.51" totalcount="4" value="NN"/>
-                        <sequence id="seq_A7_5.98" taxon="A7_5.98" totalcount="4" value="NN"/>
-                        <sequence id="seq_A8_9.33" taxon="A8_9.33" totalcount="4" value="NN"/>
-                        <sequence id="seq_A9_2.31" taxon="A9_2.31" totalcount="4" value="NN"/>
-                        <sequence id="seq_B0_0.89" taxon="B0_0.89" totalcount="4" value="NN"/>
-                        <sequence id="seq_B1_9.11" taxon="B1_9.11" totalcount="4" value="NN"/>
-                        <sequence id="seq_B2_7.95" taxon="B2_7.95" totalcount="4" value="NN"/>
-                        <sequence id="seq_B3_5.84" taxon="B3_5.84" totalcount="4" value="NN"/>
-                        <sequence id="seq_B4_8.76" taxon="B4_8.76" totalcount="4" value="NN"/>
-                        <sequence id="seq_B5_9.15" taxon="B5_9.15" totalcount="4" value="NN"/>
-                        <sequence id="seq_B6_9.97" taxon="B6_9.97" totalcount="4" value="NN"/>
-                        <sequence id="seq_B7_7.32" taxon="B7_7.32" totalcount="4" value="NN"/>
-                        <sequence id="seq_B8_8.04" taxon="B8_8.04" totalcount="4" value="NN"/>
-                        <sequence id="seq_B9_1.37" taxon="B9_1.37" totalcount="4" value="NN"/>
-                        <sequence id="seq_C0_9.04" taxon="C0_9.04" totalcount="4" value="NN"/>
-                        <sequence id="seq_C1_9.36" taxon="C1_9.36" totalcount="4" value="NN"/>
-                        <sequence id="seq_C2_6.69" taxon="C2_6.69" totalcount="4" value="NN"/>
-                        <sequence id="seq_C3_4.86" taxon="C3_4.86" totalcount="4" value="NN"/>
-                        <sequence id="seq_C4_9.95" taxon="C4_9.95" totalcount="4" value="NN"/>
-                        <sequence id="seq_C5_9.99" taxon="C5_9.99" totalcount="4" value="NN"/>
-                        <sequence id="seq_C6_7.7" taxon="C6_7.7" totalcount="4" value="NN"/>
-                        <sequence id="seq_C7_0.97" taxon="C7_0.97" totalcount="4" value="NN"/>
-                        <sequence id="seq_C8_6.16" taxon="C8_6.16" totalcount="4" value="NN"/>
-                        <sequence id="seq_C9_1.08" taxon="C9_1.08" totalcount="4" value="NN"/>
-                        <sequence id="seq_D0_4.39" taxon="D0_4.39" totalcount="4" value="NN"/>
-                        <sequence id="seq_D1_9.77" taxon="D1_9.77" totalcount="4" value="NN"/>
-                        <sequence id="seq_D2_1.16" taxon="D2_1.16" totalcount="4" value="NN"/>
-                        <sequence id="seq_D3_5.2" taxon="D3_5.2" totalcount="4" value="NN"/>
-                        <sequence id="seq_D4_1.02" taxon="D4_1.02" totalcount="4" value="NN"/>
-                        <sequence id="seq_D5_9.08" taxon="D5_9.08" totalcount="4" value="NN"/>
-                        <sequence id="seq_D6_7.39" taxon="D6_7.39" totalcount="4" value="NN"/>
-                        <sequence id="seq_D7_1.42" taxon="D7_1.42" totalcount="4" value="NN"/>
-                        <sequence id="seq_D8_8.57" taxon="D8_8.57" totalcount="4" value="NN"/>
-                        <sequence id="seq_D9_3.73" taxon="D9_3.73" totalcount="4" value="NN"/>
-                        <sequence id="seq_E0_6.99" taxon="E0_6.99" totalcount="4" value="NN"/>
-                        <sequence id="seq_E1_4.35" taxon="E1_4.35" totalcount="4" value="NN"/>
-                        <sequence id="seq_E2_6.65" taxon="E2_6.65" totalcount="4" value="NN"/>
-                        <sequence id="seq_E3_0.38" taxon="E3_0.38" totalcount="4" value="NN"/>
-                        <sequence id="seq_E4_8.09" taxon="E4_8.09" totalcount="4" value="NN"/>
-                        <sequence id="seq_E5_9.08" taxon="E5_9.08" totalcount="4" value="NN"/>
-                        <sequence id="seq_E6_4.02" taxon="E6_4.02" totalcount="4" value="NN"/>
-                        <sequence id="seq_E7_6.28" taxon="E7_6.28" totalcount="4" value="NN"/>
-                        <sequence id="seq_E8_4.26" taxon="E8_4.26" totalcount="4" value="NN"/>
-                        <sequence id="seq_E9_10" taxon="E9_10" totalcount="4" value="NN"/>
+                        <sequence id="seq_A1_0.35" taxon="A1_0.35" totalcount="4" value="NN"/>
+                        <sequence id="seq_A2_0.7" taxon="A2_0.7" totalcount="4" value="NN"/>
+                        <sequence id="seq_A3_0.78" taxon="A3_0.78" totalcount="4" value="NN"/>
+                        <sequence id="seq_A4_0.25" taxon="A4_0.25" totalcount="4" value="NN"/>
+                        <sequence id="seq_A5_0.31" taxon="A5_0.31" totalcount="4" value="NN"/>
+                        <sequence id="seq_A6_0.85" taxon="A6_0.85" totalcount="4" value="NN"/>
+                        <sequence id="seq_A7_0.56" taxon="A7_0.56" totalcount="4" value="NN"/>
+                        <sequence id="seq_A8_0.04" taxon="A8_0.04" totalcount="4" value="NN"/>
+                        <sequence id="seq_A9_0.53" taxon="A9_0.53" totalcount="4" value="NN"/>
+                        <sequence id="seq_B0_0.06" taxon="B0_0.06" totalcount="4" value="NN"/>
+                        <sequence id="seq_B1_0.12" taxon="B1_0.12" totalcount="4" value="NN"/>
+                        <sequence id="seq_B2_0.6" taxon="B2_0.6" totalcount="4" value="NN"/>
+                        <sequence id="seq_B3_0.61" taxon="B3_0.61" totalcount="4" value="NN"/>
+                        <sequence id="seq_B4_0.74" taxon="B4_0.74" totalcount="4" value="NN"/>
+                        <sequence id="seq_B5_0.22" taxon="B5_0.22" totalcount="4" value="NN"/>
+                        <sequence id="seq_B6_0.68" taxon="B6_0.68" totalcount="4" value="NN"/>
+                        <sequence id="seq_B7_0.16" taxon="B7_0.16" totalcount="4" value="NN"/>
+                        <sequence id="seq_B8_0.41" taxon="B8_0.41" totalcount="4" value="NN"/>
+                        <sequence id="seq_B9_0.7" taxon="B9_0.7" totalcount="4" value="NN"/>
+                        <sequence id="seq_C0_0.13" taxon="C0_0.13" totalcount="4" value="NN"/>
+                        <sequence id="seq_C1_0.48" taxon="C1_0.48" totalcount="4" value="NN"/>
+                        <sequence id="seq_C2_0.7" taxon="C2_0.7" totalcount="4" value="NN"/>
+                        <sequence id="seq_C3_0.88" taxon="C3_0.88" totalcount="4" value="NN"/>
+                        <sequence id="seq_C4_0.2" taxon="C4_0.2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C5_0.53" taxon="C5_0.53" totalcount="4" value="NN"/>
+                        <sequence id="seq_C6_0.2" taxon="C6_0.2" totalcount="4" value="NN"/>
+                        <sequence id="seq_C7_0.46" taxon="C7_0.46" totalcount="4" value="NN"/>
+                        <sequence id="seq_C8_0.62" taxon="C8_0.62" totalcount="4" value="NN"/>
+                        <sequence id="seq_C9_0.78" taxon="C9_0.78" totalcount="4" value="NN"/>
+                        <sequence id="seq_D0_0.26" taxon="D0_0.26" totalcount="4" value="NN"/>
+                        <sequence id="seq_D1_0.42" taxon="D1_0.42" totalcount="4" value="NN"/>
+                        <sequence id="seq_D2_0.37" taxon="D2_0.37" totalcount="4" value="NN"/>
+                        <sequence id="seq_D3_0.22" taxon="D3_0.22" totalcount="4" value="NN"/>
+                        <sequence id="seq_D4_0.68" taxon="D4_0.68" totalcount="4" value="NN"/>
+                        <sequence id="seq_D5_0.99" taxon="D5_0.99" totalcount="4" value="NN"/>
+                        <sequence id="seq_D6_0.95" taxon="D6_0.95" totalcount="4" value="NN"/>
+                        <sequence id="seq_D7_0.28" taxon="D7_0.28" totalcount="4" value="NN"/>
+                        <sequence id="seq_D8_0.52" taxon="D8_0.52" totalcount="4" value="NN"/>
+                        <sequence id="seq_D9_0.98" taxon="D9_0.98" totalcount="4" value="NN"/>
+                        <sequence id="seq_E0_0.56" taxon="E0_0.56" totalcount="4" value="NN"/>
+                        <sequence id="seq_E1_0.52" taxon="E1_0.52" totalcount="4" value="NN"/>
+                        <sequence id="seq_E2_0.75" taxon="E2_0.75" totalcount="4" value="NN"/>
+                        <sequence id="seq_E3_0.05" taxon="E3_0.05" totalcount="4" value="NN"/>
+                        <sequence id="seq_E4_0.76" taxon="E4_0.76" totalcount="4" value="NN"/>
+                        <sequence id="seq_E5_0.11" taxon="E5_0.11" totalcount="4" value="NN"/>
+                        <sequence id="seq_E6_0.75" taxon="E6_0.75" totalcount="4" value="NN"/>
+                        <sequence id="seq_E7_0.28" taxon="E7_0.28" totalcount="4" value="NN"/>
+                        <sequence id="seq_E8_0.82" taxon="E8_0.82" totalcount="4" value="NN"/>
+                        <sequence id="seq_E9_1" taxon="E9_1" totalcount="4" value="NN"/>
                     </data>
 
 
@@ -76,60 +76,60 @@ name="alignment">
 <map name="Normal">beast.math.distributions.Normal</map>
 
 
-<run chainLength="10000000" id="mcmc" sampleFromPrior="true" spec="MCMC">
-    <state id="state" storeEvery="5000">
+<run chainLength="100000" id="mcmc" sampleFromPrior="true" spec="MCMC">
+    <state id="state" storeEvery="1000">
         <tree id="Tree.t:geo_structure" name="stateNode">
             <trait id="dateTrait.t:geo_structure" spec="beast.evolution.tree.TraitSet" traitname="date-backward">
 A0_0=0,
-A1_6.31=6.31,
-A2_3.21=3.21,
-A3_6.41=6.41,
-A4_2.14=2.14,
-A5_0.65=0.65,
-A6_8.51=8.51,
-A7_5.98=5.98,
-A8_9.33=9.33,
-A9_2.31=2.31,
-B0_0.89=0.89,
-B1_9.11=9.11,
-B2_7.95=7.95,
-B3_5.84=5.84,
-B4_8.76=8.76,
-B5_9.15=9.15,
-B6_9.97=9.97,
-B7_7.32=7.32,
-B8_8.04=8.04,
-B9_1.37=1.37,
-C0_9.04=9.04,
-C1_9.36=9.36,
-C2_6.69=6.69,
-C3_4.86=4.86,
-C4_9.95=9.95,
-C5_9.99=9.99,
-C6_7.7=7.7,
-C7_0.97=0.97,
-C8_6.16=6.16,
-C9_1.08=1.08,
-D0_4.39=4.39,
-D1_9.77=9.77,
-D2_1.16=1.16,
-D3_5.2=5.2,
-D4_1.02=1.02,
-D5_9.08=9.08,
-D6_7.39=7.39,
-D7_1.42=1.42,
-D8_8.57=8.57,
-D9_3.73=3.73,
-E0_6.99=6.99,
-E1_4.35=4.35,
-E2_6.65=6.65,
-E3_0.38=0.38,
-E4_8.09=8.09,
-E5_9.08=9.08,
-E6_4.02=4.02,
-E7_6.28=6.28,
-E8_4.26=4.26,
-E9_10=10
+A1_0.35=0.35,
+A2_0.7=0.7,
+A3_0.78=0.78,
+A4_0.25=0.25,
+A5_0.31=0.31,
+A6_0.85=0.85,
+A7_0.56=0.56,
+A8_0.04=0.04,
+A9_0.53=0.53,
+B0_0.06=0.06,
+B1_0.12=0.12,
+B2_0.6=0.6,
+B3_0.61=0.61,
+B4_0.74=0.74,
+B5_0.22=0.22,
+B6_0.68=0.68,
+B7_0.16=0.16,
+B8_0.41=0.41,
+B9_0.7=0.7,
+C0_0.13=0.13,
+C1_0.48=0.48,
+C2_0.7=0.7,
+C3_0.88=0.88,
+C4_0.2=0.2,
+C5_0.53=0.53,
+C6_0.2=0.2,
+C7_0.46=0.46,
+C8_0.62=0.62,
+C9_0.78=0.78,
+D0_0.26=0.26,
+D1_0.42=0.42,
+D2_0.37=0.37,
+D3_0.22=0.22,
+D4_0.68=0.68,
+D5_0.99=0.99,
+D6_0.95=0.95,
+D7_0.28=0.28,
+D8_0.52=0.52,
+D9_0.98=0.98,
+E0_0.56=0.56,
+E1_0.52=0.52,
+E2_0.75=0.75,
+E3_0.05=0.05,
+E4_0.76=0.76,
+E5_0.11=0.11,
+E6_0.75=0.75,
+E7_0.28=0.28,
+E8_0.82=0.82,
+E9_1=1
 <taxa id="TaxonSet.geo_structure" spec="TaxonSet">
                     <data
 idref="geo_structure"
@@ -163,61 +163,142 @@ name="alignment"/>
             <distribution id="all_taxa.prior" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
                 <taxonset id="all_taxa" spec="TaxonSet">
                     <taxon id="A0_0" spec="Taxon"/>
-                    <taxon id="A1_6.31" spec="Taxon"/>
-                    <taxon id="A2_3.21" spec="Taxon"/>
-                    <taxon id="A3_6.41" spec="Taxon"/>
-                    <taxon id="A4_2.14" spec="Taxon"/>
-                    <taxon id="A5_0.65" spec="Taxon"/>
-                    <taxon id="A6_8.51" spec="Taxon"/>
-                    <taxon id="A7_5.98" spec="Taxon"/>
-                    <taxon id="A8_9.33" spec="Taxon"/>
-                    <taxon id="A9_2.31" spec="Taxon"/>
-                    <taxon id="B0_0.89" spec="Taxon"/>
-                    <taxon id="B1_9.11" spec="Taxon"/>
-                    <taxon id="B2_7.95" spec="Taxon"/>
-                    <taxon id="B3_5.84" spec="Taxon"/>
-                    <taxon id="B4_8.76" spec="Taxon"/>
-                    <taxon id="B5_9.15" spec="Taxon"/>
-                    <taxon id="B6_9.97" spec="Taxon"/>
-                    <taxon id="B7_7.32" spec="Taxon"/>
-                    <taxon id="B8_8.04" spec="Taxon"/>
-                    <taxon id="B9_1.37" spec="Taxon"/>
-                    <taxon id="C0_9.04" spec="Taxon"/>
-                    <taxon id="C1_9.36" spec="Taxon"/>
-                    <taxon id="C2_6.69" spec="Taxon"/>
-                    <taxon id="C3_4.86" spec="Taxon"/>
-                    <taxon id="C4_9.95" spec="Taxon"/>
-                    <taxon id="C5_9.99" spec="Taxon"/>
-                    <taxon id="C6_7.7" spec="Taxon"/>
-                    <taxon id="C7_0.97" spec="Taxon"/>
-                    <taxon id="C8_6.16" spec="Taxon"/>
-                    <taxon id="C9_1.08" spec="Taxon"/>
-                    <taxon id="D0_4.39" spec="Taxon"/>
-                    <taxon id="D1_9.77" spec="Taxon"/>
-                    <taxon id="D2_1.16" spec="Taxon"/>
-                    <taxon id="D3_5.2" spec="Taxon"/>
-                    <taxon id="D4_1.02" spec="Taxon"/>
-                    <taxon id="D5_9.08" spec="Taxon"/>
-                    <taxon id="D6_7.39" spec="Taxon"/>
-                    <taxon id="D7_1.42" spec="Taxon"/>
-                    <taxon id="D8_8.57" spec="Taxon"/>
-                    <taxon id="D9_3.73" spec="Taxon"/>
-                    <taxon id="E0_6.99" spec="Taxon"/>
-                    <taxon id="E1_4.35" spec="Taxon"/>
-                    <taxon id="E2_6.65" spec="Taxon"/>
-                    <taxon id="E3_0.38" spec="Taxon"/>
-                    <taxon id="E4_8.09" spec="Taxon"/>
-                    <taxon id="E5_9.08" spec="Taxon"/>
-                    <taxon id="E6_4.02" spec="Taxon"/>
-                    <taxon id="E7_6.28" spec="Taxon"/>
-                    <taxon id="E8_4.26" spec="Taxon"/>
-                    <taxon id="E9_10" spec="Taxon"/>
+                    <taxon id="A1_0.35" spec="Taxon"/>
+                    <taxon id="A2_0.7" spec="Taxon"/>
+                    <taxon id="A3_0.78" spec="Taxon"/>
+                    <taxon id="A4_0.25" spec="Taxon"/>
+                    <taxon id="A5_0.31" spec="Taxon"/>
+                    <taxon id="A6_0.85" spec="Taxon"/>
+                    <taxon id="A7_0.56" spec="Taxon"/>
+                    <taxon id="A8_0.04" spec="Taxon"/>
+                    <taxon id="A9_0.53" spec="Taxon"/>
+                    <taxon id="B0_0.06" spec="Taxon"/>
+                    <taxon id="B1_0.12" spec="Taxon"/>
+                    <taxon id="B2_0.6" spec="Taxon"/>
+                    <taxon id="B3_0.61" spec="Taxon"/>
+                    <taxon id="B4_0.74" spec="Taxon"/>
+                    <taxon id="B5_0.22" spec="Taxon"/>
+                    <taxon id="B6_0.68" spec="Taxon"/>
+                    <taxon id="B7_0.16" spec="Taxon"/>
+                    <taxon id="B8_0.41" spec="Taxon"/>
+                    <taxon id="B9_0.7" spec="Taxon"/>
+                    <taxon id="C0_0.13" spec="Taxon"/>
+                    <taxon id="C1_0.48" spec="Taxon"/>
+                    <taxon id="C2_0.7" spec="Taxon"/>
+                    <taxon id="C3_0.88" spec="Taxon"/>
+                    <taxon id="C4_0.2" spec="Taxon"/>
+                    <taxon id="C5_0.53" spec="Taxon"/>
+                    <taxon id="C6_0.2" spec="Taxon"/>
+                    <taxon id="C7_0.46" spec="Taxon"/>
+                    <taxon id="C8_0.62" spec="Taxon"/>
+                    <taxon id="C9_0.78" spec="Taxon"/>
+                    <taxon id="D0_0.26" spec="Taxon"/>
+                    <taxon id="D1_0.42" spec="Taxon"/>
+                    <taxon id="D2_0.37" spec="Taxon"/>
+                    <taxon id="D3_0.22" spec="Taxon"/>
+                    <taxon id="D4_0.68" spec="Taxon"/>
+                    <taxon id="D5_0.99" spec="Taxon"/>
+                    <taxon id="D6_0.95" spec="Taxon"/>
+                    <taxon id="D7_0.28" spec="Taxon"/>
+                    <taxon id="D8_0.52" spec="Taxon"/>
+                    <taxon id="D9_0.98" spec="Taxon"/>
+                    <taxon id="E0_0.56" spec="Taxon"/>
+                    <taxon id="E1_0.52" spec="Taxon"/>
+                    <taxon id="E2_0.75" spec="Taxon"/>
+                    <taxon id="E3_0.05" spec="Taxon"/>
+                    <taxon id="E4_0.76" spec="Taxon"/>
+                    <taxon id="E5_0.11" spec="Taxon"/>
+                    <taxon id="E6_0.75" spec="Taxon"/>
+                    <taxon id="E7_0.28" spec="Taxon"/>
+                    <taxon id="E8_0.82" spec="Taxon"/>
+                    <taxon id="E9_1" spec="Taxon"/>
                 </taxonset>
-                <LogNormal id="LogNormalDistributionModel.0" meanInRealSpace="true" name="distr" offset="95.0">
-                    <parameter estimate="false" id="RealParameter.0" name="M">100.0</parameter>
-                    <parameter estimate="false" id="RealParameter.01" lower="0.0" name="S" upper="5.0">0.5</parameter>
-                </LogNormal>
+
+                <Normal id="Normal.06" name="distr">
+                    <parameter estimate="false" id="RealParameter.78" name="mean">100.0</parameter>
+                    <parameter estimate="false" id="RealParameter.77" name="sigma">0.1</parameter>
+                </Normal>
             </distribution>
+
+
+            <distribution id="location_B.prior" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="location_B" spec="TaxonSet">
+
+                    <taxon idref="A0_0" spec="Taxon"/>
+                    <taxon idref="A1_0.35" spec="Taxon"/>
+                    <taxon idref="A2_0.7" spec="Taxon"/>
+                    <taxon idref="A3_0.78" spec="Taxon"/>
+                    <taxon idref="A4_0.25" spec="Taxon"/>
+                    <taxon idref="A5_0.31" spec="Taxon"/>
+                    <taxon idref="A6_0.85" spec="Taxon"/>
+                    <taxon idref="A7_0.56" spec="Taxon"/>
+                    <taxon idref="A8_0.04" spec="Taxon"/>
+                    <taxon idref="A9_0.53" spec="Taxon"/>
+                    <taxon idref="B0_0.06" spec="Taxon"/>
+                    <taxon idref="B1_0.12" spec="Taxon"/>
+                    <taxon idref="B2_0.6" spec="Taxon"/>
+                    <taxon idref="B3_0.61" spec="Taxon"/>
+                    <taxon idref="B4_0.74" spec="Taxon"/>
+                    <taxon idref="B5_0.22" spec="Taxon"/>
+                    <taxon idref="B6_0.68" spec="Taxon"/>
+                    <taxon idref="B7_0.16" spec="Taxon"/>
+                    <taxon idref="B8_0.41" spec="Taxon"/>
+                    <taxon idref="B9_0.7" spec="Taxon"/>
+                    <taxon idref="C0_0.13" spec="Taxon"/>
+                    <taxon idref="C1_0.48" spec="Taxon"/>
+                    <taxon idref="C2_0.7" spec="Taxon"/>
+                    <taxon idref="C3_0.88" spec="Taxon"/>
+                    <taxon idref="C4_0.2" spec="Taxon"/>
+                </taxonset>
+                <Normal id="Normal.86" name="distr">
+                    <parameter estimate="false" id="RealParameter.67" name="mean">0.5</parameter>
+                    <parameter estimate="false" id="RealParameter.68" name="sigma">0.01</parameter>
+                </Normal>
+            </distribution>
+
+
+
+            <distribution id="location_A.prior" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="location_A" spec="TaxonSet">
+
+                    <taxon idref="C5_0.53" spec="Taxon"/>
+                    <taxon idref="C6_0.2" spec="Taxon"/>
+                    <taxon idref="C7_0.46" spec="Taxon"/>
+                    <taxon idref="C8_0.62" spec="Taxon"/>
+                    <taxon idref="C9_0.78" spec="Taxon"/>
+                    <taxon idref="D0_0.26" spec="Taxon"/>
+                    <taxon idref="D1_0.42" spec="Taxon"/>
+                    <taxon idref="D2_0.37" spec="Taxon"/>
+                    <taxon idref="D3_0.22" spec="Taxon"/>
+                    <taxon idref="D4_0.68" spec="Taxon"/>
+                    <taxon idref="D5_0.99" spec="Taxon"/>
+                    <taxon idref="D6_0.95" spec="Taxon"/>
+                    <taxon idref="D7_0.28" spec="Taxon"/>
+                    <taxon idref="D8_0.52" spec="Taxon"/>
+                    <taxon idref="D9_0.98" spec="Taxon"/>
+                    <taxon idref="E0_0.56" spec="Taxon"/>
+                    <taxon idref="E1_0.52" spec="Taxon"/>
+                    <taxon idref="E2_0.75" spec="Taxon"/>
+                    <taxon idref="E3_0.05" spec="Taxon"/>
+                    <taxon idref="E4_0.76" spec="Taxon"/>
+                    <taxon idref="E5_0.11" spec="Taxon"/>
+                    <taxon idref="E6_0.75" spec="Taxon"/>
+                    <taxon idref="E7_0.28" spec="Taxon"/>
+                    <taxon idref="E8_0.82" spec="Taxon"/>
+                    <taxon idref="E9_1" spec="Taxon"/>
+
+                </taxonset>
+                <Normal id="Normal.66" name="distr">
+                    <parameter estimate="false" id="RealParameter.69" name="mean">1</parameter>
+                    <parameter estimate="false" id="RealParameter.70" name="sigma">0.01</parameter>
+                </Normal>
+            </distribution>
+
+
+
+
+
+
 
         </distribution>
         <distribution id="likelihood" spec="util.CompoundDistribution">

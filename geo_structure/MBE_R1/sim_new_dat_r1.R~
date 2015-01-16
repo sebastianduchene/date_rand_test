@@ -18,9 +18,10 @@ for(i in 1:length(taxon_names_loc)){
 
 taxa_replace <- data.frame(taxon_names, new_taxon_names = NA, sampling_time = NA, old_dates = NA, new_dates = NA)
 
-taxa_replace$sampling_time <- round(runif(nrow(taxa_replace), 0, 10), 2)
+# This is the sampling time
+taxa_replace$sampling_time <- round(runif(nrow(taxa_replace), 0, 0.5), 2)
 
-taxa_replace$sampling_time[c(1, nrow(taxa_replace))] <- c(0, 10)
+taxa_replace$sampling_time[c(1, nrow(taxa_replace))] <- c(0, 0.5)
 
 for(i in 1:nrow(taxa_replace)){
   taxa_replace$new_taxon_names[i] <- gsub('_.+', paste0('_', taxa_replace$sampling_time[i]), taxa_replace$taxon_names[i])
@@ -31,12 +32,13 @@ for(i in 1:nrow(taxa_replace)){
       taxa_replace$new_dates[i] <- paste0(taxa_replace$new_taxon_names[i], '=', taxa_replace$sampling_time[i])
 }
 
+# substitute each at a time the , should not be added to the last instance
 taxa_replace$new_dates[1:(nrow(taxa_replace) - 1)] <- paste0(taxa_replace$new_dates[1:(nrow(taxa_replace) - 1)], ',')
 
-# substitute each at a time the , should not be added to the last instance
+# Note that we use the \" as a tag to replace the taxon names only
 for(i in 1:nrow(taxa_replace)){
       raw_lines <- gsub(taxa_replace$old_dates[i], taxa_replace$new_dates[i], raw_lines)
-      raw_lines <- gsub(taxa_replace$taxon_names[i], taxa_replace$new_taxon_names[i], raw_lines)      
+      raw_lines <- gsub(paste0(taxa_replace$taxon_names[i], '\"'), paste0(taxa_replace$new_taxon_names[i], '\"' ), raw_lines)      
 
 }
 

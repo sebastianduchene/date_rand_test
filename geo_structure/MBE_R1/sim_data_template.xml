@@ -76,8 +76,8 @@ name="alignment">
 <map name="Normal">beast.math.distributions.Normal</map>
 
 
-<run chainLength="10000000" id="mcmc" sampleFromPrior="true" spec="MCMC">
-    <state id="state" storeEvery="5000">
+<run chainLength="100000" id="mcmc" sampleFromPrior="true" spec="MCMC">
+    <state id="state" storeEvery="1000">
         <tree id="Tree.t:geo_structure" name="stateNode">
             <trait id="dateTrait.t:geo_structure" spec="beast.evolution.tree.TraitSet" traitname="date-backward">
                 A0_0=0.0,
@@ -213,11 +213,92 @@ name="alignment"/>
                     <taxon id="E8_4" spec="Taxon"/>
                     <taxon id="E9_4" spec="Taxon"/>
                 </taxonset>
-                <LogNormal id="LogNormalDistributionModel.0" meanInRealSpace="true" name="distr" offset="95.0">
-                    <parameter estimate="false" id="RealParameter.0" name="M">100.0</parameter>
-                    <parameter estimate="false" id="RealParameter.01" lower="0.0" name="S" upper="5.0">0.5</parameter>
-                </LogNormal>
+
+                <Normal id="Normal.06" name="distr">
+                    <parameter estimate="false" id="RealParameter.78" name="mean">100.0</parameter>
+                    <parameter estimate="false" id="RealParameter.77" name="sigma">0.1</parameter>
+                </Normal>
             </distribution>
+
+
+            <distribution id="location_B.prior" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="location_B" spec="TaxonSet">
+
+                    <taxon idref="A0_0" spec="Taxon"/>
+                    <taxon idref="A1_0" spec="Taxon"/>
+                    <taxon idref="A2_0" spec="Taxon"/>
+                    <taxon idref="A3_0" spec="Taxon"/>
+                    <taxon idref="A4_0" spec="Taxon"/>
+                    <taxon idref="A5_0" spec="Taxon"/>
+                    <taxon idref="A6_0" spec="Taxon"/>
+                    <taxon idref="A7_0" spec="Taxon"/>
+                    <taxon idref="A8_0" spec="Taxon"/>
+                    <taxon idref="A9_0" spec="Taxon"/>
+                    <taxon idref="B0_1" spec="Taxon"/>
+                    <taxon idref="B1_1" spec="Taxon"/>
+                    <taxon idref="B2_1" spec="Taxon"/>
+                    <taxon idref="B3_1" spec="Taxon"/>
+                    <taxon idref="B4_1" spec="Taxon"/>
+                    <taxon idref="B5_1" spec="Taxon"/>
+                    <taxon idref="B6_1" spec="Taxon"/>
+                    <taxon idref="B7_1" spec="Taxon"/>
+                    <taxon idref="B8_1" spec="Taxon"/>
+                    <taxon idref="B9_1" spec="Taxon"/>
+                    <taxon idref="C0_2" spec="Taxon"/>
+                    <taxon idref="C1_2" spec="Taxon"/>
+                    <taxon idref="C2_2" spec="Taxon"/>
+                    <taxon idref="C3_2" spec="Taxon"/>
+                    <taxon idref="C4_2" spec="Taxon"/>
+                </taxonset>
+                <Normal id="Normal.86" name="distr">
+                    <parameter estimate="false" id="RealParameter.67" name="mean">0.5</parameter>
+                    <parameter estimate="false" id="RealParameter.68" name="sigma">0.01</parameter>
+                </Normal>
+            </distribution>
+
+
+
+            <distribution id="location_A.prior" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:geo_structure">
+                <taxonset id="location_A" spec="TaxonSet">
+
+                    <taxon idref="C5_2" spec="Taxon"/>
+                    <taxon idref="C6_2" spec="Taxon"/>
+                    <taxon idref="C7_2" spec="Taxon"/>
+                    <taxon idref="C8_2" spec="Taxon"/>
+                    <taxon idref="C9_2" spec="Taxon"/>
+                    <taxon idref="D0_3" spec="Taxon"/>
+                    <taxon idref="D1_3" spec="Taxon"/>
+                    <taxon idref="D2_3" spec="Taxon"/>
+                    <taxon idref="D3_3" spec="Taxon"/>
+                    <taxon idref="D4_3" spec="Taxon"/>
+                    <taxon idref="D5_3" spec="Taxon"/>
+                    <taxon idref="D6_3" spec="Taxon"/>
+                    <taxon idref="D7_3" spec="Taxon"/>
+                    <taxon idref="D8_3" spec="Taxon"/>
+                    <taxon idref="D9_3" spec="Taxon"/>
+                    <taxon idref="E0_4" spec="Taxon"/>
+                    <taxon idref="E1_4" spec="Taxon"/>
+                    <taxon idref="E2_4" spec="Taxon"/>
+                    <taxon idref="E3_4" spec="Taxon"/>
+                    <taxon idref="E4_4" spec="Taxon"/>
+                    <taxon idref="E5_4" spec="Taxon"/>
+                    <taxon idref="E6_4" spec="Taxon"/>
+                    <taxon idref="E7_4" spec="Taxon"/>
+                    <taxon idref="E8_4" spec="Taxon"/>
+                    <taxon idref="E9_4" spec="Taxon"/>
+
+                </taxonset>
+                <Normal id="Normal.66" name="distr">
+                    <parameter estimate="false" id="RealParameter.69" name="mean">1</parameter>
+                    <parameter estimate="false" id="RealParameter.70" name="sigma">0.01</parameter>
+                </Normal>
+            </distribution>
+
+
+
+
+
+
 
         </distribution>
         <distribution id="likelihood" spec="util.CompoundDistribution">
