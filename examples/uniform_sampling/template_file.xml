@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" version="2.0">
+
+
+    <data
+id="unif_sampling"
+name="alignment">
+                        <sequence id="seq_A0_DATE_INPUT" taxon="A0_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_A1_DATE_INPUT" taxon="A1_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_A2_DATE_INPUT" taxon="A2_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_A3_DATE_INPUT" taxon="A3_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_A4_DATE_INPUT" taxon="A4_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_A5_DATE_INPUT" taxon="A5_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_A6_DATE_INPUT" taxon="A6_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_A7_DATE_INPUT" taxon="A7_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_A8_DATE_INPUT" taxon="A8_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_A9_DATE_INPUT" taxon="A9_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B0_DATE_INPUT" taxon="B0_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B1_DATE_INPUT" taxon="B1_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B2_DATE_INPUT" taxon="B2_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B3_DATE_INPUT" taxon="B3_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B4_DATE_INPUT" taxon="B4_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B5_DATE_INPUT" taxon="B5_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B6_DATE_INPUT" taxon="B6_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B7_DATE_INPUT" taxon="B7_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B8_DATE_INPUT" taxon="B8_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_B9_DATE_INPUT" taxon="B9_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C0_DATE_INPUT" taxon="C0_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C1_DATE_INPUT" taxon="C1_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C2_DATE_INPUT" taxon="C2_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C3_DATE_INPUT" taxon="C3_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C4_DATE_INPUT" taxon="C4_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C5_DATE_INPUT" taxon="C5_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C6_DATE_INPUT" taxon="C6_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C7_DATE_INPUT" taxon="C7_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C8_DATE_INPUT" taxon="C8_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_C9_DATE_INPUT" taxon="C9_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D0_DATE_INPUT" taxon="D0_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D1_DATE_INPUT" taxon="D1_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D2_DATE_INPUT" taxon="D2_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D3_DATE_INPUT" taxon="D3_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D4_DATE_INPUT" taxon="D4_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D5_DATE_INPUT" taxon="D5_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D6_DATE_INPUT" taxon="D6_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D7_DATE_INPUT" taxon="D7_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D8_DATE_INPUT" taxon="D8_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_D9_DATE_INPUT" taxon="D9_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E0_DATE_INPUT" taxon="E0_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E1_DATE_INPUT" taxon="E1_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E2_DATE_INPUT" taxon="E2_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E3_DATE_INPUT" taxon="E3_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E4_DATE_INPUT" taxon="E4_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E5_DATE_INPUT" taxon="E5_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E6_DATE_INPUT" taxon="E6_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E7_DATE_INPUT" taxon="E7_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E8_DATE_INPUT" taxon="E8_DATE_INPUT" totalcount="4" value="NN"/>
+                        <sequence id="seq_E9_DATE_INPUT" taxon="E9_DATE_INPUT" totalcount="4" value="NN"/>
+                    </data>
+
+
+    
+
+
+    
+
+
+    
+<map name="Beta">beast.math.distributions.Beta</map>
+<map name="Exponential">beast.math.distributions.Exponential</map>
+<map name="InverseGamma">beast.math.distributions.InverseGamma</map>
+<map name="LogNormal">beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Gamma">beast.math.distributions.Gamma</map>
+<map name="Uniform">beast.math.distributions.Uniform</map>
+<map name="prior">beast.math.distributions.Prior</map>
+<map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map>
+<map name="OneOnX">beast.math.distributions.OneOnX</map>
+<map name="Normal">beast.math.distributions.Normal</map>
+
+
+<run chainLength="100000" id="mcmc" sampleFromPrior="true" spec="MCMC">
+    <state id="state" storeEvery="5000">
+        <tree id="Tree.t:unif_sampling" name="stateNode">
+            <trait id="dateTrait.t:unif_sampling" spec="beast.evolution.tree.TraitSet" traitname="date-backward">
+                A0_DATE_INPUT=DATE_INPUT,
+A1_DATE_INPUT=DATE_INPUT,
+A2_DATE_INPUT=DATE_INPUT,
+A3_DATE_INPUT=DATE_INPUT,
+A4_DATE_INPUT=DATE_INPUT,
+A5_DATE_INPUT=DATE_INPUT,
+A6_DATE_INPUT=DATE_INPUT,
+A7_DATE_INPUT=DATE_INPUT,
+A8_DATE_INPUT=DATE_INPUT,
+A9_DATE_INPUT=DATE_INPUT,
+B0_DATE_INPUT=DATE_INPUT,
+B1_DATE_INPUT=DATE_INPUT,
+B2_DATE_INPUT=DATE_INPUT,
+B3_DATE_INPUT=DATE_INPUT,
+B4_DATE_INPUT=DATE_INPUT,
+B5_DATE_INPUT=DATE_INPUT,
+B6_DATE_INPUT=DATE_INPUT,
+B7_DATE_INPUT=DATE_INPUT,
+B8_DATE_INPUT=DATE_INPUT,
+B9_DATE_INPUT=DATE_INPUT,
+C0_DATE_INPUT=DATE_INPUT,
+C1_DATE_INPUT=DATE_INPUT,
+C2_DATE_INPUT=DATE_INPUT,
+C3_DATE_INPUT=DATE_INPUT,
+C4_DATE_INPUT=DATE_INPUT,
+C5_DATE_INPUT=DATE_INPUT,
+C6_DATE_INPUT=DATE_INPUT,
+C7_DATE_INPUT=DATE_INPUT,
+C8_DATE_INPUT=DATE_INPUT,
+C9_DATE_INPUT=DATE_INPUT,
+D0_DATE_INPUT=DATE_INPUT,
+D1_DATE_INPUT=DATE_INPUT,
+D2_DATE_INPUT=DATE_INPUT,
+D3_DATE_INPUT=DATE_INPUT,
+D4_DATE_INPUT=DATE_INPUT,
+D5_DATE_INPUT=DATE_INPUT,
+D6_DATE_INPUT=DATE_INPUT,
+D7_DATE_INPUT=DATE_INPUT,
+D8_DATE_INPUT=DATE_INPUT,
+D9_DATE_INPUT=DATE_INPUT,
+E0_DATE_INPUT=DATE_INPUT,
+E1_DATE_INPUT=DATE_INPUT,
+E2_DATE_INPUT=DATE_INPUT,
+E3_DATE_INPUT=DATE_INPUT,
+E4_DATE_INPUT=DATE_INPUT,
+E5_DATE_INPUT=DATE_INPUT,
+E6_DATE_INPUT=DATE_INPUT,
+E7_DATE_INPUT=DATE_INPUT,
+E8_DATE_INPUT=DATE_INPUT,
+E9_DATE_INPUT=DATE_INPUT                <taxa id="TaxonSet.unif_sampling" spec="TaxonSet">
+                    <data
+idref="unif_sampling"
+name="alignment"/>
+                </taxa>
+            </trait>
+            <taxonset idref="TaxonSet.unif_sampling"/>
+        </tree>
+        <parameter id="clockRate.c:unif_sampling" name="stateNode">1.0</parameter>
+        <parameter id="popSize.t:unif_sampling" name="stateNode">0.3</parameter>
+    </state>
+
+    <init estimate="false" id="RandomTree.t:unif_sampling" initial="@Tree.t:unif_sampling" spec="beast.evolution.tree.RandomTree" taxa="@unif_sampling">
+        <populationModel id="ConstantPopulation0.t:unif_sampling" spec="ConstantPopulation">
+            <parameter id="randomPopSize.t:unif_sampling" name="popSize">1.0</parameter>
+        </populationModel>
+    </init>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="CoalescentConstant.t:unif_sampling" spec="Coalescent">
+                <populationModel id="ConstantPopulation.t:unif_sampling" popSize="@popSize.t:unif_sampling" spec="ConstantPopulation"/>
+                <treeIntervals id="TreeIntervals.t:unif_sampling" spec="TreeIntervals" tree="@Tree.t:unif_sampling"/>
+            </distribution>
+            <prior id="ClockPrior.c:unif_sampling" name="distribution" x="@clockRate.c:unif_sampling">
+                <Uniform id="Uniform.0" name="distr" upper="Infinity"/>
+            </prior>
+            <prior id="PopSizePrior.t:unif_sampling" name="distribution" x="@popSize.t:unif_sampling">
+                <OneOnX id="OneOnX.0" name="distr"/>
+            </prior>
+            <distribution id="all_taxa.prior" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:unif_sampling">
+                <taxonset id="all_taxa" spec="TaxonSet">
+                    <taxon id="A0_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="A1_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="A2_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="A3_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="A4_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="A5_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="A6_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="A7_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="A8_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="A9_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B0_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B1_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B2_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B3_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B4_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B5_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B6_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B7_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B8_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="B9_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C0_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C1_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C2_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C3_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C4_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C5_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C6_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C7_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C8_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="C9_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D0_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D1_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D2_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D3_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D4_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D5_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D6_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D7_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D8_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="D9_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E0_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E1_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E2_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E3_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E4_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E5_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E6_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E7_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E8_DATE_INPUT" spec="Taxon"/>
+                    <taxon id="E9_DATE_INPUT" spec="Taxon"/>
+                </taxonset>
+                <Normal id="Normal.06" name="distr">
+                    <parameter estimate="false" id="RealParameter.66" name="mean">100.0</parameter>
+                    <parameter estimate="false" id="RealParameter.67" name="sigma">0.1</parameter>
+                </Normal>
+            </distribution>
+<!--
+            <distribution id="location_A" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:unif_sampling">
+                <taxonset id="location_A1" spec="TaxonSet">
+                    <taxon idref="A0_DATE_INPUT"/>
+                    <taxon idref="A1_DATE_INPUT"/>
+                    <taxon idref="A2_DATE_INPUT"/>
+                    <taxon idref="A3_DATE_INPUT"/>
+                    <taxon idref="A4_DATE_INPUT"/>
+
+
+                    <taxon idref="A5_DATE_INPUT"/>
+                    <taxon idref="A6_DATE_INPUT"/>
+                    <taxon idref="A7_DATE_INPUT"/>
+                    <taxon idref="A8_DATE_INPUT"/>
+                    <taxon idref="A9_DATE_INPUT"/>
+                    <taxon idref="B0_DATE_INPUT"/>
+                    <taxon idref="B1_DATE_INPUT"/>
+                    <taxon idref="B2_DATE_INPUT"/>
+                    <taxon idref="B3_DATE_INPUT"/>
+
+
+
+                    <taxon idref="B4_DATE_INPUT"/>
+                    <taxon idref="B5_DATE_INPUT"/>
+                    <taxon idref="B6_DATE_INPUT"/>
+                    <taxon idref="B7_DATE_INPUT"/>
+                    <taxon idref="B8_DATE_INPUT"/>
+                    <taxon idref="B9_DATE_INPUT"/>
+
+
+
+                </taxonset>
+                <Normal id="Normal.01" name="distr">
+                    <parameter estimate="false" id="RealParameter.04" name="mean">2</parameter>
+                    <parameter estimate="false" id="RealParameter.05" name="sigma">0.1</parameter>
+                </Normal>
+            </distribution>
+            <distribution id="location_C" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@Tree.t:unif_sampling">
+                <taxonset id="location_C1" spec="TaxonSet">
+                    <taxon idref="C0_DATE_INPUT"/>
+                    <taxon idref="C1_DATE_INPUT"/>
+                    <taxon idref="C2_DATE_INPUT"/>
+                    <taxon idref="C3_DATE_INPUT"/>
+                    <taxon idref="C4_DATE_INPUT"/>
+                    <taxon idref="C5_DATE_INPUT"/>
+
+                    <taxon idref="C6_DATE_INPUT"/>
+                    <taxon idref="C7_DATE_INPUT"/>
+                    <taxon idref="C8_DATE_INPUT"/>
+                    <taxon idref="C9_DATE_INPUT"/>
+                    <taxon idref="D0_DATE_INPUT"/>
+                    <taxon idref="D1_DATE_INPUT"/>
+                    <taxon idref="D2_DATE_INPUT"/>
+                    <taxon idref="D3_DATE_INPUT"/>
+                    <taxon idref="D4_DATE_INPUT"/>
+
+                    <taxon idref="E3_DATE_INPUT"/>
+                    <taxon idref="E4_DATE_INPUT"/>
+                    <taxon idref="E5_DATE_INPUT"/>
+                    <taxon idref="E6_DATE_INPUT"/>
+                    <taxon idref="E7_DATE_INPUT"/>
+                    <taxon idref="E8_DATE_INPUT"/>
+
+
+
+                    <taxon idref="D5_DATE_INPUT"/>
+                    <taxon idref="D6_DATE_INPUT"/>
+                    <taxon idref="D7_DATE_INPUT"/>
+                    <taxon idref="D8_DATE_INPUT"/>
+                    <taxon idref="D9_DATE_INPUT"/>
+                    <taxon idref="E0_DATE_INPUT"/>
+                    <taxon idref="E1_DATE_INPUT"/>
+                    <taxon idref="E2_DATE_INPUT"/>
+                    <taxon idref="E9_DATE_INPUT"/>
+                </taxonset>
+                <Normal id="Normal.04" name="distr">
+                    <parameter estimate="false" id="RealParameter.010" name="mean">4</parameter>
+                    <parameter estimate="false" id="RealParameter.011" name="sigma">0.1</parameter>
+                </Normal>
+            </distribution>
+-->
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution">
+            <distribution data="@unif_sampling" id="treeLikelihood.unif_sampling" spec="TreeLikelihood" tree="@Tree.t:unif_sampling">
+                <siteModel id="SiteModel.s:unif_sampling" spec="SiteModel">
+                    <parameter estimate="false" id="mutationRate.s:unif_sampling" name="mutationRate">1.0</parameter>
+                    <parameter estimate="false" id="gammaShape.s:unif_sampling" name="shape">1.0</parameter>
+                    <parameter estimate="false" id="proportionInvariant.s:unif_sampling" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="JC69.s:unif_sampling" spec="JukesCantor"/>
+                </siteModel>
+                <branchRateModel clock.rate="@clockRate.c:unif_sampling" id="StrictClock.c:unif_sampling" spec="beast.evolution.branchratemodel.StrictClockModel"/>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="treeScaler.t:unif_sampling" scaleFactor="0.5" spec="ScaleOperator" tree="@Tree.t:unif_sampling" weight="3.0"/>
+
+    <operator id="treeRootScaler.t:unif_sampling" rootOnly="true" scaleFactor="0.5" spec="ScaleOperator" tree="@Tree.t:unif_sampling" weight="3.0"/>
+
+    <operator id="UniformOperator.t:unif_sampling" spec="Uniform" tree="@Tree.t:unif_sampling" weight="30.0"/>
+
+    <operator id="SubtreeSlide.t:unif_sampling" spec="SubtreeSlide" tree="@Tree.t:unif_sampling" weight="15.0"/>
+
+    <operator id="narrow.t:unif_sampling" spec="Exchange" tree="@Tree.t:unif_sampling" weight="15.0"/>
+
+    <operator id="wide.t:unif_sampling" isNarrow="false" spec="Exchange" tree="@Tree.t:unif_sampling" weight="3.0"/>
+
+    <operator id="WilsonBalding.t:unif_sampling" spec="WilsonBalding" tree="@Tree.t:unif_sampling" weight="3.0"/>
+
+    <operator id="StrictClockRateScaler.c:unif_sampling" parameter="@clockRate.c:unif_sampling" scaleFactor="0.75" spec="ScaleOperator" weight="3.0"/>
+
+    <operator id="strictClockUpDownOperator.c:unif_sampling" scaleFactor="0.75" spec="UpDownOperator" weight="3.0">
+        <parameter idref="clockRate.c:unif_sampling" name="up"/>
+        <tree idref="Tree.t:unif_sampling" name="down"/>
+    </operator>
+
+    <operator id="PopSizeScaler.t:unif_sampling" parameter="@popSize.t:unif_sampling" scaleFactor="0.75" spec="ScaleOperator" weight="3.0"/>
+
+    <logger fileName="unif_sampling.log" id="tracelog" logEvery="1000" model="@posterior" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.unif_sampling"/>
+        <log id="TreeHeight.t:unif_sampling" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:unif_sampling"/>
+        <parameter idref="clockRate.c:unif_sampling" name="log"/>
+        <parameter idref="popSize.t:unif_sampling" name="log"/>
+        <log idref="CoalescentConstant.t:unif_sampling"/>
+<!--
+        <log idref="location_A"/>
+        <log idref="location_B"/>
+        <log idref="location_C"/>
+        <log idref="location_D"/>
+        <log idref="location_E"/>
+        <log idref="all_taxa.prior"/>
+-->
+    </logger>
+
+    <logger id="screenlog" logEvery="1000">
+        <log idref="posterior"/>
+        <log arg="@posterior" id="ESS.0" spec="util.ESS"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+	<log idref="TreeHeight.t:unif_sampling" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:unif_sampling"/>
+
+    </logger>
+
+    <logger fileName="$(tree).trees" id="treelog.t:unif_sampling" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:unif_sampling" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:unif_sampling"/>
+    </logger>
+
+</run>
+
+</beast>

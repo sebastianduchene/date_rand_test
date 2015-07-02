@@ -1,0 +1,26 @@
+
+template_lines <- readLines('template_file.xml')
+
+dates_location <- grep('DATE_INPUT', template_lines)
+
+date_max <- 10 # Set the maximumm age of the tips
+date_min <- 0 # Set the minumum age of the tips
+
+dates <- c(date_min, date_max, runif(n = 
+
+taxa_tags <- c(paste0('A', 0:9, '_DATE_INPUT'), paste0('B', 0:9, '_DATE_INPUT'), paste0('C', 0:9, '_DATE_INPUT'), paste0('D', 0:9, '_DATE_INPUT'), paste0('E', 0:9, '_DATE_INPUT'))
+taxa_dates <- paste0(c(paste0('A', 0:9, '_'), paste0('B', 0:9, '_'), paste0('C', 0:9, '_'), paste0('D', 0:9, '_'), paste0('E', 0:9, '_')), dates)
+
+for(i in 1:length(taxa_tags)){
+      template_lines <- gsub(taxa_tags[i], taxa_dates[i], template_lines)
+}
+
+dates_spec <- paste0(taxa_dates, '=', dates)
+dates_tags <- paste0(taxa_dates, '=DATE_INPUT')
+
+for(i in 1:length(dates_spec)){
+      template_lines <- gsub(dates_tags[i], dates_spec[i], template_lines)
+}
+
+writeLines(template_lines, con = 'simulation_1.xml')# Set the name for the xml file from which to simulate the trees
+
